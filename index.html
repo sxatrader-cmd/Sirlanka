@@ -129,6 +129,18 @@ html[lang="ar"] .day-title h3{font-family:var(--serif-ar);font-weight:700;font-s
 .day-body .text{max-width:68ch;margin:4px 0 6px;font-size:16.5px}
 .day-body .text p{margin:0 0 13px}
 .night{display:inline-flex;gap:8px;align-items:center;background:var(--panel);color:var(--navy);border-radius:4px;padding:6px 14px;font-size:14px;font-weight:600;margin:4px 0 18px;border-inline-start:3px solid var(--gold)}
+.hotel{margin:22px 0 6px;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--paper)}
+.hotel-h{background:var(--navy);color:#fff;padding:14px 18px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;border-bottom:3px solid var(--gold)}
+.hotel-h .eyebrow{font-size:11px}
+.hotel-h h4{margin:2px 0 0;font-family:var(--serif-en);font-weight:400;font-size:20px;color:#fff;line-height:1.3}
+html[lang="ar"] .hotel-h h4{font-family:var(--serif-en)}
+.stars{color:var(--gold-2);font-size:15px;letter-spacing:2px;white-space:nowrap}
+.hotel-b{padding:14px 18px 18px}
+.hotel-b ul{margin:0 0 14px;padding-inline-start:18px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 20px;font-size:14.5px;color:var(--ink)}
+.hotel-b li::marker{color:var(--gold)}
+.hgal{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.hgal .ph{aspect-ratio:1/1}
+.hgal-empty{font-size:13px;color:var(--muted)}
 .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px}
 .ph{all:unset;box-sizing:border-box;cursor:zoom-in;display:block;border-radius:4px;overflow:hidden;background:var(--navy);position:relative;aspect-ratio:4/3;max-width:100%}
 .ph img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
@@ -217,6 +229,8 @@ html[lang="ar"] .lb-cap{font-family:var(--serif-ar);font-size:17px;font-weight:7
   .day-title h3{font-size:18px}
   html[lang="ar"] .day-title h3{font-size:20px}
   .gallery{grid-template-columns:repeat(2,1fr)}
+  .hgal{grid-template-columns:repeat(4,1fr);gap:5px}
+  .hotel-b ul{grid-template-columns:1fr}
   table{min-width:0;font-size:14px}
   th,td{padding:10px 10px}
   td.num{white-space:normal}
@@ -369,7 +383,7 @@ const T = {
   itE:"البرنامج · 7 أيام / 6 ليالٍ",inE:"الخدمات",feeE:"معلومات مفيدة",fmE:"احجز مكانك",
   depH:"رحلات أسبوعية من بغداد",depP:"الإقلاع من مطار بغداد الدولي كل جمعة. أقرب مواعيد الانطلاق:",
   itH:"البرنامج يوماً بيوم",itP:"اضغط على عنوان أي يوم لعرض تفاصيله وصوره. اضغط على أي صورة لتكبيرها.",
-  night:"المبيت في",
+  night:"المبيت في",stay:"الإقامة",hotelPh:"صور الفندق",nophotos:"صور الفندق ستضاف قريباً.",
   inH:"ما يشمله البرنامج",
   in1h:"طيران من بغداد",in1p:"تذاكر الطيران ذهاباً وإياباً من مطار بغداد الدولي إلى كولومبو، مع الاستقبال والتوديع في المطار.",
   in2h:"فنادق 5 نجوم",in2p:"6 ليالٍ في فنادق خمس نجوم في نيغومبو وسيجيريا وكاندي ونوارا إليا وبينتوتا مع الإفطار.",
@@ -401,7 +415,7 @@ const T = {
   itE:"Program · 7 days / 6 nights",inE:"Services",feeE:"Good to know",fmE:"Reserve your place",
   depH:"Weekly departures from Baghdad",depP:"Flights leave Baghdad International Airport every Friday. Next departures:",
   itH:"Day-by-day itinerary",itP:"Tap a day to open its details and photos. Tap any photo to view it full size.",
-  night:"Overnight in",
+  night:"Overnight in",stay:"Your hotel",hotelPh:"Hotel photos",nophotos:"Hotel photos coming soon.",
   inH:"What the program includes",
   in1h:"Flights from Baghdad",in1p:"Return flights from Baghdad International Airport to Colombo, with airport meet-and-greet and farewell.",
   in2h:"5-star hotels",in2p:"6 nights in five-star hotels in Negombo, Sigiriya, Kandy, Nuwara Eliya and Bentota, with breakfast.",
@@ -511,6 +525,28 @@ const FEES = [
  {day:6,site:{ar:"مفقس السلاحف، كوسغودا",en:"Turtle hatchery, Kosgoda"},fee:{ar:"1,000 – 1,500 روبية (≈ 3–5 دولار)",en:"LKR 1,000–1,500 (≈ US$3–5)"}}
 ];
 
+
+/* ================= HOTELS (5★, family-friendly) — day index → hotel =================
+   To use your own photos for a hotel, put up to 8 image URLs in imgs:[...] — they replace the automatic photos. */
+const HOTELS = {
+ 0:{name:"Club Hotel Dolphin",area:{ar:"وايكال، نيغومبو",en:"Waikkal, Negombo"},q:["Club Hotel Dolphin","Club Dolphin Waikkal"],must:["dolphin"],imgs:[],
+    f:{ar:["على الشاطئ مباشرة","مسبحان كبيران ومسبح للأطفال","نادٍ وملعب للأطفال","سبا ونادٍ رياضي وتنس","مطعمان وبار","غرف بإطلالة على البحر"],
+       en:["Directly on the beach","Two large pools and a kids' pool","Kids' club and playground","Spa, gym and tennis","Two restaurants and a bar","Sea-view rooms"]}},
+ 1:{name:"Heritance Kandalama",area:{ar:"دامبولا، سيجيريا",en:"Dambulla, Sigiriya"},q:["Heritance Kandalama","Kandalama Hotel"],must:["kandalama"],imgs:[],
+    f:{ar:["من تصميم المعماري جيفري باوا","مسبح لا متناهي يطل على صخرة سيجيريا","وسط الغابة على بحيرة كاندالاما","سبا Six Senses","تنس وغولف مصغّر ودراجات","غرف عائلية"],
+       en:["Designed by architect Geoffrey Bawa","Infinity pool facing Sigiriya Rock","Set in jungle on Kandalama Lake","Six Senses spa","Tennis, mini golf and bicycles","Family rooms"]}},
+ 2:{name:"The Golden Crown Hotel",area:{ar:"كاندي",en:"Kandy"},q:["Golden Crown Hotel Kandy","Golden Crown Kandy"],must:["golden crown"],imgs:[],
+    f:{ar:["إطلالة بانورامية على تلال كاندي","مسبح خارجي وتراس على السطح","سبا بغرف للأزواج","غرفة ألعاب وبلياردو","مطعم ومقهى","يرحّب بالأطفال"],
+       en:["Panoramic views over the Kandy hills","Outdoor pool and rooftop terrace","Spa with couples' rooms","Game room and billiards","Restaurant and café","Children welcome"]}},
+ 3:{name:"Araliya Green City",area:{ar:"نوارا إليا",en:"Nuwara Eliya"},q:["Araliya Green City","Araliya Green City Nuwara Eliya"],must:["araliya"],imgs:[],
+    f:{ar:["مسبح داخلي مدفأ ومسبح خارجي","مسبح للأطفال","سبا وساونا","نادٍ رياضي","مطعم ومقهى وبار","في وسط المدينة قرب بحيرة غريغوري"],
+       en:["Heated indoor and outdoor pools","Kids' pool","Spa and sauna","Fitness centre","Restaurant, café and bar","Central, near Lake Gregory"]}},
+ 4:{name:"Sheraton Kosgoda Turtle Beach Resort",area:{ar:"كوسغودا، بينتوتا",en:"Kosgoda, Bentota"},q:["Sheraton Kosgoda","Kosgoda Turtle Beach Resort"],must:["sheraton","kosgoda"],imgs:[],
+    f:{ar:["بين المحيط والبحيرة","مسبحان وبار داخل المسبح","نادٍ مجاني للأطفال مع إشراف","سبا وحمّام بخار","مطعمان وثلاثة بارات","قرب مفقس السلاحف"],
+       en:["Between the ocean and a lagoon","Two pools with a swim-up bar","Free supervised kids' club","Spa and steam room","Two restaurants, three bars","Next to the turtle hatchery"]}}
+};
+HOTELS[5]=HOTELS[4];
+
 /* ================= RENDER ================= */
 let lang = "ar";
 const urlLang=new URLSearchParams(location.search).get("lang");
@@ -549,8 +585,10 @@ function renderDays(){
     </button>
     <div class="day-body" id="db${i}" ${openIdx.includes(i)?"":"hidden"}>
       <div class="text">${d[lang]}</div>
-      ${d.night?`<div class="night">🌙 ${t.night} ${d.night[lang]} · 5★</div>`:""}
       <div class="gallery">${d.stops.map((s,j)=>`<button class="ph loading" data-d="${i}" data-s="${j}" aria-label="${s[lang]}"><span class="cap">${s[lang]}</span></button>`).join("")}</div>
+      ${HOTELS[i]?`<div class="hotel"><div class="hotel-h"><div><span class="eyebrow">${t.stay} · ${HOTELS[i].area[lang]}</span><h4>${HOTELS[i].name}</h4></div><span class="stars" aria-label="5 stars">★★★★★</span></div>
+        <div class="hotel-b"><ul>${HOTELS[i].f[lang].map(x=>`<li>${x}</li>`).join("")}</ul>
+        <div class="hgal" data-hd="${i}">${Array.from({length:8},(_,k)=>`<button class="ph loading" data-h="${i}" data-k="${k}" aria-label="${HOTELS[i].name}"></button>`).join("")}</div></div></div>`:""}
     </div>
    </article>`).join("");
   openIdx.forEach(loadDayImages);
@@ -566,7 +604,7 @@ daysEl.addEventListener("click",e=>{
     return;
   }
   const ph=e.target.closest(".ph");
-  if(ph && ph.dataset.src) openLB(+ph.dataset.d,+ph.dataset.s);
+  if(ph && ph.dataset.src) openLB(ph);
 });
 
 /* ================= PHOTOS (Wikimedia Commons, loaded on demand) ================= */
@@ -584,7 +622,40 @@ async function findImage(q){
   imgCache[q]=res; try{localStorage.setItem("ft-lk-img",JSON.stringify(imgCache));}catch(e){}
   return res;
 }
+async function findImages(qs,must,n){
+  const key="H:"+qs.join("|");
+  if(imgCache[key]) return imgCache[key];
+  const out=[], seen=new Set();
+  for(const q of qs){
+    if(out.length>=n) break;
+    try{
+      const url="https://commons.wikimedia.org/w/api.php?action=query&format=json&origin=*&generator=search&gsrnamespace=6&gsrlimit=40&prop=imageinfo&iiprop=url|size|mime&iiurlwidth=1400&gsrsearch="+encodeURIComponent(q+" filetype:bitmap");
+      const j=await (await fetch(url)).json();
+      Object.values((j.query&&j.query.pages)||{}).sort((a,b)=>a.index-b.index).forEach(p=>{
+        const ii=p.imageinfo&&p.imageinfo[0]; if(!ii||out.length>=n||seen.has(p.title)) return;
+        if(!/jpeg|png/.test(ii.mime)||ii.width<600) return;
+        const t=p.title.toLowerCase(); if(!must.some(m=>t.includes(m))) return;
+        seen.add(p.title); out.push(ii.thumburl);
+      });
+    }catch(e){}
+  }
+  imgCache[key]=out; try{localStorage.setItem("ft-lk-img",JSON.stringify(imgCache));}catch(e){}
+  return out;
+}
+async function loadHotelImages(i){
+  const h=HOTELS[i]; const box=daysEl.querySelector(`.hgal[data-hd="${i}"]`); if(!h||!box||box.dataset.done) return; box.dataset.done=1;
+  const urls=(h.imgs&&h.imgs.length?h.imgs:await findImages(h.q,h.must,8)).slice(0,8);
+  box.querySelectorAll(".ph").forEach((el,k)=>{
+    if(!urls[k]){ el.remove(); return; }
+    const img=new Image(); img.loading="lazy"; img.alt=h.name; img.src=urls[k];
+    img.onload=()=>el.classList.remove("loading");
+    img.onerror=()=>el.remove();
+    el.prepend(img); el.dataset.src=urls[k];
+  });
+  if(!urls.length) box.outerHTML=`<p class="hgal-empty">${T[lang].nophotos}</p>`;
+}
 function loadDayImages(i){
+  loadHotelImages(i);
   daysEl.querySelectorAll(`.ph[data-d="${i}"]`).forEach(async el=>{
     if(el.dataset.done) return; el.dataset.done=1;
     const s=DAYS[i].stops[+el.dataset.s];
@@ -603,16 +674,20 @@ findImage("Sigiriya rock").then(im=>{ if(im) $("#heroImg").style.backgroundImage
 
 /* ================= LIGHTBOX ================= */
 const lb=$("#lb"); let cur=null;
-function flat(){ const a=[]; daysEl.querySelectorAll(".ph[data-src]").forEach(el=>a.push([+el.dataset.d,+el.dataset.s])); return a; }
-function openLB(d,s){
-  const el=daysEl.querySelector(`.ph[data-d="${d}"][data-s="${s}"]`); if(!el||!el.dataset.src) return;
-  cur=[d,s];
-  $("#lb-img").src=el.dataset.src; $("#lb-img").alt=DAYS[d].stops[s][lang];
-  $("#lb-cap").innerHTML=`${T[lang].dayW} ${d+1} · ${DAYS[d].stops[s][lang]}<small>${T[lang].photo}</small>`;
+function flat(){ return [...daysEl.querySelectorAll(".day.open .ph[data-src]")]; }
+function capOf(el){
+  if(el.dataset.h!==undefined){ const i=+el.dataset.h; return `${T[lang].dayW} ${i+1} · ${HOTELS[i].name}`; }
+  const d=+el.dataset.d, s=+el.dataset.s; return `${T[lang].dayW} ${d+1} · ${DAYS[d].stops[s][lang]}`;
+}
+function openLB(el){
+  if(!el||!el.dataset.src) return;
+  cur=el;
+  $("#lb-img").src=el.dataset.src; $("#lb-img").alt=capOf(el);
+  $("#lb-cap").innerHTML=`${capOf(el)}<small>${T[lang].photo}</small>`;
   lb.hidden=false; document.body.style.overflow="hidden"; $("#lb-close").focus();
 }
 function closeLB(){ lb.hidden=true; document.body.style.overflow=""; }
-function step(n){ const a=flat(); let k=a.findIndex(x=>x[0]===cur[0]&&x[1]===cur[1]); k=(k+n+a.length)%a.length; openLB(...a[k]); }
+function step(n){ const a=flat(); if(!a.length) return; let k=a.indexOf(cur); k=(k+n+a.length)%a.length; openLB(a[k]); }
 $("#lb-close").onclick=closeLB;
 $("#lb-prev").onclick=()=>step(lang==="ar"?1:-1);
 $("#lb-next").onclick=()=>step(lang==="ar"?-1:1);
