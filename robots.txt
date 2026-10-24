@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sxatrader-cmd.github.io/Sirlanka/sitemap.xml
+Sitemap: https://srilanka.fabletour.com/sitemap.xml
