@@ -398,7 +398,7 @@ const T = {
   sending:"جارٍ الإرسال…",ok:"تم استلام طلبك. سنتواصل معك عبر الواتساب قريباً.",
   err:"يرجى ملء جميع الحقول ببريد إلكتروني صحيح ورقم واتساب.",fail:"تعذّر الإرسال. حاول مرة أخرى أو راسلنا على الواتساب.",
   nokey:"النموذج غير مفعّل بعد: أضف مفتاح Web3Forms في إعدادات الصفحة.",
-  dayW:"اليوم",photo:"صورة: ويكيميديا كومنز",
+  dayW:"اليوم",photo:"صورة: ويكيميديا كومنز",photoH:"صورة: الموقع الرسمي للفندق",
   months:["يناير","فبراير","مارس","أبريل","مايو","يونيو","يوليو","أغسطس","سبتمبر","أكتوبر","نوفمبر","ديسمبر"],
   fri:"جمعة",
   title:"رحلة سريلانكا 7 أيام من بغداد كل جمعة | فنادق 4–5 نجوم | Fable Tour"
@@ -430,7 +430,7 @@ const T = {
   sending:"Sending…",ok:"Thank you. We received your request and will contact you on WhatsApp soon.",
   err:"Please fill in all fields with a valid email and WhatsApp number.",fail:"Sending failed. Please try again or message us on WhatsApp.",
   nokey:"The form is not active yet: add the Web3Forms key in the page settings.",
-  dayW:"Day",photo:"Photo: Wikimedia Commons",
+  dayW:"Day",photo:"Photo: Wikimedia Commons",photoH:"Photo: hotel's official website",
   months:["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
   fri:"Fri",
   title:"Sri Lanka 7-Day Tour from Baghdad Every Friday | 4–5 Star Hotels | Fable Tour"
@@ -534,16 +534,16 @@ const HOTELS = {
  0:{name:"Club Hotel Dolphin",stars:5,area:{ar:"وايكال، نيغومبو",en:"Waikkal, Negombo"},q:["Club Hotel Dolphin","Club Dolphin Waikkal"],must:["dolphin"],imgs:[],
     f:{ar:["على الشاطئ مباشرة","مسبحان كبيران ومسبح للأطفال","نادٍ وملعب للأطفال","سبا ونادٍ رياضي وتنس","مطعمان وبار","غرف بإطلالة على البحر"],
        en:["Directly on the beach","Two large pools and a kids' pool","Kids' club and playground","Spa, gym and tennis","Two restaurants and a bar","Sea-view rooms"]}},
- 1:{name:"Heritance Kandalama",stars:5,area:{ar:"دامبولا، سيجيريا",en:"Dambulla, Sigiriya"},q:["Heritance Kandalama","Kandalama Hotel"],must:["kandalama"],imgs:[],
+ 1:{name:"Heritance Kandalama",stars:5,area:{ar:"دامبولا، سيجيريا",en:"Dambulla, Sigiriya"},q:["Heritance Kandalama","Kandalama Hotel"],must:["kandalama"],imgs:["https://heritancehotels.eme-devops.com/sites/3/2026/01/Heritance-Kandalama_Exterior22.jpg.jpg?w=1400&q=80", "https://heritancehotels.eme-devops.com/sites/3/2026/07/Web__HK-Mobile.jpg?w=1600&q=70&auto=format", "https://heritancehotels.eme-devops.com/sites/3/2025/01/kandalama-footer-1.jpg", "https://heritancehotels.eme-devops.com/sites/3/2025/01/kandalama-footer-2.jpg", "https://heritancehotels.eme-devops.com/sites/3/2025/01/kandalama-footer-3.jpg", "https://heritancehotels.eme-devops.com/sites/3/2025/01/kandalama-footer-4.jpg", "https://heritancehotels.eme-devops.com/sites/3/2025/01/kandalama-footer-5.jpg"],
     f:{ar:["من تصميم المعماري جيفري باوا","مسبح لا متناهي يطل على صخرة سيجيريا","وسط الغابة على بحيرة كاندالاما","سبا Six Senses","تنس وغولف مصغّر ودراجات","غرف عائلية"],
        en:["Designed by architect Geoffrey Bawa","Infinity pool facing Sigiriya Rock","Set in jungle on Kandalama Lake","Six Senses spa","Tennis, mini golf and bicycles","Family rooms"]}},
- 2:{name:"The Golden Crown Hotel",stars:5,area:{ar:"كاندي",en:"Kandy"},q:["Golden Crown Hotel Kandy","Golden Crown Kandy"],must:["golden crown"],imgs:[],
+ 2:{name:"The Golden Crown Hotel",stars:5,area:{ar:"كاندي",en:"Kandy"},q:["Golden Crown Hotel Kandy","Golden Crown Kandy"],must:["golden crown"],imgs:["https://www.thegoldencrownhotel.com/images/site-specific/golden_crown/home/golden-crown-banner-1.jpg", "https://www.thegoldencrownhotel.com/images/site-specific/golden_crown/gc-banner-5.jpg", "https://www.thegoldencrownhotel.com/images/site-specific/golden_crown/gc-banner-1.jpg", "https://www.thegoldencrownhotel.com/images/site-specific/golden_crown/gc-banner-3.jpg", "https://www.thegoldencrownhotel.com/images/site-specific/golden_crown/gc-banner-4.jpg", "https://www.thegoldencrownhotel.com/images/site-specific/golden_crown/accomodation/family-room-banner.jpg", "https://www.thegoldencrownhotel.com/images/site-specific/golden_crown/new-delux-room-banner.jpg", "https://www.thegoldencrownhotel.com/images/site-specific/golden_crown/dining/savana-feature.jpg"],
     f:{ar:["إطلالة بانورامية على تلال كاندي","مسبح خارجي وتراس على السطح","سبا بغرف للأزواج","غرفة ألعاب وبلياردو","مطعم ومقهى","يرحّب بالأطفال"],
        en:["Panoramic views over the Kandy hills","Outdoor pool and rooftop terrace","Spa with couples' rooms","Game room and billiards","Restaurant and café","Children welcome"]}},
- 3:{name:"Araliya Green City",stars:5,area:{ar:"نوارا إليا",en:"Nuwara Eliya"},q:["Araliya Green City","Araliya Green City Nuwara Eliya"],must:["araliya"],imgs:[],
+ 3:{name:"Araliya Green City",stars:5,area:{ar:"نوارا إليا",en:"Nuwara Eliya"},q:["Araliya Green City","Araliya Green City Nuwara Eliya"],must:["araliya"],imgs:["https://do6raq9h04ex.cloudfront.net/sites/4/2025/06/Aqua-Splash-%E2%80%93-Pool-Bar.jpg", "https://do6raq9h04ex.cloudfront.net/sites/4/2025/07/Araliya-Premier-Nuwara-Eliya-2.jpg", "https://do6raq9h04ex.cloudfront.net/sites/4/2025/06/Superior-Double-Room-2.jpg", "https://do6raq9h04ex.cloudfront.net/sites/4/2025/06/Junior-Suite-Nuwara-Eliya-1.jpg", "https://do6raq9h04ex.cloudfront.net/sites/4/2025/06/Royal-Suite-Nuwara-Eliya-2.jpg", "https://do6raq9h04ex.cloudfront.net/sites/4/2025/06/Twin-Rooms-Nuwra-Eliya.jpg", "https://do6raq9h04ex.cloudfront.net/sites/4/2024/06/lobby-cafe-desk-feat.jpg", "https://do6raq9h04ex.cloudfront.net/sites/4/2024/06/fox-hounds-desk-feat.jpg"],
     f:{ar:["مسبح داخلي مدفأ ومسبح خارجي","مسبح للأطفال","سبا وساونا","نادٍ رياضي","مطعم ومقهى وبار","في وسط المدينة قرب بحيرة غريغوري"],
        en:["Heated indoor and outdoor pools","Kids' pool","Spa and sauna","Fitness centre","Restaurant, café and bar","Central, near Lake Gregory"]}},
- 4:{name:"Sheraton Kosgoda Turtle Beach Resort",stars:5,area:{ar:"كوسغودا، بينتوتا",en:"Kosgoda, Bentota"},q:["Sheraton Kosgoda","Kosgoda Turtle Beach Resort"],must:["sheraton","kosgoda"],imgs:[],
+ 4:{name:"Sheraton Kosgoda Turtle Beach Resort",stars:5,area:{ar:"كوسغودا، بينتوتا",en:"Kosgoda, Bentota"},q:["Sheraton Kosgoda","Kosgoda Turtle Beach Resort"],must:["sheraton","kosgoda"],imgs:["https://cache.marriott.com/is/image/marriotts7prod/si-cmbst-aerial-exterior-14696:Wide-Hor?wid=1336&fit=constrain", "https://cache.marriott.com/is/image/marriotts7prod/si-cmbst-resort-pool-22881:Wide-Hor?wid=1318&fit=constrain", "https://cache.marriott.com/is/image/marriotts7prod/si-cmbst-pool-view-34607:Classic-Hor?wid=1200&fit=constrain", "https://cache.marriott.com/is/image/marriotts7prod/si-cmbst-aerial-view-30857:Classic-Hor?wid=1200&fit=constrain", "https://cache.marriott.com/is/image/marriotts7prod/si-cmbst-pool-walkway-23373:Wide-Hor?wid=1318&fit=constrain", "https://cache.marriott.com/is/image/marriotts7prod/si-cmbst-blu3-bar-10446:Classic-Hor?wid=1200&fit=constrain", "https://cache.marriott.com/is/image/marriotts7prod/si-cmbst-shine-spa-21535:Wide-Hor?wid=1318&fit=constrain", "https://cache.marriott.com/is/image/marriotts7prod/si-cmbst-cmbst-kids-club16277-46481:Wide-Hor?wid=1318&fit=constrain"],
     f:{ar:["بين المحيط والبحيرة","مسبحان وبار داخل المسبح","نادٍ مجاني للأطفال مع إشراف","سبا وحمّام بخار","مطعمان وثلاثة بارات","قرب مفقس السلاحف"],
        en:["Between the ocean and a lagoon","Two pools with a swim-up bar","Free supervised kids' club","Spa and steam room","Two restaurants, three bars","Next to the turtle hatchery"]}}
 };
@@ -647,11 +647,13 @@ async function findImages(qs,must,n){
 async function loadHotelImages(i){
   const h=HOTELS[i]; const box=daysEl.querySelector(`.hgal[data-hd="${i}"]`); if(!h||!box||box.dataset.done) return; box.dataset.done=1;
   const urls=(h.imgs&&h.imgs.length?h.imgs:await findImages(h.q,h.must,8)).slice(0,8);
+  let left=urls.length;
   box.querySelectorAll(".ph").forEach((el,k)=>{
     if(!urls[k]){ el.remove(); return; }
     const img=new Image(); img.loading="lazy"; img.alt=h.name; img.src=urls[k];
     img.onload=()=>el.classList.remove("loading");
-    img.onerror=()=>el.remove();
+    img.onerror=()=>{ el.remove(); if(--left===0 && h.imgs && h.imgs.length){ box.dataset.done=""; box.innerHTML=Array.from({length:8},(_,k)=>`<button class="ph loading" data-h="${i}" data-k="${k}" aria-label="${h.name}"></button>`).join(""); const keep=h.imgs; h.imgs=[]; loadHotelImages(i).finally(()=>{h.imgs=keep;}); } };
+    img.referrerPolicy="no-referrer";
     el.prepend(img); el.dataset.src=urls[k];
   });
   if(!urls.length) box.outerHTML=`<p class="hgal-empty">${T[lang].nophotos}</p>`;
@@ -685,7 +687,7 @@ function openLB(el){
   if(!el||!el.dataset.src) return;
   cur=el;
   $("#lb-img").src=el.dataset.src; $("#lb-img").alt=capOf(el);
-  $("#lb-cap").innerHTML=`${capOf(el)}<small>${T[lang].photo}</small>`;
+  $("#lb-cap").innerHTML=`${capOf(el)}<small>${el.dataset.h!==undefined&&HOTELS[+el.dataset.h].imgs.length?T[lang].photoH:T[lang].photo}</small>`;
   lb.hidden=false; document.body.style.overflow="hidden"; $("#lb-close").focus();
 }
 function closeLB(){ lb.hidden=true; document.body.style.overflow=""; }
