@@ -1402,7 +1402,7 @@ function pcCalc(){
   if(pax>PRICE_CFG.maxPax){ out.innerHTML=`<p class="pc-warn">${t.big}</p>`; return; }
   if(!pax||dbl*2+sgl!==pax){ out.innerHTML=`<p class="pc-warn">${t.mis}</p>`; return; }
   const c=dep&&pcCost(dep); if(!c){ out.innerHTML=""; return; }
-  const add=PRICE_CFG.transport/pax+PRICE_CFG.nuwaraPP+PRICE_CFG.profitPP;
+  const add=PRICE_CFG.transport/Math.min(pax,2)+PRICE_CFG.nuwaraPP+PRICE_CFG.profitPP;
   const ppD=Math.ceil(c.d+add), ppS=Math.ceil(c.s+add), total=ppD*dbl*2+ppS*sgl;
   const money=v=>"US$ "+v.toLocaleString("en-US");
   let h="";
