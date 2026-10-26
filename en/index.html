@@ -200,6 +200,22 @@ html[lang="ar"] .btn{letter-spacing:0;font-size:16px}
 .btn[disabled]{opacity:.6;cursor:wait}
 .msg{font-size:14px;min-height:1.4em}
 .msg.ok{color:#A9E2C3}.msg.err{color:#FFB8AC}
+
+/* ---- price calculator ---- */
+.pc{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:24px;display:grid;gap:18px}
+.pc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.pc label{font-size:13px;font-weight:600;color:var(--navy)}
+.pc select,.pc input{width:100%;padding:11px 12px;border-radius:4px;border:1px solid var(--line);background:#fff;color:var(--ink);font-size:16px;font-family:inherit}
+.pc select:focus,.pc input:focus{outline:2px solid var(--gold);border-color:var(--gold)}
+.pc-out{background:var(--navy);color:#fff;border-radius:6px;padding:20px 22px;border-bottom:4px solid var(--gold);display:grid;gap:10px}
+.pc-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:15px;color:#D3D9E2}
+.pc-row b{color:#fff;font-size:18px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.pc-total{border-top:1px solid rgba(217,192,142,.35);padding-top:10px;margin-top:4px}
+.pc-total span{color:var(--gold-2);font-weight:600}
+.pc-total b{font-size:26px;color:var(--gold-2)}
+.pc-warn{color:#FFB8AC;font-size:14px}
+.pc-out .btn{margin-top:6px;text-align:center;text-decoration:none;display:block}
+@media (max-width:760px){.pc{padding:18px}.pc-grid{grid-template-columns:1fr 1fr}.pc-grid .pc-date{grid-column:1/-1}}
 .hp{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;overflow:hidden;clip-path:inset(50%)}
 
 footer{background:var(--navy);color:#C9CFD9;font-size:14px;border-top:5px solid var(--gold);margin-top:34px}
@@ -427,6 +443,20 @@ img.hero-img{width:100%;object-fit:cover;object-position:center;display:block}
     <div class="sec-head"><span class="eyebrow" data-i="feeE">Good to know</span><h2 class="disp" data-i="feeH">Entrance fees</h2><p data-i="feeP">Official prices for foreign (non-SAARC) visitors at the main sites on the program.</p></div>
     <div class="tbl-wrap"><table id="feeTable"><thead><tr><th>Site</th><th>Day</th><th>Fee per person</th></tr></thead><tbody><tr><td>Sigiriya Lion Rock (incl. museum)</td><td><span class="d">Day 3</span></td><td class="num">US$35</td></tr><tr><td>Minneriya / Kaudulla National Park (entry only, jeep extra)</td><td><span class="d">Day 3</span></td><td class="num">US$25</td></tr><tr><td>Temple of the Tooth, Kandy</td><td><span class="d">Day 4</span></td><td class="num">LKR 3,000 (≈ US$9)</td></tr><tr><td>Kandyan cultural dance show</td><td><span class="d">Day 4</span></td><td class="num">LKR 3,000 (≈ US$9)</td></tr><tr><td>Hakgala Botanical Garden</td><td><span class="d">Day 5</span></td><td class="num">LKR 3,540 (≈ US$11)</td></tr><tr><td>Turtle hatchery, Kosgoda</td><td><span class="d">Day 7</span></td><td class="num">LKR 1,000–1,500 (≈ US$3–4.5)</td></tr></tbody></table></div>
     <p class="note" data-i="feeNote">Prices updated October 2026 by our local partner in Sri Lanka, at an exchange rate of 1 USD = 330 LKR. Fees are paid in rupees at the gate and can change without notice.</p>
+  </section>
+
+  <section class="block in" style="padding-top:0" id="price">
+    <div class="sec-head"><span class="eyebrow" id="pc-e">Prices</span><h2 class="disp" id="pc-h">Calculate your price</h2><p id="pc-p"></p></div>
+    <div class="pc">
+      <div class="pc-grid">
+        <div class="field pc-date"><label for="pc-date" id="pc-lDate">Departure date</label><select id="pc-date"></select></div>
+        <div class="field"><label for="pc-pax" id="pc-lPax">Travelers</label><input id="pc-pax" type="number" min="1" max="6" value="2" inputmode="numeric"></div>
+        <div class="field"><label for="pc-dbl" id="pc-lDbl">Double rooms</label><input id="pc-dbl" type="number" min="0" max="3" value="1" inputmode="numeric"></div>
+        <div class="field"><label for="pc-sgl" id="pc-lSgl">Single rooms</label><input id="pc-sgl" type="number" min="0" max="6" value="0" inputmode="numeric"></div>
+      </div>
+      <div class="pc-out" id="pc-out" aria-live="polite"></div>
+      <p class="note" id="pc-note" style="margin:0"></p>
+    </div>
   </section>
 
   <section class="block in" style="padding-top:0" id="interest">
@@ -1304,13 +1334,90 @@ $("#form").addEventListener("submit",async e=>{
   try{
     const r=await fetch("https://api.web3forms.com/submit",{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},
       body:JSON.stringify({access_key:WEB3FORMS_KEY,subject:"Sri Lanka 8-Day Tour — New interest ("+lang.toUpperCase()+")",from_name:"Fable Tour Website",
-        name,email,whatsapp:wa,tour:"Sri Lanka 8 days (starts Fridays in Colombo)",language:lang,botcheck:e.target.botcheck.checked})});
+        name,email,whatsapp:wa,tour:"Sri Lanka 8 days (starts Fridays in Colombo)",quote:pcQuote||"-",language:lang,botcheck:e.target.botcheck.checked})});
     const j=await r.json();
     if(!j.success) throw 0;
     msg.textContent=t.ok; msg.classList.add("ok"); e.target.reset();
   }catch(err){ msg.textContent=t.fail; msg.classList.add("err"); }
   btn.disabled=false; btn.textContent=t.send;
 });
+
+
+/* ================= PRICE CALCULATOR ================= */
+// Net BB rates per room per night (USD), winter 2026/27 contracts. [from, to, single, double]
+const PRICE_CFG = { transport:420, nuwaraPP:100, profitPP:200, maxPax:6, first:"2026-11-06", last:"2027-03-26" };
+const RATES = {
+  dolphin:  [["2026-11-01","2026-12-19",150,160],["2026-12-20","2027-01-07",280,290],["2027-01-08","2027-03-31",200,210],["2027-04-01","2027-04-30",150,160]],
+  kandalama:[["2026-11-01","2026-12-21",184,215],["2026-12-22","2027-01-05",240,280],["2027-01-06","2027-03-31",214,250]],
+  crown:    [["2026-11-01","2026-12-22",135,145],["2026-12-23","2027-01-07",185,195],["2027-01-08","2027-03-31",145,155]],
+  sheraton: [["2026-11-01","2026-12-20",235,235],["2026-12-21","2026-12-23",295,295],["2026-12-24","2027-01-10",425,425],["2027-01-11","2027-02-28",294,294],["2027-03-01","2027-04-30",270,270]]
+};
+const CROWN_HB = {s:190, d:200}; // half board compulsory at Golden Crown on 24 & 31 Dec
+const FESTIVE = { dolphin:{"12-24":100,"12-31":150}, kandalama:{"12-24":145,"12-31":174}, crown:{"12-24":80,"12-31":95}, sheraton:{"12-24":75,"12-31":250} };
+const PLAN = ["dolphin","dolphin","kandalama","crown",null,"sheraton","sheraton"]; // night 1..7 (null = Nuwara Eliya, flat per person)
+
+const PT = {
+ ar:{tot:"المجموع لعدد {n} مسافرين",e:"الأسعار",h:"احسب سعر رحلتك",p:"اختر تاريخ الانطلاق وعدد المسافرين ونوع الغرف وعددها ليظهر لك السعر.",date:"تاريخ الانطلاق (الجمعة)",pax:"عدد المسافرين",dbl:"غرف مزدوجة",sgl:"غرف فردية",ppD:"سعر الشخص في الغرفة المزدوجة",ppS:"سعر الشخص في الغرفة الفردية",total:"المجموع",mis:"عدد الغرف لا يطابق عدد المسافرين: الغرفة المزدوجة لشخصين والفردية لشخص واحد.",big:"للمجموعات أكثر من 6 أشخاص تواصل معنا على الواتساب للحصول على السعر.",fest:"يشمل السعر عشاء الحفل الإلزامي لعيد الميلاد ورأس السنة في الفنادق.",note:"الأسعار بالدولار الأمريكي، وتشمل فنادق 5 نجوم مع الإفطار والسيارة الخاصة مع المرشد والاستقبال والتوديع في المطار. لا تشمل تذاكر الطيران الدولي ورسوم الدخول.",book:"احجز بهذا السعر",q:"السعر المختار"},
+ en:{tot:"Total for {n} travelers",e:"Prices",h:"Calculate your price",p:"Choose your departure date, number of travelers and the type and number of rooms to see your price.",date:"Departure date (Friday)",pax:"Travelers",dbl:"Double rooms",sgl:"Single rooms",ppD:"Price per person in a double room",ppS:"Price per person in a single room",total:"Total",mis:"Rooms don't match the number of travelers: a double room is for 2 people, a single room for 1.",big:"For groups of more than 6 travelers, contact us on WhatsApp for a price.",fest:"Includes the hotels' compulsory Christmas and New Year gala dinners.",note:"Prices in US dollars, including 5-star hotels with breakfast, private car with guide, and airport welcome and farewell. International flights and entrance fees are not included.",book:"Book at this price",q:"Selected quote"},
+ ru:{tot:"Итого за {n} чел.",e:"Цены",h:"Рассчитайте стоимость",p:"Выберите дату начала, количество путешественников, тип и число номеров, чтобы увидеть цену.",date:"Дата начала (пятница)",pax:"Путешественники",dbl:"Двухместные номера",sgl:"Одноместные номера",ppD:"Цена за человека в двухместном номере",ppS:"Цена за человека в одноместном номере",total:"Итого",mis:"Номера не соответствуют числу путешественников: двухместный номер на 2 человек, одноместный на 1.",big:"Для групп более 6 человек напишите нам в WhatsApp, чтобы узнать цену.",fest:"Включены обязательные праздничные ужины в отелях на Рождество и Новый год.",note:"Цены в долларах США: отели 5 звёзд с завтраками, личный автомобиль с гидом, встреча и проводы в аэропорту. Международные перелёты и входные билеты не включены.",book:"Забронировать по этой цене",q:"Выбранный расчёт"},
+ de:{tot:"Gesamt für {n} Reisende",e:"Preise",h:"Preis berechnen",p:"Wählen Sie Starttermin, Anzahl der Reisenden sowie Art und Anzahl der Zimmer, um Ihren Preis zu sehen.",date:"Starttermin (Freitag)",pax:"Reisende",dbl:"Doppelzimmer",sgl:"Einzelzimmer",ppD:"Preis pro Person im Doppelzimmer",ppS:"Preis pro Person im Einzelzimmer",total:"Gesamt",mis:"Die Zimmer passen nicht zur Anzahl der Reisenden: Doppelzimmer für 2 Personen, Einzelzimmer für 1.",big:"Für Gruppen mit mehr als 6 Reisenden fragen Sie den Preis bitte per WhatsApp an.",fest:"Inklusive der obligatorischen Weihnachts- und Silvester-Galadinner der Hotels.",note:"Preise in US-Dollar, inklusive 5-Sterne-Hotels mit Frühstück, eigenem Auto mit Reiseleiter sowie Empfang und Abschied am Flughafen. Internationale Flüge und Eintrittspreise sind nicht enthalten.",book:"Zu diesem Preis buchen",q:"Gewähltes Angebot"},
+ fr:{tot:"Total pour {n} voyageurs",e:"Tarifs",h:"Calculez votre prix",p:"Choisissez la date de départ, le nombre de voyageurs ainsi que le type et le nombre de chambres pour voir votre prix.",date:"Date de départ (vendredi)",pax:"Voyageurs",dbl:"Chambres doubles",sgl:"Chambres individuelles",ppD:"Prix par personne en chambre double",ppS:"Prix par personne en chambre individuelle",total:"Total",mis:"Les chambres ne correspondent pas au nombre de voyageurs : une chambre double pour 2 personnes, une individuelle pour 1.",big:"Pour les groupes de plus de 6 voyageurs, contactez-nous sur WhatsApp pour un prix.",fest:"Comprend les dîners de gala obligatoires de Noël et du Nouvel An dans les hôtels.",note:"Prix en dollars américains, comprenant les hôtels 5 étoiles avec petit-déjeuner, la voiture privée avec guide, ainsi que l'accueil et le transfert à l'aéroport. Vols internationaux et droits d'entrée non inclus.",book:"Réserver à ce prix",q:"Devis choisi"},
+ es:{tot:"Total para {n} viajeros",e:"Precios",h:"Calcule su precio",p:"Elija la fecha de salida, el número de viajeros y el tipo y número de habitaciones para ver su precio.",date:"Fecha de salida (viernes)",pax:"Viajeros",dbl:"Habitaciones dobles",sgl:"Habitaciones individuales",ppD:"Precio por persona en habitación doble",ppS:"Precio por persona en habitación individual",total:"Total",mis:"Las habitaciones no coinciden con el número de viajeros: la doble es para 2 personas y la individual para 1.",big:"Para grupos de más de 6 viajeros, escríbanos por WhatsApp para el precio.",fest:"Incluye las cenas de gala obligatorias de Navidad y Año Nuevo en los hoteles.",note:"Precios en dólares estadounidenses, con hoteles de 5 estrellas con desayuno, coche privado con guía y recepción y despedida en el aeropuerto. No incluye vuelos internacionales ni entradas.",book:"Reservar a este precio",q:"Presupuesto elegido"}
+};
+
+const pcISO = d=>d.toISOString().slice(0,10);
+const pcDate = s=>new Date(s+"T00:00:00Z");
+function pcRate(hotel, iso){ const r=RATES[hotel].find(x=>iso>=x[0]&&iso<=x[1]); return r?{s:r[2],d:r[3]}:null; }
+function pcCost(depISO){ // net per person: in a double room (d) and in a single room (s), hotels only
+  let d=0,s=0,fest=false; const base=pcDate(depISO);
+  for(let i=0;i<7;i++){
+    const h=PLAN[i]; if(!h) continue;
+    const n=new Date(base); n.setUTCDate(n.getUTCDate()+i); const iso=pcISO(n), md=iso.slice(5);
+    let r=pcRate(h,iso); if(!r) return null;
+    if(h==="crown"&&(md==="12-24"||md==="12-31")) r=CROWN_HB;
+    const f=(FESTIVE[h]||{})[md]||0; if(f) fest=true;
+    d+=r.d/2+f; s+=r.s+f;
+  }
+  return {d,s,fest};
+}
+let pcQuote="";
+function pcFill(){
+  const t=PT[lang], loc={ar:"ar",en:"en-GB",ru:"ru",de:"de",fr:"fr",es:"es"}[lang];
+  ["e","h","p"].forEach(k=>$("#pc-"+k).textContent=t[k]);
+  $("#pc-lDate").textContent=t.date; $("#pc-lPax").textContent=t.pax; $("#pc-lDbl").textContent=t.dbl; $("#pc-lSgl").textContent=t.sgl;
+  $("#pc-note").textContent=t.note;
+  const fmt=new Intl.DateTimeFormat(loc,{weekday:"short",day:"numeric",month:"long",year:"numeric",timeZone:"UTC"});
+  const today=new Date(); const start=pcDate(PRICE_CFG.first), end=pcDate(PRICE_CFG.last);
+  const d=new Date(Math.max(start, Date.UTC(today.getFullYear(),today.getMonth(),today.getDate()+1)));
+  while(d.getUTCDay()!==5) d.setUTCDate(d.getUTCDate()+1);
+  const opts=[]; for(;d<=end;d.setUTCDate(d.getUTCDate()+7)) opts.push(`<option value="${pcISO(d)}">${fmt.format(d)}</option>`);
+  $("#pc-date").innerHTML=opts.join("");
+  pcCalc();
+}
+function pcCalc(){
+  const t=PT[lang], out=$("#pc-out");
+  const num=v=>Math.max(0,parseInt(v,10)||0);
+  const pax=num($("#pc-pax").value), dbl=num($("#pc-dbl").value), sgl=num($("#pc-sgl").value), dep=$("#pc-date").value;
+  pcQuote="";
+  if(pax>PRICE_CFG.maxPax){ out.innerHTML=`<p class="pc-warn">${t.big}</p>`; return; }
+  if(!pax||dbl*2+sgl!==pax){ out.innerHTML=`<p class="pc-warn">${t.mis}</p>`; return; }
+  const c=dep&&pcCost(dep); if(!c){ out.innerHTML=""; return; }
+  const add=PRICE_CFG.transport/pax+PRICE_CFG.nuwaraPP+PRICE_CFG.profitPP;
+  const ppD=Math.ceil(c.d+add), ppS=Math.ceil(c.s+add), total=ppD*dbl*2+ppS*sgl;
+  const money=v=>"US$ "+v.toLocaleString("en-US");
+  let h="";
+  if(dbl) h+=`<div class="pc-row"><span>${t.ppD}</span><b dir="ltr">${money(ppD)}</b></div>`;
+  if(sgl) h+=`<div class="pc-row"><span>${t.ppS}</span><b dir="ltr">${money(ppS)}</b></div>`;
+  h+=`<div class="pc-row pc-total"><span>${t.total} · ${pax} × </span><b dir="ltr">${money(total)}</b></div>`;
+  if(c.fest) h+=`<p class="note" style="color:#D3D9E2;margin:0">${t.fest}</p>`;
+  h+=`<a class="btn" href="#interest">${t.book}</a>`;
+  out.innerHTML=h;
+  out.querySelector(".pc-total span").textContent=t.tot.replace("{n}",pax);
+  pcQuote=`${dep} | pax ${pax} | DBL ${dbl} x ${dbl?money(ppD)+" pp":"-"} | SGL ${sgl} x ${sgl?money(ppS):"-"} | TOTAL ${money(total)}`;
+}
+$("#pc-pax").addEventListener("input",()=>{ const n=Math.max(0,parseInt($("#pc-pax").value,10)||0); if(n&&n<=PRICE_CFG.maxPax){ $("#pc-dbl").value=Math.floor(n/2); $("#pc-sgl").value=n%2; } pcCalc(); });
+["#pc-dbl","#pc-sgl","#pc-date"].forEach(s=>$(s).addEventListener("input",pcCalc));
+pcFill();
 
 /* ================= INIT ================= */
 renderStatic(); renderDays();
