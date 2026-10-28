@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Sri Lanka Rundreise 8 Tage, jeden Freitag | Fable Tour</title>
 <meta name="description" content="Sri-Lanka-Rundreise mit 8 Tagen / 7 Nächten, Start jeden Freitag in Colombo, für Reisende aus allen Ländern: Negombo, Sigiriya und Elefantensafari, Kandy, das Teeland von Nuwara Eliya und die Strände von Bentota. 5-Sterne-Hotels und privater Guide.">
-<meta name="keywords" content="سريلانكا, رحلة سريلانكا, برنامج سياحي سريلانكا, Sri Lanka tour, Sri Lanka 8 days, тур Шри-Ланка, Шри-Ланка 8 дней, Sri Lanka Rundreise, circuit Sri Lanka, viaje Sri Lanka, Sigiriya, Kandy, Nuwara Eliya, Bentota, Fable Tour">
+<meta name="keywords" content="سريلانكا, رحلة سريلانكا, برنامج سياحي سريلانكا, Sri Lanka tour, Sri Lanka 8 days, тур Шри-Ланка, Шри-Ланка 8 дней, Sri Lanka Rundreise, circuit Sri Lanka, viaje Sri Lanka, Sigiriya, Kandy, Nuwara Eliya, Bentota, Sri Lanka day trips, Negombo day tour, Galle day trip, Pinnawala, Kandy day trip, Fable Tour">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="author" content="Fable Tour">
 <meta name="theme-color" content="#1B2A47">
@@ -220,6 +220,35 @@ html[lang="ar"] .btn{letter-spacing:0;font-size:16px}
 .pc-out .btn{margin-top:6px;text-align:center;text-decoration:none;display:block}
 @media (max-width:760px){.pc{padding:18px}.pc-grid{grid-template-columns:1fr 1fr}.pc-grid .pc-date{grid-column:1/-1}}
 .hp{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;overflow:hidden;clip-path:inset(50%)}
+
+/* ---- day trips ---- */
+.trips{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.trip{background:var(--paper);border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:6px;overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.trip-ph{display:grid;grid-template-columns:2fr 1fr;grid-template-rows:1fr 1fr;gap:3px;aspect-ratio:16/10;background:var(--navy)}
+.trip-ph .ph{aspect-ratio:auto;border-radius:0;min-height:0;height:100%}
+.trip-ph .ph:first-child{grid-row:1/3}
+.trip-ph .ph img{filter:saturate(1.25) contrast(1.06) brightness(1.05)}
+.trip-ph .ph:not(:first-child) .cap{font-size:11.5px;padding:18px 8px 6px}
+.trip-b{padding:18px 18px 20px;display:flex;flex-direction:column;gap:10px;flex:1}
+.trip-b .eyebrow{font-size:11.5px;letter-spacing:.14em}
+html[lang="ar"] .trip-b .eyebrow{font-size:13px;letter-spacing:0}
+.trip-b h3{font-family:var(--serif-en);font-weight:400;font-size:21px;color:var(--navy);line-height:1.3}
+html[lang="ar"] .trip-b h3{font-family:var(--serif-ar);font-weight:700;font-size:23px}
+.pick{display:flex;gap:8px;align-items:flex-start;background:var(--panel);border-inline-start:3px solid var(--gold);border-radius:4px;padding:7px 12px;font-size:13.5px;color:var(--navy);line-height:1.5}
+.pick svg{flex:none;margin-top:3px;color:var(--gold)}
+.tl{list-style:none;margin:2px 0 0;padding:0;display:grid;gap:7px;font-size:15px}
+.tl li{position:relative;padding-inline-start:20px;line-height:1.55}
+.tl li::before{content:"";position:absolute;inset-inline-start:2px;top:.6em;width:8px;height:8px;border-radius:50%;background:var(--gold)}
+.tl li.opt::before{background:var(--paper);box-shadow:inset 0 0 0 2px var(--gold)}
+.optb{display:inline-block;font:600 11px var(--sans-en);letter-spacing:.06em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold-2);border-radius:3px;padding:0 6px;margin-inline-end:7px;vertical-align:1px}
+html[lang="ar"] .optb{font-family:var(--sans-ar);letter-spacing:0;font-size:12px}
+.trip-foot{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-top:14px;border-top:1px solid var(--line)}
+.tprice b{display:block;font-family:var(--serif-en);font-weight:400;font-size:28px;color:var(--navy);line-height:1.1;font-variant-numeric:tabular-nums}
+html[lang="ar"] .tprice b{font-family:var(--serif-ar);font-weight:700}
+.tprice small{font-size:12.5px;color:var(--muted)}
+.btn.wa{display:inline-flex;align-items:center;gap:8px;padding:11px 16px;font-size:13px;text-decoration:none}
+html[lang="ar"] .btn.wa{font-size:15px}
+@media (max-width:760px){.trips{grid-template-columns:1fr}}
 
 footer{background:var(--navy);color:#C9CFD9;font-size:14px;border-top:5px solid var(--gold);margin-top:34px}
 footer .wrap{padding-block:24px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:center}
@@ -460,6 +489,65 @@ img.hero-img{width:100%;object-fit:cover;object-position:center;display:block}
       <div class="pc-out" id="pc-out" aria-live="polite"></div>
       <p class="note" id="pc-note" style="margin:0"></p>
     </div>
+  </section>
+
+  <section class="block in" style="padding-top:0" id="daytrips">
+    <div class="sec-head"><span class="eyebrow">Ab Negombo · Privatwagen mit Fahrer</span><h2 class="disp">Tagesausflüge</h2><p>Ganztägige Ausflüge ab und bis zu Ihrem Hotel in Negombo – ideal vor oder nach dem 8-Tage-Programm oder für einen kurzen Aufenthalt auf Sri Lanka.</p></div>
+    <div class="trips" id="trips">
+      <article class="trip">
+        <div class="trip-ph"><button class="ph loading" data-q="Galle Fort lighthouse|Galle Fort|Galle lighthouse" aria-label="Galle &amp; das holländische Fort · Fort Galle"><span class="cap">Fort Galle</span></button><button class="ph loading" data-q="Madu Ganga|Madu River Balapitiya|Madu Ganga boat" aria-label="Galle &amp; das holländische Fort · Madu-Fluss"><span class="cap">Madu-Fluss</span></button><button class="ph loading" data-q="Kosgoda turtle hatchery|sea turtle hatchery Sri Lanka|Kosgoda turtle" aria-label="Galle &amp; das holländische Fort · Schildkrötenstation"><span class="cap">Schildkrötenstation</span></button></div>
+        <div class="trip-b">
+          <span class="eyebrow">Ganztägig · Negombo → Galle → Negombo</span>
+          <h3>Galle &amp; das holländische Fort</h3>
+          <span class="pick"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Abholung um 8:00 Uhr an Ihrem Hotel in Negombo</span></span>
+          <ul class="tl"><li>Bootssafari auf dem Madu-Fluss mit Besuch der Zimtinsel</li><li>Meeresschildkröten-Aufzuchtstation</li><li>Nachmittags: das holländische Fort in Galle</li><li>Rückkehr zum Hotel am späten Abend</li></ul>
+          <div class="trip-foot">
+            <div class="tprice"><b>US$169</b><small>pro Auto · bis 3 Personen</small></div>
+            <a class="btn wa" href="https://wa.me/9647711745353?text=Hallo%2C%20ich%20m%C3%B6chte%20den%20Sri-Lanka-Tagesausflug%20buchen%3A%20Galle%20%26%20das%20holl%C3%A4ndische%20Fort%20%28US%24169%29" target="_blank" rel="noopener"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg><span>Über WhatsApp buchen</span></a>
+          </div>
+        </div>
+      </article>
+      <article class="trip">
+        <div class="trip-ph"><button class="ph loading" data-q="Pinnawala elephants river|Pinnawala Elephant Orphanage|elephants bathing Sri Lanka" aria-label="Elefantenwaisenhaus Pinnawala · Elefantenbad"><span class="cap">Elefantenbad</span></button><button class="ph loading" data-q="Pinnawala Elephant Orphanage|Pinnawala elephants|Pinnawala" aria-label="Elefantenwaisenhaus Pinnawala · Pinnawala"><span class="cap">Pinnawala</span></button><button class="ph loading" data-q="Pinnawala baby elephant|baby elephant Sri Lanka|elephant feeding Pinnawala" aria-label="Elefantenwaisenhaus Pinnawala · Elefantenbabys"><span class="cap">Elefantenbabys</span></button></div>
+        <div class="trip-b">
+          <span class="eyebrow">Ganztägig · Negombo → Pinnawala → Negombo</span>
+          <h3>Elefantenwaisenhaus Pinnawala</h3>
+          <span class="pick"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Abholung um 8:00 Uhr an Ihrem Hotel in Negombo</span></span>
+          <ul class="tl"><li>Besuch des Elefantenwaisenhauses</li><li>Elefanten beim Baden im Fluss</li><li>Fütterung der Elefanten mit Obst</li><li>Schöne Fotos mit den Elefanten</li><li>Rückkehr zum Hotel am Abend</li></ul>
+          <div class="trip-foot">
+            <div class="tprice"><b>US$130</b><small>pro Auto · bis 3 Personen</small></div>
+            <a class="btn wa" href="https://wa.me/9647711745353?text=Hallo%2C%20ich%20m%C3%B6chte%20den%20Sri-Lanka-Tagesausflug%20buchen%3A%20Elefantenwaisenhaus%20Pinnawala%20%28US%24130%29" target="_blank" rel="noopener"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg><span>Über WhatsApp buchen</span></a>
+          </div>
+        </div>
+      </article>
+      <article class="trip">
+        <div class="trip-ph"><button class="ph loading" data-q="Sigiriya rock|Sigiriya|Sigiriya Lion Rock" aria-label="Sigiriya-Felsen &amp; Dorftour · Löwenfelsen Sigiriya"><span class="cap">Löwenfelsen Sigiriya</span></button><button class="ph loading" data-q="Sri Lanka bullock cart|bullock cart Sri Lanka|Habarana village" aria-label="Sigiriya-Felsen &amp; Dorftour · Ochsenkarren"><span class="cap">Ochsenkarren</span></button><button class="ph loading" data-q="Sigiriya Lion Gate|Sigiriya lion paws|Sigiriya steps" aria-label="Sigiriya-Felsen &amp; Dorftour · Löwentor"><span class="cap">Löwentor</span></button></div>
+        <div class="trip-b">
+          <span class="eyebrow">Ganztägig · Negombo → Sigiriya → Negombo</span>
+          <h3>Sigiriya-Felsen &amp; Dorftour</h3>
+          <span class="pick"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Abholung gegen 9:00 Uhr nach dem Frühstück · ca. 3,5 Std. Fahrt</span></span>
+          <ul class="tl"><li>Dorftour: Ochsenkarrenfahrt und traditionelles Katamaranboot</li><li>Bei einer Bauernfamilie: Die Bäuerin zeigt traditionelle Tätigkeiten des alten Dorflebens und kocht ein traditionelles Mittagessen in ihrem Haus</li><li>Besteigung des Löwenfelsens Sigiriya</li><li class="opt"><span class="optb">Optional</span>Elefantenritt</li><li>Rückkehr zum Hotel am späten Abend</li></ul>
+          <div class="trip-foot">
+            <div class="tprice"><b>US$182</b><small>pro Auto · bis 3 Personen</small></div>
+            <a class="btn wa" href="https://wa.me/9647711745353?text=Hallo%2C%20ich%20m%C3%B6chte%20den%20Sri-Lanka-Tagesausflug%20buchen%3A%20Sigiriya-Felsen%20%26%20Dorftour%20%28US%24182%29" target="_blank" rel="noopener"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg><span>Über WhatsApp buchen</span></a>
+          </div>
+        </div>
+      </article>
+      <article class="trip">
+        <div class="trip-ph"><button class="ph loading" data-q="Temple of the Tooth Kandy|Sri Dalada Maligawa|Kandy lake temple" aria-label="Kandy &amp; der Zahntempel · Zahntempel"><span class="cap">Zahntempel</span></button><button class="ph loading" data-q="Sri Lanka tea plantation|tea estate Sri Lanka|Ceylon tea plantation" aria-label="Kandy &amp; der Zahntempel · Ceylon-Tee"><span class="cap">Ceylon-Tee</span></button><button class="ph loading" data-q="Kandyan dance|Kandyan dancers|Sri Lankan traditional dance" aria-label="Kandy &amp; der Zahntempel · Kandy-Tanz"><span class="cap">Kandy-Tanz</span></button></div>
+        <div class="trip-b">
+          <span class="eyebrow">Ganztägig · Negombo → Kandy → Negombo</span>
+          <h3>Kandy &amp; der Zahntempel</h3>
+          <span class="pick"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Abholung nach dem Frühstück an Ihrem Hotel in Negombo</span></span>
+          <ul class="tl"><li>Unterwegs: Ceylon-Teefabrik mit Einblick in die Teeherstellung</li><li>Kräutergarten</li><li>Kulturelle Tanzshow</li><li>Abends: der Tempel des Zahns</li><li class="opt"><span class="optb">Optional</span>Edelsteinmanufaktur</li><li>Rückkehr zum Hotel am späten Abend</li></ul>
+          <div class="trip-foot">
+            <div class="tprice"><b>US$189</b><small>pro Auto · bis 3 Personen</small></div>
+            <a class="btn wa" href="https://wa.me/9647711745353?text=Hallo%2C%20ich%20m%C3%B6chte%20den%20Sri-Lanka-Tagesausflug%20buchen%3A%20Kandy%20%26%20der%20Zahntempel%20%28US%24189%29" target="_blank" rel="noopener"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg><span>Über WhatsApp buchen</span></a>
+          </div>
+        </div>
+      </article>
+    </div>
+    <p class="note">Preise in US-Dollar für einen klimatisierten Privatwagen mit Fahrer für bis zu 3 Personen, inklusive Abholung und Rückfahrt zu Ihrem Hotel in Negombo. Eintrittsgelder und optionale Aktivitäten sind nicht inbegriffen.</p>
   </section>
 
   <section class="block in" style="padding-top:0" id="interest">
@@ -1303,8 +1391,9 @@ function loadDayImages(i){
 
 /* ================= LIGHTBOX ================= */
 const lb=$("#lb"); let cur=null;
-function flat(){ return [...daysEl.querySelectorAll(".day.open .ph[data-src]")]; }
+function flat(){ const sc=cur&&cur.closest("#trips"); return sc?[...sc.querySelectorAll(".ph[data-src]")]:[...daysEl.querySelectorAll(".day.open .ph[data-src]")]; }
 function capOf(el){
+  if(el.dataset.q!==undefined) return el.getAttribute("aria-label");
   if(el.dataset.h!==undefined){ const i=+el.dataset.h; return `${T[lang].dayW} ${i+1} · ${HOTELS[i].name} (${HOTELS[i].stars}★)`; }
   const d=+el.dataset.d, s=+el.dataset.s; return `${T[lang].dayW} ${d+1} · ${DAYS[d].stops[s][lang]}`;
 }
@@ -1322,6 +1411,26 @@ $("#lb-prev").onclick=()=>step(lang==="ar"?1:-1);
 $("#lb-next").onclick=()=>step(lang==="ar"?-1:1);
 lb.addEventListener("click",e=>{ if(e.target===lb) closeLB(); });
 document.addEventListener("keydown",e=>{ if(lb.hidden) return; if(e.key==="Escape") closeLB(); if(e.key==="ArrowRight") step(lang==="ar"?-1:1); if(e.key==="ArrowLeft") step(lang==="ar"?1:-1); });
+
+/* ================= DAY TRIPS (photos from Wikimedia Commons, loaded on demand) ================= */
+const tripsEl=$("#trips");
+function loadTripImages(){
+  tripsEl.querySelectorAll(".ph[data-q]").forEach(async el=>{
+    if(el.dataset.done) return; el.dataset.done=1;
+    let im=null;
+    for(const q of el.dataset.q.split("|")){ try{ im=await findImage(q); }catch(e){ im=null; } if(im) break; }
+    if(!im){ el.classList.remove("loading"); el.classList.add("noimg"); return; }
+    const img=new Image(); img.loading="lazy"; img.alt=el.getAttribute("aria-label"); img.referrerPolicy="no-referrer"; img.src=im.thumb;
+    img.onload=()=>el.classList.remove("loading");
+    img.onerror=()=>{ el.classList.remove("loading"); el.classList.add("noimg"); };
+    el.prepend(img); el.dataset.src=im.full;
+  });
+}
+if(tripsEl){
+  if("IntersectionObserver" in window){ const io=new IntersectionObserver(es=>{ if(es.some(x=>x.isIntersecting)){ io.disconnect(); loadTripImages(); } },{rootMargin:"700px"}); io.observe(tripsEl); }
+  else loadTripImages();
+  tripsEl.addEventListener("click",e=>{ const ph=e.target.closest(".ph"); if(ph && ph.dataset.src) openLB(ph); });
+}
 
 /* ================= LANGUAGE ================= */
 $("#langSel").addEventListener("change",e=>{ const v=e.target.value; location.href="../"+(v==="ar"?"":v+"/"); });
