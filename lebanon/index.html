@@ -293,6 +293,7 @@ html[lang="ar"] .lb-cap{font-family:var(--serif-ar);font-size:17px;font-weight:7
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 img.hero-img{width:100%;object-fit:cover;object-position:center;display:block}
 .vid-frame{max-width:340px;margin:0 auto;aspect-ratio:9/16;border-radius:18px;overflow:hidden;background:var(--navy);border:2px solid var(--gold);box-shadow:0 12px 30px rgba(27,42,71,.18)}.vid-frame iframe{width:100%;height:100%;border:0;display:block}
+.slides{position:relative;max-width:560px;margin:0 auto;aspect-ratio:4/5;border-radius:18px;overflow:hidden;background:var(--navy);border:2px solid var(--gold);box-shadow:0 12px 30px rgba(27,42,71,.18)}.slide{position:absolute;inset:0;opacity:0;transition:opacity 1s ease}.slide.on{opacity:1}.slide .bg{position:absolute;inset:-20px;width:calc(100% + 40px);height:calc(100% + 40px);object-fit:cover;filter:blur(18px) brightness(.7)}.slide .fg{position:relative;width:100%;height:100%;object-fit:contain}
 </style>
 <style id="sites-css">footer .sites{flex-basis:100%;display:flex;flex-wrap:wrap;align-items:center;gap:8px 18px;font-size:14px}footer .sites b{font-weight:500;opacity:.75}footer .sites a:hover{text-decoration:underline}</style>
 <style>.cfaq{border-bottom:1px solid var(--line);padding:10px 0}.cfaq summary{cursor:pointer;font-weight:600;color:var(--navy)}.cfaq p{margin:8px 0 0;color:var(--muted)}#from-lebanon h3{margin:18px 0 4px;color:var(--navy)}.ctry{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:14px;padding-block:16px}.ctry a{color:var(--navy-2)}</style>
@@ -497,6 +498,11 @@ img.hero-img{width:100%;object-fit:cover;object-position:center;display:block}
       <div class="pc-out" id="pc-out" aria-live="polite"></div>
       <p class="note" id="pc-note" style="margin:0"></p>
     </div>
+  </section>
+
+  <section class="block in" style="padding-top:0" id="gallery">
+    <div class="sec-head" style="text-align:center"><span class="eyebrow">معرض الصور</span><h2 class="disp">لحظات من رحلاتنا في سريلانكا</h2></div>
+    <div class="slides"><div class="slide on"><img class="bg" src="../gallery/sri-lanka-1.jpg" alt="" aria-hidden="true"><img class="fg" src="../gallery/sri-lanka-1.jpg" alt="جولة بالقارب بين أشجار المانغروف في سريلانكا"></div><div class="slide"><img class="bg" src="../gallery/sri-lanka-2.jpg" alt="" aria-hidden="true" loading="lazy"><img class="fg" src="../gallery/sri-lanka-2.jpg" alt="صورة جماعية أمام صخرة سيغيريا" loading="lazy"></div><div class="slide"><img class="bg" src="../gallery/sri-lanka-3.jpg" alt="" aria-hidden="true" loading="lazy"><img class="fg" src="../gallery/sri-lanka-3.jpg" alt="قفزة جماعية على قمة صخرة بيدورانغالا مقابل سيغيريا" loading="lazy"></div></div>
   </section>
 
   <section class="block in" style="padding-top:0" id="daytrips">
@@ -1550,5 +1556,6 @@ daysEl.querySelector(".day-btn").click();
 <!-- Floating WhatsApp button -->
 <style>.wa-float{position:fixed;inset-inline-start:18px;bottom:20px;z-index:30;width:56px;height:56px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 8px 22px rgba(37,211,102,.4);transition:transform .2s}.wa-float:hover{transform:scale(1.08)}.wa-float svg{width:30px;height:30px;fill:#fff}@media (max-width:760px){.wa-float{width:50px;height:50px;bottom:16px}}</style>
 <a class="wa-float" href="https://wa.me/9647711745353" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1s-.5-.1-.7.1-.8 1-.9 1.2-.3.2-.6.1a8.2 8.2 0 0 1-4-3.5c-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.8.4 3.6 3.6 0 0 0-1.1 2.6 6.2 6.2 0 0 0 1.3 3.3 14.2 14.2 0 0 0 5.4 4.8c2 .9 2.8.9 3.8.8a3.2 3.2 0 0 0 2.1-1.5 2.6 2.6 0 0 0 .2-1.5c-.1-.1-.3-.2-.6-.3zM12 21.8a9.8 9.8 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 1 1 12 21.8zm8.4-18.3A11.8 11.8 0 0 0 1.8 17.7L.1 24l6.4-1.7A11.8 11.8 0 0 0 12 23.7 11.8 11.8 0 0 0 20.4 3.5z"/></svg></a>
+<script>(function(){var s=document.querySelectorAll("#gallery .slide"),i=0;if(s.length<2)return;setInterval(function(){s[i].classList.remove("on");i=(i+1)%s.length;s[i].classList.add("on")},5000)})();</script>
 </body>
 </html>
