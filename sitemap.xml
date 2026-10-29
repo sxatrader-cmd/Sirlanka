@@ -78,4 +78,148 @@
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
+  <url>
+    <loc>https://srilanka.fabletour.com/saudi-arabia/</loc>
+    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://srilanka.fabletour.com/saudi-arabia/"/>
+    <xhtml:link rel="alternate" hreflang="ar-AE" href="https://srilanka.fabletour.com/uae/"/>
+    <xhtml:link rel="alternate" hreflang="ar-KW" href="https://srilanka.fabletour.com/kuwait/"/>
+    <xhtml:link rel="alternate" hreflang="ar-QA" href="https://srilanka.fabletour.com/qatar/"/>
+    <xhtml:link rel="alternate" hreflang="ar-BH" href="https://srilanka.fabletour.com/bahrain/"/>
+    <xhtml:link rel="alternate" hreflang="ar-OM" href="https://srilanka.fabletour.com/oman/"/>
+    <xhtml:link rel="alternate" hreflang="ar-IQ" href="https://srilanka.fabletour.com/iraq/"/>
+    <xhtml:link rel="alternate" hreflang="ar-SY" href="https://srilanka.fabletour.com/syria/"/>
+    <xhtml:link rel="alternate" hreflang="ar-LB" href="https://srilanka.fabletour.com/lebanon/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://srilanka.fabletour.com/"/>
+    <lastmod>2026-10-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://srilanka.fabletour.com/uae/</loc>
+    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://srilanka.fabletour.com/saudi-arabia/"/>
+    <xhtml:link rel="alternate" hreflang="ar-AE" href="https://srilanka.fabletour.com/uae/"/>
+    <xhtml:link rel="alternate" hreflang="ar-KW" href="https://srilanka.fabletour.com/kuwait/"/>
+    <xhtml:link rel="alternate" hreflang="ar-QA" href="https://srilanka.fabletour.com/qatar/"/>
+    <xhtml:link rel="alternate" hreflang="ar-BH" href="https://srilanka.fabletour.com/bahrain/"/>
+    <xhtml:link rel="alternate" hreflang="ar-OM" href="https://srilanka.fabletour.com/oman/"/>
+    <xhtml:link rel="alternate" hreflang="ar-IQ" href="https://srilanka.fabletour.com/iraq/"/>
+    <xhtml:link rel="alternate" hreflang="ar-SY" href="https://srilanka.fabletour.com/syria/"/>
+    <xhtml:link rel="alternate" hreflang="ar-LB" href="https://srilanka.fabletour.com/lebanon/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://srilanka.fabletour.com/"/>
+    <lastmod>2026-10-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://srilanka.fabletour.com/kuwait/</loc>
+    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://srilanka.fabletour.com/saudi-arabia/"/>
+    <xhtml:link rel="alternate" hreflang="ar-AE" href="https://srilanka.fabletour.com/uae/"/>
+    <xhtml:link rel="alternate" hreflang="ar-KW" href="https://srilanka.fabletour.com/kuwait/"/>
+    <xhtml:link rel="alternate" hreflang="ar-QA" href="https://srilanka.fabletour.com/qatar/"/>
+    <xhtml:link rel="alternate" hreflang="ar-BH" href="https://srilanka.fabletour.com/bahrain/"/>
+    <xhtml:link rel="alternate" hreflang="ar-OM" href="https://srilanka.fabletour.com/oman/"/>
+    <xhtml:link rel="alternate" hreflang="ar-IQ" href="https://srilanka.fabletour.com/iraq/"/>
+    <xhtml:link rel="alternate" hreflang="ar-SY" href="https://srilanka.fabletour.com/syria/"/>
+    <xhtml:link rel="alternate" hreflang="ar-LB" href="https://srilanka.fabletour.com/lebanon/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://srilanka.fabletour.com/"/>
+    <lastmod>2026-10-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://srilanka.fabletour.com/qatar/</loc>
+    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://srilanka.fabletour.com/saudi-arabia/"/>
+    <xhtml:link rel="alternate" hreflang="ar-AE" href="https://srilanka.fabletour.com/uae/"/>
+    <xhtml:link rel="alternate" hreflang="ar-KW" href="https://srilanka.fabletour.com/kuwait/"/>
+    <xhtml:link rel="alternate" hreflang="ar-QA" href="https://srilanka.fabletour.com/qatar/"/>
+    <xhtml:link rel="alternate" hreflang="ar-BH" href="https://srilanka.fabletour.com/bahrain/"/>
+    <xhtml:link rel="alternate" hreflang="ar-OM" href="https://srilanka.fabletour.com/oman/"/>
+    <xhtml:link rel="alternate" hreflang="ar-IQ" href="https://srilanka.fabletour.com/iraq/"/>
+    <xhtml:link rel="alternate" hreflang="ar-SY" href="https://srilanka.fabletour.com/syria/"/>
+    <xhtml:link rel="alternate" hreflang="ar-LB" href="https://srilanka.fabletour.com/lebanon/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://srilanka.fabletour.com/"/>
+    <lastmod>2026-10-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://srilanka.fabletour.com/bahrain/</loc>
+    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://srilanka.fabletour.com/saudi-arabia/"/>
+    <xhtml:link rel="alternate" hreflang="ar-AE" href="https://srilanka.fabletour.com/uae/"/>
+    <xhtml:link rel="alternate" hreflang="ar-KW" href="https://srilanka.fabletour.com/kuwait/"/>
+    <xhtml:link rel="alternate" hreflang="ar-QA" href="https://srilanka.fabletour.com/qatar/"/>
+    <xhtml:link rel="alternate" hreflang="ar-BH" href="https://srilanka.fabletour.com/bahrain/"/>
+    <xhtml:link rel="alternate" hreflang="ar-OM" href="https://srilanka.fabletour.com/oman/"/>
+    <xhtml:link rel="alternate" hreflang="ar-IQ" href="https://srilanka.fabletour.com/iraq/"/>
+    <xhtml:link rel="alternate" hreflang="ar-SY" href="https://srilanka.fabletour.com/syria/"/>
+    <xhtml:link rel="alternate" hreflang="ar-LB" href="https://srilanka.fabletour.com/lebanon/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://srilanka.fabletour.com/"/>
+    <lastmod>2026-10-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://srilanka.fabletour.com/oman/</loc>
+    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://srilanka.fabletour.com/saudi-arabia/"/>
+    <xhtml:link rel="alternate" hreflang="ar-AE" href="https://srilanka.fabletour.com/uae/"/>
+    <xhtml:link rel="alternate" hreflang="ar-KW" href="https://srilanka.fabletour.com/kuwait/"/>
+    <xhtml:link rel="alternate" hreflang="ar-QA" href="https://srilanka.fabletour.com/qatar/"/>
+    <xhtml:link rel="alternate" hreflang="ar-BH" href="https://srilanka.fabletour.com/bahrain/"/>
+    <xhtml:link rel="alternate" hreflang="ar-OM" href="https://srilanka.fabletour.com/oman/"/>
+    <xhtml:link rel="alternate" hreflang="ar-IQ" href="https://srilanka.fabletour.com/iraq/"/>
+    <xhtml:link rel="alternate" hreflang="ar-SY" href="https://srilanka.fabletour.com/syria/"/>
+    <xhtml:link rel="alternate" hreflang="ar-LB" href="https://srilanka.fabletour.com/lebanon/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://srilanka.fabletour.com/"/>
+    <lastmod>2026-10-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://srilanka.fabletour.com/iraq/</loc>
+    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://srilanka.fabletour.com/saudi-arabia/"/>
+    <xhtml:link rel="alternate" hreflang="ar-AE" href="https://srilanka.fabletour.com/uae/"/>
+    <xhtml:link rel="alternate" hreflang="ar-KW" href="https://srilanka.fabletour.com/kuwait/"/>
+    <xhtml:link rel="alternate" hreflang="ar-QA" href="https://srilanka.fabletour.com/qatar/"/>
+    <xhtml:link rel="alternate" hreflang="ar-BH" href="https://srilanka.fabletour.com/bahrain/"/>
+    <xhtml:link rel="alternate" hreflang="ar-OM" href="https://srilanka.fabletour.com/oman/"/>
+    <xhtml:link rel="alternate" hreflang="ar-IQ" href="https://srilanka.fabletour.com/iraq/"/>
+    <xhtml:link rel="alternate" hreflang="ar-SY" href="https://srilanka.fabletour.com/syria/"/>
+    <xhtml:link rel="alternate" hreflang="ar-LB" href="https://srilanka.fabletour.com/lebanon/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://srilanka.fabletour.com/"/>
+    <lastmod>2026-10-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://srilanka.fabletour.com/syria/</loc>
+    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://srilanka.fabletour.com/saudi-arabia/"/>
+    <xhtml:link rel="alternate" hreflang="ar-AE" href="https://srilanka.fabletour.com/uae/"/>
+    <xhtml:link rel="alternate" hreflang="ar-KW" href="https://srilanka.fabletour.com/kuwait/"/>
+    <xhtml:link rel="alternate" hreflang="ar-QA" href="https://srilanka.fabletour.com/qatar/"/>
+    <xhtml:link rel="alternate" hreflang="ar-BH" href="https://srilanka.fabletour.com/bahrain/"/>
+    <xhtml:link rel="alternate" hreflang="ar-OM" href="https://srilanka.fabletour.com/oman/"/>
+    <xhtml:link rel="alternate" hreflang="ar-IQ" href="https://srilanka.fabletour.com/iraq/"/>
+    <xhtml:link rel="alternate" hreflang="ar-SY" href="https://srilanka.fabletour.com/syria/"/>
+    <xhtml:link rel="alternate" hreflang="ar-LB" href="https://srilanka.fabletour.com/lebanon/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://srilanka.fabletour.com/"/>
+    <lastmod>2026-10-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://srilanka.fabletour.com/lebanon/</loc>
+    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://srilanka.fabletour.com/saudi-arabia/"/>
+    <xhtml:link rel="alternate" hreflang="ar-AE" href="https://srilanka.fabletour.com/uae/"/>
+    <xhtml:link rel="alternate" hreflang="ar-KW" href="https://srilanka.fabletour.com/kuwait/"/>
+    <xhtml:link rel="alternate" hreflang="ar-QA" href="https://srilanka.fabletour.com/qatar/"/>
+    <xhtml:link rel="alternate" hreflang="ar-BH" href="https://srilanka.fabletour.com/bahrain/"/>
+    <xhtml:link rel="alternate" hreflang="ar-OM" href="https://srilanka.fabletour.com/oman/"/>
+    <xhtml:link rel="alternate" hreflang="ar-IQ" href="https://srilanka.fabletour.com/iraq/"/>
+    <xhtml:link rel="alternate" hreflang="ar-SY" href="https://srilanka.fabletour.com/syria/"/>
+    <xhtml:link rel="alternate" hreflang="ar-LB" href="https://srilanka.fabletour.com/lebanon/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://srilanka.fabletour.com/"/>
+    <lastmod>2026-10-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
