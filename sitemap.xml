@@ -4084,4 +4084,59 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://srilanka.fabletour.com/germany/</loc>
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://srilanka.fabletour.com/germany/"/>
+    <xhtml:link rel="alternate" hreflang="de-AT" href="https://srilanka.fabletour.com/austria/"/>
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://srilanka.fabletour.com/switzerland/"/>
+    <xhtml:link rel="alternate" hreflang="de-LI" href="https://srilanka.fabletour.com/liechtenstein/"/>
+    <xhtml:link rel="alternate" hreflang="de-LU" href="https://srilanka.fabletour.com/luxembourg/"/>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://srilanka.fabletour.com/austria/</loc>
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://srilanka.fabletour.com/germany/"/>
+    <xhtml:link rel="alternate" hreflang="de-AT" href="https://srilanka.fabletour.com/austria/"/>
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://srilanka.fabletour.com/switzerland/"/>
+    <xhtml:link rel="alternate" hreflang="de-LI" href="https://srilanka.fabletour.com/liechtenstein/"/>
+    <xhtml:link rel="alternate" hreflang="de-LU" href="https://srilanka.fabletour.com/luxembourg/"/>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://srilanka.fabletour.com/switzerland/</loc>
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://srilanka.fabletour.com/germany/"/>
+    <xhtml:link rel="alternate" hreflang="de-AT" href="https://srilanka.fabletour.com/austria/"/>
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://srilanka.fabletour.com/switzerland/"/>
+    <xhtml:link rel="alternate" hreflang="de-LI" href="https://srilanka.fabletour.com/liechtenstein/"/>
+    <xhtml:link rel="alternate" hreflang="de-LU" href="https://srilanka.fabletour.com/luxembourg/"/>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://srilanka.fabletour.com/liechtenstein/</loc>
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://srilanka.fabletour.com/germany/"/>
+    <xhtml:link rel="alternate" hreflang="de-AT" href="https://srilanka.fabletour.com/austria/"/>
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://srilanka.fabletour.com/switzerland/"/>
+    <xhtml:link rel="alternate" hreflang="de-LI" href="https://srilanka.fabletour.com/liechtenstein/"/>
+    <xhtml:link rel="alternate" hreflang="de-LU" href="https://srilanka.fabletour.com/luxembourg/"/>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://srilanka.fabletour.com/luxembourg/</loc>
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://srilanka.fabletour.com/germany/"/>
+    <xhtml:link rel="alternate" hreflang="de-AT" href="https://srilanka.fabletour.com/austria/"/>
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://srilanka.fabletour.com/switzerland/"/>
+    <xhtml:link rel="alternate" hreflang="de-LI" href="https://srilanka.fabletour.com/liechtenstein/"/>
+    <xhtml:link rel="alternate" hreflang="de-LU" href="https://srilanka.fabletour.com/luxembourg/"/>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
