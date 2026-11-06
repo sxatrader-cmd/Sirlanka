@@ -218,6 +218,7 @@ html[lang="ar"] .btn{letter-spacing:0;font-size:16px}
 .pc-pkg button .st{display:block;color:var(--gold);letter-spacing:2px;font-size:13px}
 .pc-pkg button[aria-checked="true"]{background:var(--navy);color:#fff;border-color:var(--navy);box-shadow:inset 0 -3px 0 var(--gold)}
 .pc-grid.t3{grid-template-columns:1.7fr repeat(4,1fr)}
+.it-pkg-l{margin:0 0 8px}.it-pkg{max-width:560px;margin:0 0 22px}
 .h3alt{display:block;margin-top:4px;font-size:13px;color:var(--gold-2)}
 @media (max-width:760px){.pc-grid.t3{grid-template-columns:1fr 1fr}}
 .pc-out{background:var(--navy);color:#fff;border-radius:6px;padding:20px 22px;border-bottom:4px solid var(--gold);display:grid;gap:10px}
@@ -389,6 +390,7 @@ img.hero-img{width:100%;object-fit:cover;object-position:center;display:block}
 
   <section class="block in" id="itinerary">
     <div class="sec-head"><span class="eyebrow" data-i="itE">Programm · 8 Tage / 7 Nächte</span><h2 class="disp" data-i="itH">Reiseverlauf Tag für Tag</h2><p data-i="itP">Tippen Sie auf einen Tag, um Details und Fotos zu sehen. Tippen Sie auf ein Foto, um es zu vergrößern.</p></div>
+    <p class="pc-pkg-l it-pkg-l pkgL"></p><div class="pc-pkg it-pkg" role="radiogroup"><button type="button" role="radio" aria-checked="true" data-p="5"><span class="st">★★★★★</span><span class="pkg5">5★</span></button><button type="button" role="radio" aria-checked="false" data-p="3"><span class="st">★★★</span><span class="pkg3">3★</span></button></div>
     <div class="days" id="days">
    <article class="day" data-idx="0">
     <button class="day-btn" aria-expanded="false" aria-controls="db0">
@@ -506,7 +508,7 @@ img.hero-img{width:100%;object-fit:cover;object-position:center;display:block}
   <section class="block in" style="padding-top:0" id="price">
     <div class="sec-head"><span class="eyebrow" id="pc-e">Prices</span><h2 class="disp" id="pc-h">Calculate your price</h2><p id="pc-p"></p></div>
     <div class="pc">
-      <p class="pc-pkg-l" id="pc-lPkg"></p><div class="pc-pkg" role="radiogroup" id="pc-pkg"><button type="button" role="radio" aria-checked="true" data-p="5"><span class="st">★★★★★</span><span id="pc-p5">5★</span></button><button type="button" role="radio" aria-checked="false" data-p="3"><span class="st">★★★</span><span id="pc-p3">3★</span></button></div>
+      <p class="pc-pkg-l pkgL" id="pc-lPkg"></p><div class="pc-pkg" role="radiogroup" id="pc-pkg"><button type="button" role="radio" aria-checked="true" data-p="5"><span class="st">★★★★★</span><span id="pc-p5" class="pkg5">5★</span></button><button type="button" role="radio" aria-checked="false" data-p="3"><span class="st">★★★</span><span id="pc-p3" class="pkg3">3★</span></button></div>
       <div class="pc-grid">
         <div class="field pc-date"><label for="pc-date" id="pc-lDate">Departure date</label><select id="pc-date"></select></div>
         <div class="field"><label for="pc-pax" id="pc-lPax">Travelers</label><input id="pc-pax" type="number" min="1" max="6" value="2" inputmode="numeric"></div>
@@ -1342,7 +1344,7 @@ function renderDays(){
     <div class="day-body" id="db${i}" ${openIdx.includes(i)?"":"hidden"}>
       <div class="text">${d[lang]}</div>
       <div class="gallery">${d.stops.map((s,j)=>`<button class="ph loading" data-d="${i}" data-s="${j}" aria-label="${s[lang]}"><span class="cap">${s[lang]}</span></button>`).join("")}</div>
-      ${HOTELS[i]?`<div class="hotel"><div class="hotel-h"><div><span class="eyebrow">${t.stay} · ${HOTELS[i].area[lang]}</span><h4>${HOTELS[i].name} <span class="stbadge">${HOTELS[i].stars} ${t.starW}</span></h4>${HOTELS3[i]?`<span class="h3alt">★★★ ${P3("h3")}: ${HOTELS3[i]}</span>`:""}</div><span class="stars" aria-hidden="true">${"★".repeat(HOTELS[i].stars)}</span></div></div>`:""}
+      ${HOTELS[i]?(()=>{ const p3=pcPkg==="3"&&HOTELS3[i], nm=p3?HOTELS3[i]:HOTELS[i].name, st=p3?3:HOTELS[i].stars, ar=p3?(AREA3[lang]||AREA3.en)[i]:HOTELS[i].area[lang]; return `<div class="hotel"><div class="hotel-h"><div><span class="eyebrow">${t.stay} · ${ar}</span><h4>${nm} <span class="stbadge">${st} ${st===3&&lang==="ru"?"звезды":t.starW}</span></h4></div><span class="stars" aria-hidden="true">${"★".repeat(st)}</span></div></div>`; })():""}
     </div>
    </article>`).join("");
   openIdx.forEach(loadDayImages);
@@ -1549,6 +1551,7 @@ const ARALIYA_HB = {s:110,d:125,t:150}; // HB compulsory at Araliya Red on 24 & 
 const FESTIVE3 = { earls:{"12-24":70,"12-31":70}, elephant:{"12-24":35,"12-31":35}, heritage:{"12-24":45,"12-31":45}, araliya:{"12-24":70,"12-31":70}, shandaru:{"12-24":100,"12-31":100} };
 const PLAN3 = ["earls","earls","elephant","heritage","araliya","shandaru","shandaru"];
 const HOTELS3 = ["Earls Regent","Earls Regent","Elephant Lake by Oak Ray","Oak Ray Heritage","Araliya Red","Shandaru Blue","Shandaru Blue"];
+const AREA3 = {ar:["نيغومبو","نيغومبو","هبرانا","كاندي","نوارا إليا","بينتوتا","بينتوتا"], ru:["Негомбо","Негомбо","Хабарана","Канди","Нувара-Элия","Бентота","Бентота"], en:["Negombo","Negombo","Habarana","Kandy","Nuwara Eliya","Bentota","Bentota"]};
 let pcPkg="5";
 function pcCost3(depISO){
   let d=0,s=0,t=0,fest=false; const base=pcDate(depISO);
@@ -1564,17 +1567,17 @@ function pcCost3(depISO){
 }
 function pcSetPkg(p){
   pcPkg=p;
-  document.querySelectorAll("#pc-pkg button").forEach(b=>b.setAttribute("aria-checked",b.dataset.p===p?"true":"false"));
+  document.querySelectorAll(".pc-pkg button").forEach(b=>b.setAttribute("aria-checked",b.dataset.p===p?"true":"false"));
   $("#pc-tplF").style.display=p==="3"?"":"none";
   document.querySelector(".pc-grid").classList.toggle("t3",p==="3");
-  pcAuto(); pcCalc();
+  pcAuto(); pcCalc(); if(typeof renderDays==="function") renderDays();
 }
 let pcQuote="";
 function pcFill(){
   const t=PT[lang], loc={ar:"ar",en:"en-GB",ru:"ru",de:"de",fr:"fr",es:"es"}[lang];
   ["e","h","p"].forEach(k=>$("#pc-"+k).textContent=t[k]);
   $("#pc-lDate").textContent=t.date; $("#pc-lPax").textContent=t.pax; $("#pc-lDbl").textContent=t.dbl; $("#pc-lSgl").textContent=t.sgl;
-  $("#pc-note").textContent=t.note; $("#pc-lPkg").textContent=P3("pkg"); $("#pc-p5").textContent=P3("p5"); $("#pc-p3").textContent=P3("p3"); $("#pc-lTpl").textContent=P3("tpl");
+  $("#pc-note").textContent=t.note; document.querySelectorAll(".pkgL").forEach(e=>e.textContent=P3("pkg")); document.querySelectorAll(".pkg5").forEach(e=>e.textContent=P3("p5")); document.querySelectorAll(".pkg3").forEach(e=>e.textContent=P3("p3")); $("#pc-lTpl").textContent=P3("tpl");
   const fmt=new Intl.DateTimeFormat(loc,{weekday:"short",day:"numeric",month:"long",year:"numeric",timeZone:"UTC"});
   const today=new Date(); const start=pcDate(PRICE_CFG.first), end=pcDate(PRICE_CFG.last);
   const d=new Date(Math.max(start, Date.UTC(today.getFullYear(),today.getMonth(),today.getDate()+1)));
@@ -1610,7 +1613,7 @@ function pcCalc(){
 function pcAuto(){ const n=Math.max(0,parseInt($("#pc-pax").value,10)||0); if(n&&n<=PRICE_CFG.maxPax){ const t3=(pcPkg==="3"&&n>=3&&n%2)?1:0, r=n-3*t3; $("#pc-tpl").value=t3; $("#pc-dbl").value=Math.floor(r/2); $("#pc-sgl").value=r%2; } }
 $("#pc-pax").addEventListener("input",()=>{ pcAuto(); pcCalc(); });
 ["#pc-dbl","#pc-sgl","#pc-tpl","#pc-date"].forEach(s=>$(s).addEventListener("input",pcCalc));
-document.querySelectorAll("#pc-pkg button").forEach(b=>b.addEventListener("click",()=>pcSetPkg(b.dataset.p)));
+document.querySelectorAll(".pc-pkg button").forEach(b=>b.addEventListener("click",()=>pcSetPkg(b.dataset.p)));
 pcFill();
 
 /* ================= INIT ================= */
