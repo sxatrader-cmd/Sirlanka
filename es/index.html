@@ -211,6 +211,14 @@ html[lang="ar"] .btn{letter-spacing:0;font-size:16px}
 .pc label{font-size:13px;font-weight:600;color:var(--navy)}
 .pc select,.pc input{width:100%;padding:11px 12px;border-radius:4px;border:1px solid var(--line);background:#fff;color:var(--ink);font-size:16px;font-family:inherit}
 .pc select:focus,.pc input:focus{outline:2px solid var(--gold);border-color:var(--gold)}
+.pc-pkg{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.pc-pkg-l{font-size:13px;color:var(--muted);margin:0 0 -8px}
+.pc-pkg button{font:inherit;cursor:pointer;padding:12px 10px;border-radius:6px;border:1px solid var(--line);background:var(--paper);color:var(--navy);font-weight:600;font-size:15px}
+.pc-pkg button .st{display:block;color:var(--gold);letter-spacing:2px;font-size:13px}
+.pc-pkg button[aria-checked="true"]{background:var(--navy);color:#fff;border-color:var(--navy);box-shadow:inset 0 -3px 0 var(--gold)}
+.pc-grid.t3{grid-template-columns:1.7fr repeat(4,1fr)}
+.h3alt{display:block;margin-top:4px;font-size:13px;color:var(--gold-2)}
+@media (max-width:760px){.pc-grid.t3{grid-template-columns:1fr 1fr}}
 .pc-out{background:var(--navy);color:#fff;border-radius:6px;padding:20px 22px;border-bottom:4px solid var(--gold);display:grid;gap:10px}
 .pc-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:15px;color:#D3D9E2}
 .pc-row b{color:#fff;font-size:18px;font-variant-numeric:tabular-nums;white-space:nowrap}
@@ -497,11 +505,13 @@ img.hero-img{width:100%;object-fit:cover;object-position:center;display:block}
   <section class="block in" style="padding-top:0" id="price">
     <div class="sec-head"><span class="eyebrow" id="pc-e">Prices</span><h2 class="disp" id="pc-h">Calculate your price</h2><p id="pc-p"></p></div>
     <div class="pc">
+      <p class="pc-pkg-l" id="pc-lPkg"></p><div class="pc-pkg" role="radiogroup" id="pc-pkg"><button type="button" role="radio" aria-checked="true" data-p="5"><span class="st">★★★★★</span><span id="pc-p5">5★</span></button><button type="button" role="radio" aria-checked="false" data-p="3"><span class="st">★★★</span><span id="pc-p3">3★</span></button></div>
       <div class="pc-grid">
         <div class="field pc-date"><label for="pc-date" id="pc-lDate">Departure date</label><select id="pc-date"></select></div>
         <div class="field"><label for="pc-pax" id="pc-lPax">Travelers</label><input id="pc-pax" type="number" min="1" max="6" value="2" inputmode="numeric"></div>
         <div class="field"><label for="pc-dbl" id="pc-lDbl">Double rooms</label><input id="pc-dbl" type="number" min="0" max="3" value="1" inputmode="numeric"></div>
         <div class="field"><label for="pc-sgl" id="pc-lSgl">Single rooms</label><input id="pc-sgl" type="number" min="0" max="6" value="0" inputmode="numeric"></div>
+        <div class="field" id="pc-tplF" style="display:none"><label for="pc-tpl" id="pc-lTpl">Triple rooms</label><input id="pc-tpl" type="number" min="0" max="2" value="0" inputmode="numeric"></div>
       </div>
       <div class="pc-out" id="pc-out" aria-live="polite"></div>
       <p class="note" id="pc-note" style="margin:0"></p>
@@ -1331,7 +1341,7 @@ function renderDays(){
     <div class="day-body" id="db${i}" ${openIdx.includes(i)?"":"hidden"}>
       <div class="text">${d[lang]}</div>
       <div class="gallery">${d.stops.map((s,j)=>`<button class="ph loading" data-d="${i}" data-s="${j}" aria-label="${s[lang]}"><span class="cap">${s[lang]}</span></button>`).join("")}</div>
-      ${HOTELS[i]?`<div class="hotel"><div class="hotel-h"><div><span class="eyebrow">${t.stay} · ${HOTELS[i].area[lang]}</span><h4>${HOTELS[i].name} <span class="stbadge">${HOTELS[i].stars} ${t.starW}</span></h4></div><span class="stars" aria-hidden="true">${"★".repeat(HOTELS[i].stars)}</span></div></div>`:""}
+      ${HOTELS[i]?`<div class="hotel"><div class="hotel-h"><div><span class="eyebrow">${t.stay} · ${HOTELS[i].area[lang]}</span><h4>${HOTELS[i].name} <span class="stbadge">${HOTELS[i].stars} ${t.starW}</span></h4>${HOTELS3[i]?`<span class="h3alt">★★★ ${P3("h3")}: ${HOTELS3[i]}</span>`:""}</div><span class="stars" aria-hidden="true">${"★".repeat(HOTELS[i].stars)}</span></div></div>`:""}
     </div>
    </article>`).join("");
   openIdx.forEach(loadDayImages);
@@ -1521,12 +1531,49 @@ function pcCost(depISO){ // net per person: in a double room (d) and in a single
   }
   return {d,s,fest};
 }
+
+/* ---- 3-star package (net BB per room per night, winter 2026/27): [from, to, single, double, triple] ---- */
+const PT3 = {"ar": {"pkg": "اختر الباقة", "p5": "باقة 5 نجوم", "p3": "باقة 3 نجوم", "tpl": "غرف ثلاثية", "ppT": "سعر الشخص في الغرفة الثلاثية", "h3": "في باقة 3 نجوم", "mis3": "عدد الغرف لا يطابق عدد المسافرين: المزدوجة لشخصين، والفردية لشخص واحد، والثلاثية لثلاثة أشخاص.", "note3": "الأسعار بالدولار الأمريكي، وتشمل فنادق 3 نجوم مع الإفطار والسيارة الخاصة مع المرشد والاستقبال والتوديع في المطار. لا تشمل تذاكر الطيران الدولي ورسوم الدخول."}, "en": {"pkg": "Choose your package", "p5": "5-star package", "p3": "3-star package", "tpl": "Triple rooms", "ppT": "Price per person in a triple room", "h3": "3-star package", "mis3": "Rooms don't match the number of travelers: a double room is for 2 people, a single for 1 and a triple for 3.", "note3": "Prices in US dollars, including 3-star hotels with breakfast, private car with guide, and airport welcome and farewell. International flights and entrance fees are not included."}, "ru": {"pkg": "Выберите пакет", "p5": "Пакет 5 звёзд", "p3": "Пакет 3 звезды", "tpl": "Трёхместные номера", "ppT": "Цена за человека в трёхместном номере", "h3": "Пакет 3 звезды", "mis3": "Номера не соответствуют числу путешественников: двухместный на 2 человек, одноместный на 1, трёхместный на 3.", "note3": "Цены в долларах США: отели 3 звезды с завтраками, личный автомобиль с гидом, встреча и проводы в аэропорту. Международные перелёты и входные билеты не включены."}, "de": {"pkg": "Paket wählen", "p5": "5-Sterne-Paket", "p3": "3-Sterne-Paket", "tpl": "Dreibettzimmer", "ppT": "Preis pro Person im Dreibettzimmer", "h3": "3-Sterne-Paket", "mis3": "Die Zimmer passen nicht zur Anzahl der Reisenden: Doppelzimmer für 2, Einzelzimmer für 1, Dreibettzimmer für 3 Personen.", "note3": "Preise in US-Dollar, inklusive 3-Sterne-Hotels mit Frühstück, eigenem Auto mit Reiseleiter sowie Empfang und Abschied am Flughafen. Internationale Flüge und Eintrittspreise sind nicht enthalten."}, "fr": {"pkg": "Choisissez votre formule", "p5": "Formule 5 étoiles", "p3": "Formule 3 étoiles", "tpl": "Chambres triples", "ppT": "Prix par personne en chambre triple", "h3": "Formule 3 étoiles", "mis3": "Les chambres ne correspondent pas au nombre de voyageurs : double pour 2, individuelle pour 1, triple pour 3.", "note3": "Prix en dollars américains, comprenant les hôtels 3 étoiles avec petit-déjeuner, la voiture privée avec guide, ainsi que l'accueil et le transfert à l'aéroport. Vols internationaux et droits d'entrée non inclus."}, "es": {"pkg": "Elija su paquete", "p5": "Paquete 5 estrellas", "p3": "Paquete 3 estrellas", "tpl": "Habitaciones triples", "ppT": "Precio por persona en habitación triple", "h3": "Paquete 3 estrellas", "mis3": "Las habitaciones no coinciden con el número de viajeros: doble para 2, individual para 1 y triple para 3.", "note3": "Precios en dólares estadounidenses, con hoteles de 3 estrellas con desayuno, coche privado con guía y recepción y despedida en el aeropuerto. No incluye vuelos internacionales ni entradas."}, "hi": {"pkg": "अपना पैकेज चुनें", "p5": "5-स्टार पैकेज", "p3": "3-स्टार पैकेज", "tpl": "ट्रिपल कमरे", "ppT": "ट्रिपल कमरे में प्रति व्यक्ति कीमत", "h3": "3-स्टार पैकेज", "mis3": "कमरे यात्रियों की संख्या से मेल नहीं खाते: डबल कमरा 2 लोगों के लिए, सिंगल 1 के लिए और ट्रिपल 3 के लिए है।", "note3": "कीमतें अमेरिकी डॉलर में हैं, जिनमें नाश्ते सहित 3-स्टार होटल, गाइड के साथ निजी कार और एयरपोर्ट पर स्वागत व विदाई शामिल हैं। अंतरराष्ट्रीय उड़ानें और प्रवेश शुल्क शामिल नहीं हैं।"}, "mr": {"pkg": "तुमचे पॅकेज निवडा", "p5": "5-स्टार पॅकेज", "p3": "3-स्टार पॅकेज", "tpl": "ट्रिपल खोल्या", "ppT": "ट्रिपल खोलीत प्रति व्यक्ती किंमत", "h3": "3-स्टार पॅकेज", "mis3": "खोल्या प्रवाशांच्या संख्येशी जुळत नाहीत: डबल खोली 2 जणांसाठी, सिंगल 1 साठी आणि ट्रिपल 3 साठी.", "note3": "किंमती अमेरिकन डॉलरमध्ये असून त्यात नाश्त्यासह 3-स्टार हॉटेल्स, गाइडसह खाजगी कार आणि विमानतळावर स्वागत व निरोप समाविष्ट आहेत. आंतरराष्ट्रीय विमान तिकिटे आणि प्रवेश शुल्क समाविष्ट नाहीत."}, "gu": {"pkg": "તમારું પેકેજ પસંદ કરો", "p5": "5-સ્ટાર પેકેજ", "p3": "3-સ્ટાર પેકેજ", "tpl": "ટ્રિપલ રૂમ", "ppT": "ટ્રિપલ રૂમમાં વ્યક્તિ દીઠ કિંમત", "h3": "3-સ્ટાર પેકેજ", "mis3": "રૂમ મુસાફરોની સંખ્યા સાથે મેળ ખાતા નથી: ડબલ રૂમ 2 વ્યક્તિ માટે, સિંગલ 1 માટે અને ટ્રિપલ 3 માટે છે.", "note3": "કિંમતો યુએસ ડોલરમાં છે, જેમાં નાસ્તા સાથે 3-સ્ટાર હોટેલ, ગાઇડ સાથે ખાનગી કાર અને એરપોર્ટ પર સ્વાગત અને વિદાય શામેલ છે. આંતરરાષ્ટ્રીય ફ્લાઇટ્સ અને પ્રવેશ ફી શામેલ નથી."}, "ta": {"pkg": "உங்கள் பேக்கேஜைத் தேர்ந்தெடுக்கவும்", "p5": "5-நட்சத்திர பேக்கேஜ்", "p3": "3-நட்சத்திர பேக்கேஜ்", "tpl": "மூவர் அறைகள்", "ppT": "மூவர் அறையில் ஒருவருக்கான விலை", "h3": "3-நட்சத்திர பேக்கேஜ்", "mis3": "அறைகள் பயணிகளின் எண்ணிக்கையுடன் பொருந்தவில்லை: இரட்டை அறை 2 பேருக்கு, ஒற்றை அறை 1 பேருக்கு, மூவர் அறை 3 பேருக்கு.", "note3": "விலைகள் அமெரிக்க டாலரில்; காலை உணவுடன் 3-நட்சத்திர ஹோட்டல்கள், வழிகாட்டியுடன் தனியார் கார், விமான நிலைய வரவேற்பு மற்றும் வழியனுப்புதல் அடங்கும். சர்வதேச விமானங்கள் மற்றும் நுழைவுக் கட்டணங்கள் சேர்க்கப்படவில்லை."}, "te": {"pkg": "మీ ప్యాకేజీని ఎంచుకోండి", "p5": "5-స్టార్ ప్యాకేజీ", "p3": "3-స్టార్ ప్యాకేజీ", "tpl": "ట్రిపుల్ గదులు", "ppT": "ట్రిపుల్ గదిలో ఒక్కొక్కరికి ధర", "h3": "3-స్టార్ ప్యాకేజీ", "mis3": "గదులు ప్రయాణికుల సంఖ్యకు సరిపోలడం లేదు: డబుల్ గది 2 మందికి, సింగిల్ 1 మందికి, ట్రిపుల్ 3 మందికి.", "note3": "ధరలు అమెరికన్ డాలర్లలో; అల్పాహారంతో 3-స్టార్ హోటళ్లు, గైడ్‌తో ప్రైవేట్ కారు, విమానాశ్రయంలో స్వాగతం మరియు వీడ్కోలు ఉన్నాయి. అంతర్జాతీయ విమానాలు మరియు ప్రవేశ రుసుములు చేర్చబడలేదు."}, "kn": {"pkg": "ನಿಮ್ಮ ಪ್ಯಾಕೇಜ್ ಆಯ್ಕೆಮಾಡಿ", "p5": "5-ಸ್ಟಾರ್ ಪ್ಯಾಕೇಜ್", "p3": "3-ಸ್ಟಾರ್ ಪ್ಯಾಕೇಜ್", "tpl": "ಟ್ರಿಪಲ್ ಕೊಠಡಿಗಳು", "ppT": "ಟ್ರಿಪಲ್ ಕೊಠಡಿಯಲ್ಲಿ ಒಬ್ಬರಿಗೆ ದರ", "h3": "3-ಸ್ಟಾರ್ ಪ್ಯಾಕೇಜ್", "mis3": "ಕೊಠಡಿಗಳು ಪ್ರವಾಸಿಗರ ಸಂಖ್ಯೆಗೆ ಹೊಂದಿಕೆಯಾಗುತ್ತಿಲ್ಲ: ಡಬಲ್ ಕೊಠಡಿ 2 ಜನರಿಗೆ, ಸಿಂಗಲ್ 1 ಜನರಿಗೆ, ಟ್ರಿಪಲ್ 3 ಜನರಿಗೆ.", "note3": "ದರಗಳು ಅಮೆರಿಕನ್ ಡಾಲರ್‌ಗಳಲ್ಲಿ; ಉಪಾಹಾರದೊಂದಿಗೆ 3-ಸ್ಟಾರ್ ಹೋಟೆಲ್‌ಗಳು, ಗೈಡ್ ಜೊತೆ ಖಾಸಗಿ ಕಾರು, ವಿಮಾನ ನಿಲ್ದಾಣದಲ್ಲಿ ಸ್ವಾಗತ ಮತ್ತು ಬೀಳ್ಕೊಡುಗೆ ಸೇರಿವೆ. ಅಂತರರಾಷ್ಟ್ರೀಯ ವಿಮಾನಗಳು ಮತ್ತು ಪ್ರವೇಶ ಶುಲ್ಕಗಳು ಸೇರಿಲ್ಲ."}, "ml": {"pkg": "നിങ്ങളുടെ പാക്കേജ് തിരഞ്ഞെടുക്കുക", "p5": "5-സ്റ്റാർ പാക്കേജ്", "p3": "3-സ്റ്റാർ പാക്കേജ്", "tpl": "ട്രിപ്പിൾ മുറികൾ", "ppT": "ട്രിപ്പിൾ മുറിയിൽ ഒരാൾക്കുള്ള നിരക്ക്", "h3": "3-സ്റ്റാർ പാക്കേജ്", "mis3": "മുറികൾ യാത്രക്കാരുടെ എണ്ണവുമായി പൊരുത്തപ്പെടുന്നില്ല: ഡബിൾ മുറി 2 പേർക്ക്, സിംഗിൾ 1 ആൾക്ക്, ട്രിപ്പിൾ 3 പേർക്ക്.", "note3": "നിരക്കുകൾ യുഎസ് ഡോളറിൽ; പ്രഭാതഭക്ഷണത്തോടെ 3-സ്റ്റാർ ഹോട്ടലുകൾ, ഗൈഡിനൊപ്പം സ്വകാര്യ കാർ, വിമാനത്താവളത്തിൽ സ്വീകരണവും യാത്രയയപ്പും ഉൾപ്പെടുന്നു. അന്താരാഷ്ട്ര വിമാനങ്ങളും പ്രവേശന ഫീസും ഉൾപ്പെടുന്നില്ല."}};
+Object.keys(PT3).forEach(k=>{ if(PT[k]) Object.assign(PT[k],PT3[k]); });
+const P3 = (k)=>((PT3[lang]||PT3.en)[k]);
+const PRICE3 = { transport:450, profitPP:200 };
+const RATES3 = {
+  earls:   [["2026-11-01","2026-12-19",100,105,115],["2026-12-20","2027-01-10",120,125,135],["2027-01-11","2027-04-30",100,105,115]],
+  elephant:[["2026-11-01","2026-12-19",80,85,115],["2026-12-20","2027-01-10",100,105,135],["2027-01-11","2027-04-30",80,85,115]],
+  heritage:[["2026-11-01","2026-12-19",95,100,130],["2026-12-20","2027-01-10",115,120,150],["2027-01-11","2027-04-30",95,100,130]],
+  araliya: [["2026-11-01","2027-04-30",95,105,120]],
+  shandaru:[["2026-11-01","2027-04-30",130,145,160]]
+};
+const ARALIYA_HB = {s:110,d:125,t:150}; // HB compulsory at Araliya Red on 24 & 31 Dec
+const FESTIVE3 = { earls:{"12-24":70,"12-31":70}, elephant:{"12-24":35,"12-31":35}, heritage:{"12-24":45,"12-31":45}, araliya:{"12-24":70,"12-31":70}, shandaru:{"12-24":100,"12-31":100} };
+const PLAN3 = ["earls","earls","elephant","heritage","araliya","shandaru","shandaru"];
+const HOTELS3 = ["Earls Regent","Earls Regent","Elephant Lake by Oak Ray","Oak Ray Heritage","Araliya Red","Shandaru Blue","Shandaru Blue"];
+let pcPkg="5";
+function pcCost3(depISO){
+  let d=0,s=0,t=0,fest=false; const base=pcDate(depISO);
+  for(let i=0;i<7;i++){
+    const h=PLAN3[i]; const n=new Date(base); n.setUTCDate(n.getUTCDate()+i); const iso=pcISO(n), md=iso.slice(5);
+    const x=RATES3[h].find(y=>iso>=y[0]&&iso<=y[1]); if(!x) return null;
+    let r={s:x[2],d:x[3],t:x[4]};
+    if(h==="araliya"&&(md==="12-24"||md==="12-31")) r=ARALIYA_HB;
+    const f=(FESTIVE3[h]||{})[md]||0; if(f) fest=true;
+    d+=r.d/2+f; s+=r.s+f; t+=r.t/3+f;
+  }
+  return {d,s,t,fest};
+}
+function pcSetPkg(p){
+  pcPkg=p;
+  document.querySelectorAll("#pc-pkg button").forEach(b=>b.setAttribute("aria-checked",b.dataset.p===p?"true":"false"));
+  $("#pc-tplF").style.display=p==="3"?"":"none";
+  document.querySelector(".pc-grid").classList.toggle("t3",p==="3");
+  pcAuto(); pcCalc();
+}
 let pcQuote="";
 function pcFill(){
   const t=PT[lang], loc={ar:"ar",en:"en-GB",ru:"ru",de:"de",fr:"fr",es:"es"}[lang];
   ["e","h","p"].forEach(k=>$("#pc-"+k).textContent=t[k]);
   $("#pc-lDate").textContent=t.date; $("#pc-lPax").textContent=t.pax; $("#pc-lDbl").textContent=t.dbl; $("#pc-lSgl").textContent=t.sgl;
-  $("#pc-note").textContent=t.note;
+  $("#pc-note").textContent=t.note; $("#pc-lPkg").textContent=P3("pkg"); $("#pc-p5").textContent=P3("p5"); $("#pc-p3").textContent=P3("p3"); $("#pc-lTpl").textContent=P3("tpl");
   const fmt=new Intl.DateTimeFormat(loc,{weekday:"short",day:"numeric",month:"long",year:"numeric",timeZone:"UTC"});
   const today=new Date(); const start=pcDate(PRICE_CFG.first), end=pcDate(PRICE_CFG.last);
   const d=new Date(Math.max(start, Date.UTC(today.getFullYear(),today.getMonth(),today.getDate()+1)));
@@ -1538,26 +1585,31 @@ function pcFill(){
 function pcCalc(){
   const t=PT[lang], out=$("#pc-out");
   const num=v=>Math.max(0,parseInt(v,10)||0);
-  const pax=num($("#pc-pax").value), dbl=num($("#pc-dbl").value), sgl=num($("#pc-sgl").value), dep=$("#pc-date").value;
+  const p3=pcPkg==="3";
+  const pax=num($("#pc-pax").value), dbl=num($("#pc-dbl").value), sgl=num($("#pc-sgl").value), tpl=p3?num($("#pc-tpl").value):0, dep=$("#pc-date").value;
+  $("#pc-note").textContent=p3?P3("note3"):t.note;
   pcQuote="";
   if(pax>PRICE_CFG.maxPax){ out.innerHTML=`<p class="pc-warn">${t.big}</p>`; return; }
-  if(!pax||dbl*2+sgl!==pax){ out.innerHTML=`<p class="pc-warn">${t.mis}</p>`; return; }
-  const c=dep&&pcCost(dep); if(!c){ out.innerHTML=""; return; }
-  const add=PRICE_CFG.transport/Math.min(pax,2)+PRICE_CFG.nuwaraPP+PRICE_CFG.profitPP;
-  const ppD=Math.ceil(c.d+add), ppS=Math.ceil(c.s+add), total=ppD*dbl*2+ppS*sgl;
+  if(!pax||dbl*2+sgl+tpl*3!==pax){ out.innerHTML=`<p class="pc-warn">${p3?P3("mis3"):t.mis}</p>`; return; }
+  const c=dep&&(p3?pcCost3(dep):pcCost(dep)); if(!c){ out.innerHTML=""; return; }
+  const add=p3?PRICE3.transport/Math.min(pax,2)+PRICE3.profitPP:PRICE_CFG.transport/Math.min(pax,2)+PRICE_CFG.nuwaraPP+PRICE_CFG.profitPP;
+  const ppD=Math.ceil(c.d+add), ppS=Math.ceil(c.s+add), ppT=p3?Math.ceil(c.t+add):0, total=ppD*dbl*2+ppS*sgl+ppT*tpl*3;
   const money=v=>"US$ "+v.toLocaleString("en-US");
   let h="";
   if(dbl) h+=`<div class="pc-row"><span>${t.ppD}</span><b dir="ltr">${money(ppD)}</b></div>`;
   if(sgl) h+=`<div class="pc-row"><span>${t.ppS}</span><b dir="ltr">${money(ppS)}</b></div>`;
+  if(tpl) h+=`<div class="pc-row"><span>${P3("ppT")}</span><b dir="ltr">${money(ppT)}</b></div>`;
   h+=`<div class="pc-row pc-total"><span>${t.total} · ${pax} × </span><b dir="ltr">${money(total)}</b></div>`;
   if(c.fest) h+=`<p class="note" style="color:#D3D9E2;margin:0">${t.fest}</p>`;
   h+=`<a class="btn" href="#interest">${t.book}</a>`;
   out.innerHTML=h;
   out.querySelector(".pc-total span").textContent=t.tot.replace("{n}",pax);
-  pcQuote=`${dep} | pax ${pax} | DBL ${dbl} x ${dbl?money(ppD)+" pp":"-"} | SGL ${sgl} x ${sgl?money(ppS):"-"} | TOTAL ${money(total)}`;
+  pcQuote=`${pcPkg}-star | ${dep} | pax ${pax} | DBL ${dbl} x ${dbl?money(ppD)+" pp":"-"} | SGL ${sgl} x ${sgl?money(ppS):"-"} | TPL ${tpl} x ${tpl?money(ppT)+" pp":"-"} | TOTAL ${money(total)}`;
 }
-$("#pc-pax").addEventListener("input",()=>{ const n=Math.max(0,parseInt($("#pc-pax").value,10)||0); if(n&&n<=PRICE_CFG.maxPax){ $("#pc-dbl").value=Math.floor(n/2); $("#pc-sgl").value=n%2; } pcCalc(); });
-["#pc-dbl","#pc-sgl","#pc-date"].forEach(s=>$(s).addEventListener("input",pcCalc));
+function pcAuto(){ const n=Math.max(0,parseInt($("#pc-pax").value,10)||0); if(n&&n<=PRICE_CFG.maxPax){ const t3=(pcPkg==="3"&&n>=3&&n%2)?1:0, r=n-3*t3; $("#pc-tpl").value=t3; $("#pc-dbl").value=Math.floor(r/2); $("#pc-sgl").value=r%2; } }
+$("#pc-pax").addEventListener("input",()=>{ pcAuto(); pcCalc(); });
+["#pc-dbl","#pc-sgl","#pc-tpl","#pc-date"].forEach(s=>$(s).addEventListener("input",pcCalc));
+document.querySelectorAll("#pc-pkg button").forEach(b=>b.addEventListener("click",()=>pcSetPkg(b.dataset.p)));
 pcFill();
 
 /* ================= INIT ================= */
