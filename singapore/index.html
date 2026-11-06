@@ -513,7 +513,7 @@ img.hero-img{width:100%;object-fit:cover;object-position:center;display:block}
     <div class="pc">
       <div class="pc-grid">
         <div class="field pc-date"><label for="pc-date" id="pc-lDate">Departure date</label><select id="pc-date"></select></div>
-        <div class="field"><label for="pc-pax" id="pc-lPax">Travelers</label><input id="pc-pax" type="number" min="1" max="6" value="2" inputmode="numeric"></div>
+        <div class="field"><label for="pc-pax" id="pc-lPax">Travelers</label><select id="pc-pax"></select></div>
         <div class="field"><label for="pc-dbl" id="pc-lDbl">Double rooms</label><input id="pc-dbl" type="number" min="0" max="3" value="1" inputmode="numeric"></div>
         <div class="field"><label for="pc-sgl" id="pc-lSgl">Single rooms</label><input id="pc-sgl" type="number" min="0" max="6" value="0" inputmode="numeric"></div>
         <div class="field" id="pc-tplF" style="display:none"><label for="pc-tpl" id="pc-lTpl">Triple rooms</label><input id="pc-tpl" type="number" min="0" max="2" value="0" inputmode="numeric"></div>
@@ -1557,6 +1557,7 @@ const PLAN3 = ["earls","earls","elephant","heritage","araliya","shandaru","shand
 const HOTELS3 = ["Earls Regent","Earls Regent","Elephant Lake by Oak Ray","Oak Ray Heritage","Araliya Red","Shandaru Blue","Shandaru Blue"];
 const AREA3 = {ar:["نيغومبو","نيغومبو","هبرانا","كاندي","نوارا إليا","بينتوتا","بينتوتا"], ru:["Негомбо","Негомбо","Хабарана","Канди","Нувара-Элия","Бентота","Бентота"], en:["Negombo","Negombo","Habarana","Kandy","Nuwara Eliya","Bentota","Bentota"]};
 let pcPkg="5"; const DRIVER_GROUP=650;
+function pcPaxOpts(max){ const e=$("#pc-pax"), v=Math.min(max,parseInt(e.value,10)||2); e.innerHTML=Array.from({length:max},(_,i)=>`<option value="${i+1}">${i+1}</option>`).join(""); e.value=v; }
 function pcCost3(depISO){
   let d=0,s=0,t=0,fest=false; const base=pcDate(depISO);
   for(let i=0;i<7;i++){
@@ -1575,7 +1576,7 @@ function pcSetPkg(p){
   $("#pc-tplF").style.display=p==="3"?"":"none";
   document.querySelector(".pc-grid").classList.toggle("t3",p==="3");
   ["#pc-dbl","#pc-sgl"].forEach(x=>$(x).parentElement.style.display=p==="0"?"none":""); if(p==="0") $("#pc-tplF").style.display="none";
-  if(p==="0") $("#pc-pax").removeAttribute("max"); else $("#pc-pax").setAttribute("max",PRICE_CFG.maxPax);
+  pcPaxOpts(p==="0"?30:PRICE_CFG.maxPax);
   pcAuto(); pcCalc(); if(typeof renderDays==="function") renderDays();
 }
 let pcQuote="";
@@ -1624,7 +1625,7 @@ function pcCalc(){
   pcQuote=`${pcPkg}-star | ${dep} | pax ${pax} | DBL ${dbl} x ${dbl?money(ppD)+" pp":"-"} | SGL ${sgl} x ${sgl?money(ppS):"-"} | TPL ${tpl} x ${tpl?money(ppT)+" pp":"-"} | TOTAL ${money(total)}`;
 }
 function pcAuto(){ if(pcPkg==="0") return; const n=Math.max(0,parseInt($("#pc-pax").value,10)||0); if(n&&n<=PRICE_CFG.maxPax){ const t3=(pcPkg==="3"&&n>=3&&n%2)?1:0, r=n-3*t3; $("#pc-tpl").value=t3; $("#pc-dbl").value=Math.floor(r/2); $("#pc-sgl").value=r%2; } }
-$("#pc-pax").addEventListener("input",()=>{ pcAuto(); pcCalc(); });
+pcPaxOpts(PRICE_CFG.maxPax); $("#pc-pax").addEventListener("change",()=>{ pcAuto(); pcCalc(); });
 ["#pc-dbl","#pc-sgl","#pc-tpl","#pc-date"].forEach(s=>$(s).addEventListener("input",pcCalc));
 document.querySelectorAll(".pc-pkg button").forEach(b=>b.addEventListener("click",()=>pcSetPkg(b.dataset.p)));
 pcFill();
