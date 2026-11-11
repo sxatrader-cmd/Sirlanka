@@ -382,15 +382,6 @@ img.hero-img{width:100%;object-fit:cover;object-position:center;display:block}
 .pc-prog button .st{display:block;color:var(--gold);letter-spacing:2px;font-size:13px}
 .pc-prog button[aria-checked="true"]{background:var(--navy);color:#fff;border-color:var(--navy);box-shadow:inset 0 -3px 0 var(--gold)}
 @media (max-width:560px){.pc-prog button{font-size:13.5px;padding:10px 6px}.hthumb{width:56px;height:56px}}
-.pc .field{position:relative}
-.pc input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:48px;padding:0;margin:0;border:0;background:transparent;cursor:pointer;accent-color:var(--gold);touch-action:pan-y}
-.pc input[type=range]::-webkit-slider-runnable-track{height:8px;border-radius:4px;background:linear-gradient(to right,var(--gold) var(--fill,0%),var(--line) var(--fill,0%))}
-[dir=rtl] .pc input[type=range]::-webkit-slider-runnable-track{background:linear-gradient(to left,var(--gold) var(--fill,0%),var(--line) var(--fill,0%))}
-.pc input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:26px;height:26px;border-radius:50%;background:var(--navy);border:3px solid var(--gold);margin-top:-9px;box-shadow:0 2px 6px rgba(27,42,71,.3)}
-.pc input[type=range]::-moz-range-track{height:8px;border-radius:4px;background:var(--line)}
-.pc input[type=range]::-moz-range-progress{height:8px;border-radius:4px;background:var(--gold)}
-.pc input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:var(--navy);border:3px solid var(--gold)}
-.pc .rv{position:absolute;top:0;inset-inline-end:0;min-width:28px;text-align:center;background:var(--navy);color:#fff;border-radius:12px;font-weight:700;font-size:14px;line-height:22px;padding:0 8px;font-variant-numeric:tabular-nums}
 </style>
 </head>
 <body>
@@ -704,9 +695,9 @@ img.hero-img{width:100%;object-fit:cover;object-position:center;display:block}
       <div class="pc-grid">
         <div class="field pc-date"><label for="pc-date" id="pc-lDate">प्रस्थान की तारीख</label><select id="pc-date"></select></div>
         <div class="field"><label for="pc-pax" id="pc-lPax">यात्री</label><select id="pc-pax"></select></div>
-        <div class="field"><label for="pc-dbl" id="pc-lDbl">डबल कमरे</label><input id="pc-dbl" type="range" min="0" max="3" step="1" value="1"><output class="rv" for="pc-dbl">1</output></div>
-        <div class="field"><label for="pc-sgl" id="pc-lSgl">सिंगल कमरे</label><input id="pc-sgl" type="range" min="0" max="6" step="1" value="0"><output class="rv" for="pc-sgl">0</output></div>
-        <div class="field" id="pc-tplF" style="display:none"><label for="pc-tpl" id="pc-lTpl">Triple rooms</label><input id="pc-tpl" type="range" min="0" max="2" step="1" value="0"><output class="rv" for="pc-tpl">0</output></div>
+        <div class="field"><label for="pc-dbl" id="pc-lDbl">डबल कमरे</label><select id="pc-dbl"><option value="0">0</option><option value="1" selected>1</option><option value="2">2</option><option value="3">3</option></select></div>
+        <div class="field"><label for="pc-sgl" id="pc-lSgl">सिंगल कमरे</label><select id="pc-sgl"><option value="0" selected>0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option></select></div>
+        <div class="field" id="pc-tplF" style="display:none"><label for="pc-tpl" id="pc-lTpl">Triple rooms</label><select id="pc-tpl"><option value="0" selected>0</option><option value="1">1</option><option value="2">2</option></select></div>
       </div>
       <div class="pc-out" id="pc-out" aria-live="polite"></div>
       <p class="note" id="pc-note" style="margin:0"></p>
@@ -1130,7 +1121,6 @@ function pcFill(){
   pcCalc();
 }
 function pcCalc(){
-  if(window.pcSync) window.pcSync();
   if(window.pcProg==="2") return window.pc2Calc();
   const t=PT[lang], out=$("#pc-out");
   const num=v=>Math.max(0,parseInt(v,10)||0);
@@ -1215,10 +1205,9 @@ function draw(){d.innerHTML="";var k=cur();for(var i=0;i<c.length;i++){(function
 var tm;g.addEventListener("scroll",function(){clearTimeout(tm);tm=setTimeout(draw,120);});window.addEventListener("resize",draw);draw();}
 document.querySelectorAll(".pk-ph").forEach(function(p){p.addEventListener("click",function(){var b=p.parentNode.querySelector(".prog-tg");if(b)b.click();});});
 document.querySelectorAll(".p2days").forEach(function(w){w.addEventListener("click",function(e){var btn=e.target.closest(".day-btn");if(!btn||!w.contains(btn))return;var a=btn.parentElement,body=a.querySelector(".day-body"),o=!a.classList.contains("open");a.classList.toggle("open",o);body.hidden=!o;btn.setAttribute("aria-expanded",o);});});
-window.pcSync=function(){["pc-dbl","pc-sgl","pc-tpl"].forEach(function(id){var e=document.getElementById(id);if(!e||e.type!=="range")return;var o=document.querySelector('output[for="'+id+'"]');if(o)o.textContent=e.value;var mx=+e.max||1;e.style.setProperty("--fill",(100*e.value/mx)+"%");});};
 if(typeof pcFill==="function"&&document.getElementById("pc-out")){
 var PR2={s:1655,d:875,t:665};window.pcProg="1";
-window.pc2Pkg="4";["pc-dbl","pc-sgl","pc-tpl"].forEach(function(id){var e=document.getElementById(id);if(e)e.addEventListener("input",window.pcSync);});window.pcSync();
+window.pc2Pkg="4";
 window.pc2Calc=function(){var t=PT[lang],out=$("#pc-out"),num=function(v){return Math.max(0,parseInt(v,10)||0);};
 if(window.pc2Pkg==="0"){var pax0=num($("#pc-pax").value),dep0=$("#pc-date").value,m0=function(v){return "US$ "+v.toLocaleString("en-US");};
 $("#pc-note").textContent=P3("note0");pcQuote="";if(!pax0){out.innerHTML="";return;}
