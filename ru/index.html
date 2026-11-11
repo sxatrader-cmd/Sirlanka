@@ -326,6 +326,49 @@ img.hero-img{width:100%;object-fit:cover;object-position:center;display:block}
 .ft-guide p{margin:0;color:var(--ink);line-height:1.75;max-width:70ch}
 @media (max-width:640px){.ft-guide{flex-direction:column;text-align:center;padding:22px 18px}.ft-guide img{width:calc((100% + 36px) / 2);height:auto}}
 </style>
+<style id="prog-css">
+.pk-wrap{margin-top:8px}.pk-grid{display:flex;align-items:stretch;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:4px 2px 14px;scrollbar-width:none;overscroll-behavior-x:contain}.pk-grid::-webkit-scrollbar{display:none}
+.pk{flex:0 0 calc((100% - 18px)/2);scroll-snap-align:start;min-width:0;background:var(--navy);border-radius:8px;box-shadow:0 8px 24px -18px rgba(27,42,71,.5);overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .2s}
+.pk.on{box-shadow:0 10px 30px -14px rgba(184,149,90,.75)}
+.pk-ph{aspect-ratio:16/10;background:var(--navy-2) center/cover no-repeat;filter:saturate(1.2) contrast(1.04);cursor:pointer}
+.pk-bd{padding:20px 22px;display:flex;flex-direction:column;gap:6px;flex:1;background:var(--navy);color:#fff;border-bottom:4px solid var(--gold)}
+.pk-bd .eyebrow{color:var(--gold-2)}.pk-bd h3{font-size:clamp(21px,3.2vw,27px);color:#fff;line-height:1.3;margin:6px 0 8px}
+.pk-bd .route{margin:0;color:#D9DEE6;font-size:14.5px;line-height:1.6}.pk-bd .se{margin:6px 0 0;color:var(--gold-2);font-size:13.5px;font-weight:600}
+.pk-bd .prog-tg{margin-top:auto;padding-top:14px}
+.pk-dots{display:none;justify-content:center;gap:7px;margin-top:4px}.pk-dots button{width:9px;height:9px;border-radius:50%;border:0;padding:0;background:#D5D9E0;cursor:pointer}.pk-dots button.on{background:var(--gold);width:22px;border-radius:5px}
+@media (max-width:600px){.pk{flex-basis:88%}.pk-dots{display:flex}}
+.prog:not(.open){margin:0}.prog.open{margin-top:24px}
+.prog-cap{background:var(--navy);color:#fff;border-radius:6px 6px 0 0;padding:16px 20px;border-bottom:4px solid var(--gold)}.prog-cap .eyebrow{color:var(--gold-2)}.prog-cap b{display:block;font-size:clamp(19px,3vw,24px);line-height:1.3;margin-top:4px}
+.prog-tg{display:flex;align-items:center;gap:12px;background:none;border:0;padding:0;color:var(--gold-2);font:inherit;font-weight:700;font-size:15px;cursor:pointer;text-align:start}
+.prog-chev{flex:none;width:38px;height:38px;border-radius:50%;background:var(--gold);color:var(--navy);display:grid;place-items:center;transition:transform .25s}.prog.open .prog-chev,.pk.on .prog-chev{transform:rotate(180deg)}
+.p2gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;margin-top:6px}
+.p2gal figure{margin:0;border-radius:4px;overflow:hidden;background:var(--navy);position:relative;aspect-ratio:4/3}
+.p2gal img{width:100%;height:100%;object-fit:cover;display:block}
+.p2gal figcaption{position:absolute;inset:auto 0 0 0;padding:22px 10px 8px;background:linear-gradient(transparent,rgba(15,24,42,.85));color:#fff;font-size:13px;line-height:1.35}
+.hotel-h .rmt{font:500 12.5px var(--sans-en);color:var(--gold-2);margin-inline-start:6px}html[lang="ar"] .hotel-h .rmt{font-family:var(--sans-ar)}
+.pblock{margin-top:18px}
+.pricebox{background:var(--navy);color:#fff;border-radius:6px;padding:24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;border-bottom:5px solid var(--gold);margin-bottom:12px}
+.pricebox .amount{font-family:var(--serif-en);font-size:clamp(40px,8vw,54px);line-height:1;color:#fff;font-variant-numeric:tabular-nums}
+.pricebox .amount small{font-size:.38em;color:var(--gold-2);letter-spacing:.12em;margin-inline-start:6px}.pricebox .from{display:block;font-size:14px;color:var(--gold-2);margin-bottom:6px;font-family:var(--sans-en)}html[lang="ar"] .pricebox .from{font-family:var(--sans-ar)}
+.pricebox .per{color:#D9DEE6;font-size:15px;margin-top:8px}
+.pricebox .tag{border:1px solid rgba(217,192,142,.5);color:#EFE3C8;border-radius:4px;padding:8px 12px;font-size:13.5px;line-height:1.5;max-width:300px}
+.ptbl-h{font-size:18px;color:var(--navy);margin:20px 0 10px}html[lang="ar"] .ptbl-h{font-family:var(--serif-ar);font-size:21px}
+.ptbl{min-width:0!important}.ptbl td.num,.ptbl th.num{text-align:end;white-space:nowrap;font-variant-numeric:tabular-nums}.ptbl td b{color:var(--navy)}
+.pcols{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
+.pcol{background:var(--panel);border-radius:6px;padding:18px 20px;border-top:3px solid var(--gold);min-width:0}.pcol.no{border-top-color:#A04A3A}
+.pcol h3{font-family:var(--serif-en);font-weight:400;font-size:18px;color:var(--navy);margin-bottom:8px}html[lang="ar"] .pcol h3{font-family:var(--serif-ar);font-weight:700;font-size:20px}
+.pcol ul{margin:0;padding:0;list-style:none;display:grid;gap:7px;font-size:15px}.pcol li{display:flex;gap:10px;align-items:flex-start;line-height:1.55}
+.pcol li::before{content:"✓";color:#2E7D4F;font-weight:700;flex:none}.pcol.no li::before{content:"✕";color:#A04A3A}
+.pnotes{margin-top:12px;border:1px solid var(--line);border-radius:6px;padding:16px 20px;background:var(--paper)}.pnotes h3{font-size:15px;color:var(--navy);margin-bottom:6px}
+.pnotes ul{margin:0;padding-inline-start:18px;color:var(--muted);font-size:14px;display:grid;gap:4px}.pnotes li::marker{color:var(--gold)}
+.pcta{margin-top:14px;background:var(--navy);color:#fff;border-radius:6px;padding:22px 24px;border-bottom:5px solid var(--gold);display:flex;flex-wrap:wrap;gap:14px 22px;align-items:center;justify-content:space-between}
+.pcta h3{color:#fff;font-size:20px;margin:0 0 4px}.pcta p{margin:0;color:#D9DEE6;font-size:14.5px;max-width:52ch}
+.pcta .acts{display:flex;flex-wrap:wrap;gap:10px}
+.pbtn{display:inline-flex;align-items:center;gap:8px;border-radius:4px;padding:12px 16px;font-weight:700;font-size:15px;text-decoration:none;white-space:nowrap}
+.pbtn.wa{background:#25D366;color:#fff}.pbtn.gd{background:var(--gold);color:var(--navy)}.pbtn.ol{border:1px solid var(--gold-2);color:var(--gold-2)}
+.pbtn:hover{filter:brightness(1.07)}
+@media (max-width:760px){.pcols{grid-template-columns:1fr}.pcta{padding:20px}.pcta .acts,.pcta .pbtn{width:100%;justify-content:center}}
+</style>
 </head>
 <body>
 
@@ -389,7 +432,14 @@ img.hero-img{width:100%;object-fit:cover;object-position:center;display:block}
   </section>
 
   <section class="block in" id="itinerary">
-    <div class="sec-head"><span class="eyebrow" data-i="itE">Программа · 8 дней / 7 ночей</span><h2 class="disp" data-i="itH">Программа по дням</h2><p data-i="itP">Нажмите на день, чтобы открыть описание и фото. Нажмите на фото, чтобы увеличить его.</p></div>
+    <div class="sec-head"><span class="eyebrow">Программы</span><h2 class="disp">Наши программы по Шри-Ланке</h2><p>Выберите программу, чтобы увидеть её по дням. Нажмите на день, чтобы открыть подробности и фото.</p></div>
+    <div class="pk-wrap"><div class="pk-grid"><article class="pk" data-prog="tour-8-days"><div class="pk-ph" style="background-image:url('/hero.jpg')" role="presentation"></div><div class="pk-bd"><span class="eyebrow">Программа 1 · 8 дней / 7 ночей</span>
+      <h3 class="disp" id="tour-8-days-h">Вся Шри-Ланка: 8 дней / 7 ночей</h3>
+      <p class="route">Негомбо · Сигирия · Канди · Нувара-Элия · Бентота</p><p class="se">Старт каждую пятницу · выберите пакет и рассчитайте цену</p><button type="button" class="prog-tg" aria-expanded="false" aria-controls="pb-tour-8-days" data-show="Показать программу" data-hide="Скрыть программу"><span class="lbl">Показать программу</span><span class="prog-chev" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M6 9l6 6 6-6"/></svg></span></button></div></article><article class="pk" data-prog="private-8-days"><div class="pk-ph" style="background-image:url('/gallery/sri-lanka-16.jpg')" role="presentation"></div><div class="pk-bd"><span class="eyebrow">Программа 2 · от <span dir="ltr">$875</span> с человека</span>
+      <h3 class="disp" id="private-8-days-h">Индивидуальный тур по Шри-Ланке: 8 дней / 7 ночей</h3>
+      <p class="route">Коломбо · Пиннавела · Канди · Нувара-Элия · Китулгала · Бентота</p><p class="se">Прилёт и вылет: международный аэропорт Коломбо</p><button type="button" class="prog-tg" aria-expanded="false" aria-controls="pb-private-8-days" data-show="Показать программу" data-hide="Скрыть программу"><span class="lbl">Показать программу</span><span class="prog-chev" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M6 9l6 6 6-6"/></svg></span></button></div></article></div><div class="pk-dots"></div></div>
+   <section class="prog" id="tour-8-days" aria-labelledby="tour-8-days-h">
+    <div class="prog-body" id="pb-tour-8-days" hidden><div class="prog-cap"><span class="eyebrow">Программа 1 · 8 дней / 7 ночей</span><b>Вся Шри-Ланка: 8 дней / 7 ночей</b></div>
     <p class="pc-pkg-l it-pkg-l pkgL"></p><div class="pc-pkg it-pkg" role="radiogroup"><button type="button" role="radio" aria-checked="true" data-p="5"><span class="st">★★★★★</span><span class="pkg5">5★</span></button><button type="button" role="radio" aria-checked="false" data-p="3"><span class="st">★★★</span><span class="pkg3">3★</span></button><button type="button" role="radio" aria-checked="false" data-p="0"><span class="st">🚘</span><span class="pkg0">Driver/guide</span></button></div>
     <div class="days" id="days">
    <article class="day" data-idx="0">
@@ -488,6 +538,117 @@ img.hero-img{width:100%;object-fit:cover;object-position:center;display:block}
       
     </div>
    </article></div>
+    </div></section>
+   <section class="prog" id="private-8-days" aria-labelledby="private-8-days-h">
+    <div class="prog-body" id="pb-private-8-days" hidden><div class="prog-cap"><span class="eyebrow">Программа 2 · от <span dir="ltr">$875</span> с человека</span><b>Индивидуальный тур по Шри-Ланке: 8 дней / 7 ночей</b></div>
+    <div class="days p2days"><article class="day" id="private-8-days-day-1">
+    <button class="day-btn" aria-expanded="false" aria-controls="p2db0">
+      <span class="daynum"><span><small>День</small><b>1</b></span></span>
+      <span class="day-title"><span class="city">Коломбо</span><h3>Прилёт в Коломбо</h3><span class="stops-line">Площадь Независимости · Форт · Галле-Фейс · конференц-зал Бандаранаике</span></span>
+      <span class="chev" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></span>
+    </button>
+    <div class="day-body" id="p2db0" hidden>
+      <div class="text"><p>Встреча в аэропорту и переезд в Коломбо. Экскурсия по площади Независимости, району Форт, набережной Галле-Фейс и Мемориальному конференц-залу Бандаранаике или шопинг в One Galle Face Mall. Ночь в Коломбо.</p></div>
+      <div class="p2gal"><figure><img src="/gallery/sri-lanka-18.jpg" alt="Прилёт в аэропорт Коломбо" loading="lazy" decoding="async"><figcaption>Прилёт в аэропорт Коломбо</figcaption></figure></div>
+      <div class="hotel"><div class="hotel-h"><div><span class="eyebrow">Ваш отель · Коломбо</span><h4>Maradha Colombo</h4></div></div></div>
+    </div>
+   </article>
+<article class="day" id="private-8-days-day-2">
+    <button class="day-btn" aria-expanded="false" aria-controls="p2db1">
+      <span class="daynum"><span><small>День</small><b>2</b></span></span>
+      <span class="day-title"><span class="city">Коломбо → Пиннавела → Канди</span><h3>Коломбо, Пиннавела, Канди</h3><span class="stops-line">Пиннавела · сад специй</span></span>
+      <span class="chev" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></span>
+    </button>
+    <div class="day-body" id="p2db1" hidden>
+      <div class="text"><p>После завтрака выезд в Канди с остановкой в Пиннавеле, где можно покататься на слоне, затем посещение сада специй. Ночь в Канди.</p></div>
+      <div class="p2gal"><figure><img src="/gallery/sri-lanka-11.jpg" alt="Катание на слоне" loading="lazy" decoding="async"><figcaption>Катание на слоне</figcaption></figure></div>
+      <div class="hotel"><div class="hotel-h"><div><span class="eyebrow">Ваш отель · Канди</span><h4>Radisson Hotel Kandy</h4></div></div></div>
+    </div>
+   </article>
+<article class="day" id="private-8-days-day-3">
+    <button class="day-btn" aria-expanded="false" aria-controls="p2db2">
+      <span class="daynum"><span><small>День</small><b>3</b></span></span>
+      <span class="day-title"><span class="city">Канди</span><h3>Экскурсия по Канди</h3><span class="stops-line">Ботанический сад Перадения · рынок Канди · мастерские ремёсел и батика · музей драгоценных камней · смотровая площадка и озеро · культурное шоу</span></span>
+      <span class="chev" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></span>
+    </button>
+    <div class="day-body" id="p2db2" hidden>
+      <div class="text"><p>Королевский ботанический сад Перадения, рынок Канди, мастерские ремёсел и батика, музей драгоценных камней. Смотровая площадка Канди и прогулка вокруг озера, вечером культурное шоу. Ночь в Канди.</p></div>
+      
+      <div class="hotel"><div class="hotel-h"><div><span class="eyebrow">Ваш отель · Канди</span><h4>Radisson Hotel Kandy</h4></div></div></div>
+    </div>
+   </article>
+<article class="day" id="private-8-days-day-4">
+    <button class="day-btn" aria-expanded="false" aria-controls="p2db3">
+      <span class="daynum"><span><small>День</small><b>4</b></span></span>
+      <span class="day-title"><span class="city">Канди → Нувара-Элия</span><h3>Из Канди в Нувара-Элию</h3><span class="stops-line">Водопад Рамбода · чайная плантация и фабрика</span></span>
+      <span class="chev" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></span>
+    </button>
+    <div class="day-body" id="p2db3" hidden>
+      <div class="text"><p>Остановка для фото у водопада Рамбода, посещение чайной плантации и фабрики: как производят чай, сбор чайного листа и дегустация. Ночь в Нувара-Элии.</p></div>
+      <div class="p2gal"><figure><img src="/gallery/sri-lanka-16.jpg" alt="Водопад и чайные холмы" loading="lazy" decoding="async"><figcaption>Водопад и чайные холмы</figcaption></figure><figure><img src="/gallery/sri-lanka-6.jpg" alt="Чайные плантации в горах" loading="lazy" decoding="async"><figcaption>Чайные плантации в горах</figcaption></figure></div>
+      <div class="hotel"><div class="hotel-h"><div><span class="eyebrow">Ваш отель · Нувара-Элия</span><h4>Queenswood Cottage <span class="rmt">· стандартный номер</span></h4></div></div></div>
+    </div>
+   </article>
+<article class="day" id="private-8-days-day-5">
+    <button class="day-btn" aria-expanded="false" aria-controls="p2db4">
+      <span class="daynum"><span><small>День</small><b>5</b></span></span>
+      <span class="day-title"><span class="city">Нувара-Элия</span><h3>Нувара-Элия</h3><span class="stops-line">Озеро Грегори · ферма Амбевела · клубничные фермы</span></span>
+      <span class="chev" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></span>
+    </button>
+    <div class="day-body" id="p2db4" hidden>
+      <div class="text"><p>Утренняя прогулка у озера Грегори, затем ферма Амбевела и клубничные фермы, остановки в местных магазинах или кафе. Ночь в Нувара-Элии.</p></div>
+      <div class="p2gal"><figure><img src="/gallery/sri-lanka-7.jpg" alt="Зелёные холмы" loading="lazy" decoding="async"><figcaption>Зелёные холмы</figcaption></figure></div>
+      <div class="hotel"><div class="hotel-h"><div><span class="eyebrow">Ваш отель · Нувара-Элия</span><h4>Queenswood Cottage <span class="rmt">· стандартный номер</span></h4></div></div></div>
+    </div>
+   </article>
+<article class="day" id="private-8-days-day-6">
+    <button class="day-btn" aria-expanded="false" aria-controls="p2db5">
+      <span class="daynum"><span><small>День</small><b>6</b></span></span>
+      <span class="day-title"><span class="city">Нувара-Элия → Китулгала → Бентота</span><h3>Нувара-Элия, Китулгала, Бентота</h3><span class="stops-line">Водопады Девон и Сент-Клэр · рафтинг в Китулгале</span></span>
+      <span class="chev" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></span>
+    </button>
+    <div class="day-body" id="p2db5" hidden>
+      <div class="text"><p>Остановки для фото у водопадов Девон и Сент-Клэр, по желанию рафтинг по реке Келани в Китулгале, затем прибытие в Бентоту. Ночь в Бентоте.</p></div>
+      
+      <div class="hotel"><div class="hotel-h"><div><span class="eyebrow">Ваш отель · Бентота</span><h4>Shandaru Blue Bentota</h4></div></div></div>
+    </div>
+   </article>
+<article class="day" id="private-8-days-day-7">
+    <button class="day-btn" aria-expanded="false" aria-controls="p2db6">
+      <span class="daynum"><span><small>День</small><b>7</b></span></span>
+      <span class="day-title"><span class="city">Бентота</span><h3>Пляж Бентоты и река Маду</h3><span class="stops-line">Пляж · прогулка на лодке по реке Маду · центр защиты морских черепах</span></span>
+      <span class="chev" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></span>
+    </button>
+    <div class="day-body" id="p2db6" hidden>
+      <div class="text"><p>Свободное время на пляже или для водных видов спорта, затем прогулка на лодке по реке Маду и посещение центра защиты морских черепах. Ночь в Бентоте.</p></div>
+      <div class="p2gal"><figure><img src="/gallery/sri-lanka-12.jpg" alt="Прогулка на лодке среди мангровых зарослей" loading="lazy" decoding="async"><figcaption>Прогулка на лодке среди мангровых зарослей</figcaption></figure><figure><img src="/gallery/sri-lanka-13.jpg" alt="Пляж Индийского океана" loading="lazy" decoding="async"><figcaption>Пляж Индийского океана</figcaption></figure></div>
+      <div class="hotel"><div class="hotel-h"><div><span class="eyebrow">Ваш отель · Бентота</span><h4>Shandaru Blue Bentota</h4></div></div></div>
+    </div>
+   </article>
+<article class="day" id="private-8-days-day-8">
+    <button class="day-btn" aria-expanded="false" aria-controls="p2db7">
+      <span class="daynum"><span><small>День</small><b>8</b></span></span>
+      <span class="day-title"><span class="city">Бентота → аэропорт Коломбо</span><h3>Вылет</h3><span class="stops-line">Трансфер в аэропорт</span></span>
+      <span class="chev" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></span>
+    </button>
+    <div class="day-body" id="p2db7" hidden>
+      <div class="text"><p>Утренний трансфер из Бентоты в аэропорт к рейсу домой.</p></div>
+      
+      
+    </div>
+   </article></div>
+    <div class="pblock">
+    <div class="pricebox"><div><span class="from">от</span><div class="amount" dir="ltr">$875<small>USD</small></div><div class="per">с человека в двухместном номере</div></div><div class="tag">Цена зависит от дат и сезона · перелёт и виза не включены</div></div>
+    <h3 class="ptbl-h">Цены пакета в долларах США</h3>
+    <div class="tbl-wrap"><table class="ptbl"><thead><tr><th>Тип номера</th><th class="num">Цена с человека</th><th class="num">Итого за бронирование</th></tr></thead><tbody><tr><td>Одноместный номер · 1 путешественник</td><td class="num"><b dir="ltr">$1,655</b></td><td class="num" dir="ltr">$1,655</td></tr><tr><td>Двухместный номер · 2 путешественника</td><td class="num"><b dir="ltr">$875</b></td><td class="num" dir="ltr">$1,750</td></tr><tr><td>Трёхместный номер · 3 путешественника</td><td class="num"><b dir="ltr">$665</b></td><td class="num" dir="ltr">$1,995</td></tr></tbody></table></div>
+    <p class="note">Указаны цены «от», рассчитанные для прилёта 20 ноября 2026 и вылета 27 ноября 2026. Цены зависят от дат проживания, наличия номеров и подтверждения бронирования; при смене дат цена пересчитывается по сезону и обязательным сборам, если они есть.</p>
+    <h3 class="ptbl-h">Предлагаемые отели</h3>
+    <div class="tbl-wrap"><table class="ptbl"><thead><tr><th>Город</th><th>Отель</th><th class="num">Ночей</th></tr></thead><tbody><tr><td>Коломбо</td><td dir="ltr" style="text-align:start">Maradha Colombo</td><td class="num">1</td></tr><tr><td>Канди</td><td dir="ltr" style="text-align:start">Radisson Hotel Kandy</td><td class="num">2</td></tr><tr><td>Нувара-Элия</td><td dir="ltr" style="text-align:start">Queenswood Cottage · стандартный номер</td><td class="num">2</td></tr><tr><td>Бентота</td><td dir="ltr" style="text-align:start">Shandaru Blue Bentota</td><td class="num">2</td></tr></tbody></table></div>
+    <div class="pcols"><div class="pcol"><h3>Включено</h3><ul><li>7 ночей с завтраком в предлагаемых отелях</li><li>Личный автомобиль с гидом для переездов по программе</li><li>Встреча и проводы в аэропорту</li></ul></div><div class="pcol no"><h3>Оплачивается отдельно</h3><ul><li>Входные билеты и активности</li><li>Перелёт</li><li>Виза</li><li>Обеды и ужины</li><li>Букет цветов и украшение машины для молодожёнов (по запросу)</li><li>Ранний заезд (по запросу)</li></ul></div></div>
+    <div class="pnotes"><h3>Примечания</h3><ul><li>Цены зависят от дат проживания, наличия номеров и подтверждения бронирования.</li><li>При смене дат цена пересчитывается по сезону и обязательным сборам, если они есть.</li></ul></div>
+    <div class="pcta"><div><h3>Забронируйте индивидуальный тур</h3><p>Напишите дату прилёта и число путешественников, и мы пришлём окончательную цену на ваши даты в WhatsApp.</p></div><div class="acts"><a class="pbtn wa" href="https://wa.me/9647711745353?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D1%85%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%B1%D1%80%D0%BE%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C%20%D0%B8%D0%BD%D0%B4%D0%B8%D0%B2%D0%B8%D0%B4%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D1%82%D1%83%D1%80%20%D0%BF%D0%BE%20%D0%A8%D1%80%D0%B8-%D0%9B%D0%B0%D0%BD%D0%BA%D0%B5%20%D0%BD%D0%B0%208%20%D0%B4%D0%BD%D0%B5%D0%B9%20%28%D0%9A%D0%BE%D0%BB%D0%BE%D0%BC%D0%B1%D0%BE%2C%20%D0%9A%D0%B0%D0%BD%D0%B4%D0%B8%2C%20%D0%9D%D1%83%D0%B2%D0%B0%D1%80%D0%B0-%D0%AD%D0%BB%D0%B8%D1%8F%2C%20%D0%91%D0%B5%D0%BD%D1%82%D0%BE%D1%82%D0%B0%29." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2s.2-1.1.1-1.2-.2-.2-.4-.3z"/></svg>Забронировать в WhatsApp</a><a class="pbtn gd" href="/ru/private-tour-8-days/">Полная страница программы</a></div></div>
+    </div>
+    </div></section>
   </section>
 
   <section class="block in" style="padding-top:0">
@@ -1657,5 +1818,20 @@ var to;t.addEventListener("scroll",function(){clearTimeout(to);to=setTimeout(dra
 <style id="hero-ss-css">.hero-ss{position:relative;overflow:hidden;background:var(--navy-2)}.hero-ss .hero-img{transition:opacity 1s ease}.hero-ss .hs{position:absolute;inset:0;height:100%;opacity:0}.hero-ss .hs.on{opacity:1}</style>
 <script>(function(){var w=document.querySelector(".hero-ss");if(!w)return;var s=w.querySelectorAll(".hs"),i=0;if(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches)return;
 setInterval(function(){if(document.hidden)return;i=(i+1)%(s.length+1);s.forEach(function(e,k){e.classList.toggle("on",k===i-1)});},3000);})();</script>
+<script id="prog-js">(function(){
+function set(s,o){var b=s.querySelector(".prog-body"),t=b&&document.querySelector('.prog-tg[aria-controls="'+b.id+'"]');if(!b||!t)return;var pk=t.closest(".pk");if(pk)pk.classList.toggle("on",o);b.hidden=!o;s.classList.toggle("open",o);t.setAttribute("aria-expanded",o);t.querySelector(".lbl").textContent=o?t.dataset.hide:t.dataset.show;}
+document.querySelectorAll(".pk .prog-tg").forEach(function(t){t.addEventListener("click",function(){var b=document.getElementById(t.getAttribute("aria-controls")),s=b&&b.closest(".prog");if(!s)return;var o=b.hidden;document.querySelectorAll(".prog.open").forEach(function(x){if(x!==s)set(x,false);});set(s,o);if(o)setTimeout(function(){s.scrollIntoView({behavior:"smooth",block:"start"});},30);});});
+function openFor(id){var el=document.getElementById(id);if(!el)return;var s=el.closest(".prog");if(!s)return;document.querySelectorAll(".prog.open").forEach(function(x){if(x!==s)set(x,false);});set(s,true);setTimeout(function(){el.scrollIntoView({behavior:"smooth",block:"start"});},60);}
+function fromHash(){if(/^#(tour-8-days|private-8-days)/.test(location.hash))openFor(decodeURIComponent(location.hash.slice(1)));}
+fromHash();window.addEventListener("hashchange",fromHash);
+var g=document.querySelector(".pk-grid"),d=document.querySelector(".pk-dots");
+if(g&&d){var c=g.children;
+function cur(){var r=g.getBoundingClientRect(),k=0,b=1e9;for(var i=0;i<c.length;i++){var x=c[i].getBoundingClientRect(),m=Math.abs((x.left+x.right)/2-(r.left+r.right)/2);if(m<b){b=m;k=i;}}return k;}
+function go(i){var f=c[0],t=c[i],rtl=getComputedStyle(g).direction==="rtl";g.scrollTo({left:rtl?-((f.offsetLeft+f.offsetWidth)-(t.offsetLeft+t.offsetWidth)):t.offsetLeft-f.offsetLeft});}
+function draw(){d.innerHTML="";var k=cur();for(var i=0;i<c.length;i++){(function(i){var b=document.createElement("button");b.type="button";b.setAttribute("aria-label",(i+1)+"/"+c.length);if(i===k)b.className="on";b.addEventListener("click",function(){go(i);});d.appendChild(b);})(i);}}
+var tm;g.addEventListener("scroll",function(){clearTimeout(tm);tm=setTimeout(draw,120);});window.addEventListener("resize",draw);draw();}
+document.querySelectorAll(".pk-ph").forEach(function(p){p.addEventListener("click",function(){var b=p.parentNode.querySelector(".prog-tg");if(b)b.click();});});
+document.querySelectorAll(".p2days").forEach(function(w){w.addEventListener("click",function(e){var btn=e.target.closest(".day-btn");if(!btn||!w.contains(btn))return;var a=btn.parentElement,body=a.querySelector(".day-body"),o=!a.classList.contains("open");a.classList.toggle("open",o);body.hidden=!o;btn.setAttribute("aria-expanded",o);});});
+})();</script>
 </body>
 </html>
