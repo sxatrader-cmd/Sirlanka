@@ -370,6 +370,18 @@ img.hero-img{width:100%;object-fit:cover;object-position:center;display:block}
 .pbtn.wa{background:#25D366;color:#fff}.pbtn.gd{background:var(--gold);color:var(--navy)}.pbtn.ol{border:1px solid var(--gold-2);color:var(--gold-2)}
 .pbtn:hover{filter:brightness(1.07)}
 @media (max-width:760px){.pcols{grid-template-columns:1fr}.pcta{padding:20px}.pcta .acts,.pcta .pbtn{width:100%;justify-content:center}}
+.hth{display:flex;align-items:center;gap:14px;min-width:0}
+.hthumb{width:64px;height:64px;flex:none;border-radius:10px;object-fit:cover;display:block;box-shadow:0 0 0 2px var(--gold)}
+.hthumb.sm{width:56px;height:56px;border-radius:8px;box-shadow:none}
+.hcell{display:flex;align-items:center;gap:12px}.hcell>span{display:flex;flex-direction:column;line-height:1.35}
+.hst{display:block;color:var(--gold);font-size:12.5px;letter-spacing:.5px;margin-top:2px}
+.pk-price{color:#fff;font-size:14px;font-weight:600;text-decoration:none;border-bottom:1px solid var(--gold-2);align-self:flex-start;margin-top:8px}
+.pc-progw{display:grid;gap:10px;margin-bottom:14px}
+.pc-prog{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.pc-prog button{font:inherit;cursor:pointer;padding:12px 10px;border-radius:6px;border:1px solid var(--line);background:var(--paper);color:var(--navy);font-weight:700;font-size:15px}
+.pc-prog button .st{display:block;color:var(--gold);letter-spacing:2px;font-size:13px}
+.pc-prog button[aria-checked="true"]{background:var(--navy);color:#fff;border-color:var(--navy);box-shadow:inset 0 -3px 0 var(--gold)}
+@media (max-width:560px){.pc-prog button{font-size:13.5px;padding:10px 6px}.hthumb{width:56px;height:56px}}
 </style>
 </head>
 <body>
@@ -437,9 +449,9 @@ img.hero-img{width:100%;object-fit:cover;object-position:center;display:block}
     <div class="sec-head"><span class="eyebrow">प्रोग्राम</span><h2 class="disp">हमारे श्रीलंका प्रोग्राम</h2><p>दिन-प्रतिदिन विवरण देखने के लिए कोई प्रोग्राम चुनें। किसी दिन पर टैप करके उसका विवरण और तस्वीरें देखें।</p></div>
     <div class="pk-wrap"><div class="pk-grid"><article class="pk" data-prog="tour-8-days"><div class="pk-ph" style="background-image:url('/hero.jpg')" role="presentation"></div><div class="pk-bd"><span class="eyebrow">प्रोग्राम 1 · 8 दिन / 7 रातें</span>
       <h3 class="disp" id="tour-8-days-h">पूरा श्रीलंका: 8 दिन / 7 रातें</h3>
-      <p class="route">नेगोम्बो · सिगिरिया · कैंडी · नुवारा एलिया · बेनटोटा</p><p class="se">हर शुक्रवार शुरुआत · अपना पैकेज चुनें और कीमत देखें</p><button type="button" class="prog-tg" aria-expanded="false" aria-controls="pb-tour-8-days" data-show="प्रोग्राम का विवरण देखें" data-hide="प्रोग्राम का विवरण छिपाएँ"><span class="lbl">प्रोग्राम का विवरण देखें</span><span class="prog-chev" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M6 9l6 6 6-6"/></svg></span></button></div></article><article class="pk" data-prog="private-8-days"><div class="pk-ph" style="background-image:url('/gallery/sri-lanka-16.jpg')" role="presentation"></div><div class="pk-bd"><span class="eyebrow">प्रोग्राम 2 · <span dir="ltr">$875</span> प्रति व्यक्ति से</span>
+      <p class="route">नेगोम्बो · सिगिरिया · कैंडी · नुवारा एलिया · बेनटोटा</p><p class="se">हर शुक्रवार शुरुआत · अपना पैकेज चुनें और कीमत देखें</p><a class="pk-price" href="#price" data-g="1">कीमतें देखें ›</a><button type="button" class="prog-tg" aria-expanded="false" aria-controls="pb-tour-8-days" data-show="प्रोग्राम का विवरण देखें" data-hide="प्रोग्राम का विवरण छिपाएँ"><span class="lbl">प्रोग्राम का विवरण देखें</span><span class="prog-chev" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M6 9l6 6 6-6"/></svg></span></button></div></article><article class="pk" data-prog="private-8-days"><div class="pk-ph" style="background-image:url('/gallery/sri-lanka-16.jpg')" role="presentation"></div><div class="pk-bd"><span class="eyebrow">प्रोग्राम 2 · <span dir="ltr">$875</span> प्रति व्यक्ति से</span>
       <h3 class="disp" id="private-8-days-h">श्रीलंका प्राइवेट टूर: 8 दिन / 7 रातें</h3>
-      <p class="route">कोलंबो · पिन्नावाला · कैंडी · नुवारा एलिया · कितुलगला · बेनटोटा</p><p class="se">आगमन और प्रस्थान: कोलंबो अंतरराष्ट्रीय हवाई अड्डा</p><button type="button" class="prog-tg" aria-expanded="false" aria-controls="pb-private-8-days" data-show="प्रोग्राम का विवरण देखें" data-hide="प्रोग्राम का विवरण छिपाएँ"><span class="lbl">प्रोग्राम का विवरण देखें</span><span class="prog-chev" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M6 9l6 6 6-6"/></svg></span></button></div></article></div><div class="pk-dots"></div></div>
+      <p class="route">कोलंबो · पिन्नावाला · कैंडी · नुवारा एलिया · कितुलगला · बेनटोटा</p><p class="se">4-स्टार होटल ★★★★ · आगमन और प्रस्थान: कोलंबो अंतरराष्ट्रीय हवाई अड्डा</p><a class="pk-price" href="#price" data-g="2">कीमतें देखें ›</a><button type="button" class="prog-tg" aria-expanded="false" aria-controls="pb-private-8-days" data-show="प्रोग्राम का विवरण देखें" data-hide="प्रोग्राम का विवरण छिपाएँ"><span class="lbl">प्रोग्राम का विवरण देखें</span><span class="prog-chev" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M6 9l6 6 6-6"/></svg></span></button></div></article></div><div class="pk-dots"></div></div>
    <section class="prog" id="tour-8-days" aria-labelledby="tour-8-days-h">
     <div class="prog-body" id="pb-tour-8-days" hidden><div class="prog-cap"><span class="eyebrow">प्रोग्राम 1 · 8 दिन / 7 रातें</span><b>पूरा श्रीलंका: 8 दिन / 7 रातें</b></div>
     <p class="pc-pkg-l it-pkg-l pkgL"></p><div class="pc-pkg it-pkg" role="radiogroup"><button type="button" role="radio" aria-checked="true" data-p="5"><span class="st">★★★★★</span><span class="pkg5">5★</span></button><button type="button" role="radio" aria-checked="false" data-p="3"><span class="st">★★★</span><span class="pkg3">3★</span></button><button type="button" role="radio" aria-checked="false" data-p="0"><span class="st">🚘</span><span class="pkg0">Driver/guide</span></button></div>
@@ -552,7 +564,7 @@ img.hero-img{width:100%;object-fit:cover;object-position:center;display:block}
     <div class="day-body" id="p2db0" hidden>
       <div class="text"><p>हवाई अड्डे पर स्वागत और कोलंबो के लिए रवाना। इंडिपेंडेंस स्क्वायर, फोर्ट क्षेत्र, गॉल फेस ग्रीन और बंडारनायके मेमोरियल इंटरनेशनल कॉन्फ्रेंस हॉल की सैर, या वन गॉल फेस मॉल में खरीदारी। रात्रि विश्राम कोलंबो में।</p></div>
       <div class="p2gal"><figure><img src="/gallery/sri-lanka-18.jpg" alt="कोलंबो एयरपोर्ट पर आगमन" loading="lazy" decoding="async"><figcaption>कोलंबो एयरपोर्ट पर आगमन</figcaption></figure></div>
-      <div class="hotel"><div class="hotel-h"><div><span class="eyebrow">आपका होटल · कोलंबो</span><h4>Maradha Colombo</h4></div></div></div>
+      <div class="hotel"><div class="hotel-h"><div class="hth"><img class="hthumb" src="/hotels/maradha-colombo.webp" alt="Maradha Colombo" width="64" height="64" loading="lazy" decoding="async"><div><span class="eyebrow">आपका होटल · कोलंबो</span><h4>Maradha Colombo <span class="stbadge">4-स्टार</span></h4></div></div><span class="stars" aria-hidden="true">★★★★</span></div></div>
     </div>
    </article>
 <article class="day" id="private-8-days-day-2">
@@ -564,7 +576,7 @@ img.hero-img{width:100%;object-fit:cover;object-position:center;display:block}
     <div class="day-body" id="p2db1" hidden>
       <div class="text"><p>नाश्ते के बाद कैंडी की ओर रवाना, रास्ते में पिन्नावाला में रुकना जहाँ हाथी की सवारी संभव है, फिर मसाला बागान की सैर। रात्रि विश्राम कैंडी में।</p></div>
       <div class="p2gal"><figure><img src="/gallery/sri-lanka-11.jpg" alt="हाथी की सवारी" loading="lazy" decoding="async"><figcaption>हाथी की सवारी</figcaption></figure></div>
-      <div class="hotel"><div class="hotel-h"><div><span class="eyebrow">आपका होटल · कैंडी</span><h4>Radisson Hotel Kandy</h4></div></div></div>
+      <div class="hotel"><div class="hotel-h"><div class="hth"><img class="hthumb" src="/hotels/radisson-hotel-kandy.webp" alt="Radisson Hotel Kandy" width="64" height="64" loading="lazy" decoding="async"><div><span class="eyebrow">आपका होटल · कैंडी</span><h4>Radisson Hotel Kandy <span class="stbadge">4-स्टार</span></h4></div></div><span class="stars" aria-hidden="true">★★★★</span></div></div>
     </div>
    </article>
 <article class="day" id="private-8-days-day-3">
@@ -576,7 +588,7 @@ img.hero-img{width:100%;object-fit:cover;object-position:center;display:block}
     <div class="day-body" id="p2db2" hidden>
       <div class="text"><p>पेरादेनिया रॉयल बॉटनिकल गार्डन, कैंडी बाज़ार, हस्तशिल्प और बाटिक वर्कशॉप और रत्न संग्रहालय। कैंडी व्यूपॉइंट और झील के किनारे सैर, फिर शाम का सांस्कृतिक शो। रात्रि विश्राम कैंडी में।</p></div>
       
-      <div class="hotel"><div class="hotel-h"><div><span class="eyebrow">आपका होटल · कैंडी</span><h4>Radisson Hotel Kandy</h4></div></div></div>
+      <div class="hotel"><div class="hotel-h"><div class="hth"><img class="hthumb" src="/hotels/radisson-hotel-kandy.webp" alt="Radisson Hotel Kandy" width="64" height="64" loading="lazy" decoding="async"><div><span class="eyebrow">आपका होटल · कैंडी</span><h4>Radisson Hotel Kandy <span class="stbadge">4-स्टार</span></h4></div></div><span class="stars" aria-hidden="true">★★★★</span></div></div>
     </div>
    </article>
 <article class="day" id="private-8-days-day-4">
@@ -588,7 +600,7 @@ img.hero-img{width:100%;object-fit:cover;object-position:center;display:block}
     <div class="day-body" id="p2db3" hidden>
       <div class="text"><p>रम्बोडा झरने पर फोटो के लिए रुकना, फिर चाय बागान और फैक्ट्री की सैर: चाय बनने की प्रक्रिया, पत्तियाँ तोड़ने का अनुभव और चाय का स्वाद। रात्रि विश्राम नुवारा एलिया में।</p></div>
       <div class="p2gal"><figure><img src="/gallery/sri-lanka-16.jpg" alt="झरना और चाय की पहाड़ियाँ" loading="lazy" decoding="async"><figcaption>झरना और चाय की पहाड़ियाँ</figcaption></figure><figure><img src="/gallery/sri-lanka-6.jpg" alt="पहाड़ी इलाके के चाय बागान" loading="lazy" decoding="async"><figcaption>पहाड़ी इलाके के चाय बागान</figcaption></figure></div>
-      <div class="hotel"><div class="hotel-h"><div><span class="eyebrow">आपका होटल · नुवारा एलिया</span><h4>Queenswood Cottage <span class="rmt">· स्टैंडर्ड रूम</span></h4></div></div></div>
+      <div class="hotel"><div class="hotel-h"><div class="hth"><img class="hthumb" src="/hotels/queenswood-cottage.webp" alt="Queenswood Cottage" width="64" height="64" loading="lazy" decoding="async"><div><span class="eyebrow">आपका होटल · नुवारा एलिया</span><h4>Queenswood Cottage <span class="stbadge">4-स्टार</span> <span class="rmt">· स्टैंडर्ड रूम</span></h4></div></div><span class="stars" aria-hidden="true">★★★★</span></div></div>
     </div>
    </article>
 <article class="day" id="private-8-days-day-5">
@@ -600,7 +612,7 @@ img.hero-img{width:100%;object-fit:cover;object-position:center;display:block}
     <div class="day-body" id="p2db4" hidden>
       <div class="text"><p>सुबह ग्रेगरी झील की सैर, फिर अम्बेवेला फार्म और स्ट्रॉबेरी फार्म, स्थानीय दुकानों या कैफ़े में रुकना। रात्रि विश्राम नुवारा एलिया में।</p></div>
       <div class="p2gal"><figure><img src="/gallery/sri-lanka-7.jpg" alt="हरी-भरी पहाड़ियाँ" loading="lazy" decoding="async"><figcaption>हरी-भरी पहाड़ियाँ</figcaption></figure></div>
-      <div class="hotel"><div class="hotel-h"><div><span class="eyebrow">आपका होटल · नुवारा एलिया</span><h4>Queenswood Cottage <span class="rmt">· स्टैंडर्ड रूम</span></h4></div></div></div>
+      <div class="hotel"><div class="hotel-h"><div class="hth"><img class="hthumb" src="/hotels/queenswood-cottage.webp" alt="Queenswood Cottage" width="64" height="64" loading="lazy" decoding="async"><div><span class="eyebrow">आपका होटल · नुवारा एलिया</span><h4>Queenswood Cottage <span class="stbadge">4-स्टार</span> <span class="rmt">· स्टैंडर्ड रूम</span></h4></div></div><span class="stars" aria-hidden="true">★★★★</span></div></div>
     </div>
    </article>
 <article class="day" id="private-8-days-day-6">
@@ -612,7 +624,7 @@ img.hero-img{width:100%;object-fit:cover;object-position:center;display:block}
     <div class="day-body" id="p2db5" hidden>
       <div class="text"><p>डेवन और सेंट क्लेयर झरनों पर फोटो के लिए रुकना, कितुलगला में केलानी नदी पर राफ्टिंग का विकल्प, फिर बेनटोटा पहुँचना। रात्रि विश्राम बेनटोटा में।</p></div>
       
-      <div class="hotel"><div class="hotel-h"><div><span class="eyebrow">आपका होटल · बेनटोटा</span><h4>Shandaru Blue Bentota</h4></div></div></div>
+      <div class="hotel"><div class="hotel-h"><div class="hth"><img class="hthumb" src="/hotels/shandaru-blue-bentota.webp" alt="Shandaru Blue Bentota" width="64" height="64" loading="lazy" decoding="async"><div><span class="eyebrow">आपका होटल · बेनटोटा</span><h4>Shandaru Blue Bentota <span class="stbadge">4-स्टार</span></h4></div></div><span class="stars" aria-hidden="true">★★★★</span></div></div>
     </div>
    </article>
 <article class="day" id="private-8-days-day-7">
@@ -624,7 +636,7 @@ img.hero-img{width:100%;object-fit:cover;object-position:center;display:block}
     <div class="day-body" id="p2db6" hidden>
       <div class="text"><p>बीच पर या वॉटर स्पोर्ट्स के लिए खाली समय, फिर मादु नदी में नाव की सैर और समुद्री कछुआ संरक्षण केंद्र की यात्रा। रात्रि विश्राम बेनटोटा में।</p></div>
       <div class="p2gal"><figure><img src="/gallery/sri-lanka-12.jpg" alt="मैंग्रोव के बीच नाव की सैर" loading="lazy" decoding="async"><figcaption>मैंग्रोव के बीच नाव की सैर</figcaption></figure><figure><img src="/gallery/sri-lanka-13.jpg" alt="हिंद महासागर का बीच" loading="lazy" decoding="async"><figcaption>हिंद महासागर का बीच</figcaption></figure></div>
-      <div class="hotel"><div class="hotel-h"><div><span class="eyebrow">आपका होटल · बेनटोटा</span><h4>Shandaru Blue Bentota</h4></div></div></div>
+      <div class="hotel"><div class="hotel-h"><div class="hth"><img class="hthumb" src="/hotels/shandaru-blue-bentota.webp" alt="Shandaru Blue Bentota" width="64" height="64" loading="lazy" decoding="async"><div><span class="eyebrow">आपका होटल · बेनटोटा</span><h4>Shandaru Blue Bentota <span class="stbadge">4-स्टार</span></h4></div></div><span class="stars" aria-hidden="true">★★★★</span></div></div>
     </div>
    </article>
 <article class="day" id="private-8-days-day-8">
@@ -644,11 +656,11 @@ img.hero-img{width:100%;object-fit:cover;object-position:center;display:block}
     <h3 class="ptbl-h">पैकेज की कीमतें अमेरिकी डॉलर में</h3>
     <div class="tbl-wrap"><table class="ptbl"><thead><tr><th>कमरे का प्रकार</th><th class="num">प्रति व्यक्ति कीमत</th><th class="num">कुल बुकिंग</th></tr></thead><tbody><tr><td>सिंगल रूम · 1 यात्री</td><td class="num"><b dir="ltr">$1,655</b></td><td class="num" dir="ltr">$1,655</td></tr><tr><td>डबल रूम · 2 यात्री</td><td class="num"><b dir="ltr">$875</b></td><td class="num" dir="ltr">$1,750</td></tr><tr><td>ट्रिपल रूम · 3 यात्री</td><td class="num"><b dir="ltr">$665</b></td><td class="num" dir="ltr">$1,995</td></tr></tbody></table></div>
     <p class="note">दिखाई गई कीमतें शुरुआती कीमतें हैं, जो 20 नवंबर 2026 को आगमन और 27 नवंबर 2026 को प्रस्थान के आधार पर तय की गई हैं। कीमतें ठहरने की तारीखों, कमरों की उपलब्धता और बुकिंग की पुष्टि पर निर्भर हैं; दूसरी तारीखों के लिए कीमत सीज़न और अनिवार्य शुल्कों (यदि हों) के अनुसार दोबारा तय होती है।</p>
-    <h3 class="ptbl-h">सुझाए गए होटल</h3>
-    <div class="tbl-wrap"><table class="ptbl"><thead><tr><th>शहर</th><th>होटल</th><th class="num">रातें</th></tr></thead><tbody><tr><td>कोलंबो</td><td dir="ltr" style="text-align:start">Maradha Colombo</td><td class="num">1</td></tr><tr><td>कैंडी</td><td dir="ltr" style="text-align:start">Radisson Hotel Kandy</td><td class="num">2</td></tr><tr><td>नुवारा एलिया</td><td dir="ltr" style="text-align:start">Queenswood Cottage · स्टैंडर्ड रूम</td><td class="num">2</td></tr><tr><td>बेनटोटा</td><td dir="ltr" style="text-align:start">Shandaru Blue Bentota</td><td class="num">2</td></tr></tbody></table></div>
-    <div class="pcols"><div class="pcol"><h3>कीमत में शामिल</h3><ul><li>सुझाए गए होटलों में नाश्ते सहित 7 रातें</li><li>प्रोग्राम के सभी ट्रांसफर के लिए गाइड के साथ निजी कार</li><li>हवाई अड्डे पर स्वागत और प्रस्थान ट्रांसफर</li></ul></div><div class="pcol no"><h3>अलग से भुगतान</h3><ul><li>प्रवेश टिकट और गतिविधियाँ</li><li>उड़ानें</li><li>वीज़ा</li><li>दोपहर और रात का भोजन</li><li>फूलों का गुलदस्ता और हनीमून कार सजावट (अनुरोध पर)</li><li>अर्ली चेक-इन (अनुरोध पर)</li></ul></div></div>
+    <h3 class="ptbl-h">सुझाए गए होटल · 4-स्टार</h3>
+    <div class="tbl-wrap"><table class="ptbl"><thead><tr><th>शहर</th><th>होटल</th><th class="num">रातें</th></tr></thead><tbody><tr><td>कोलंबो</td><td><span class="hcell"><img class="hthumb sm" src="/hotels/maradha-colombo.webp" alt="Maradha Colombo" width="56" height="56" loading="lazy" decoding="async"><span><span dir="ltr">Maradha Colombo</span><small class="hst">★★★★ 4-स्टार</small></span></span></td><td class="num">1</td></tr><tr><td>कैंडी</td><td><span class="hcell"><img class="hthumb sm" src="/hotels/radisson-hotel-kandy.webp" alt="Radisson Hotel Kandy" width="56" height="56" loading="lazy" decoding="async"><span><span dir="ltr">Radisson Hotel Kandy</span><small class="hst">★★★★ 4-स्टार</small></span></span></td><td class="num">2</td></tr><tr><td>नुवारा एलिया</td><td><span class="hcell"><img class="hthumb sm" src="/hotels/queenswood-cottage.webp" alt="Queenswood Cottage" width="56" height="56" loading="lazy" decoding="async"><span><span dir="ltr">Queenswood Cottage</span><small class="hst">★★★★ 4-स्टार</small><small class="hst">स्टैंडर्ड रूम</small></span></span></td><td class="num">2</td></tr><tr><td>बेनटोटा</td><td><span class="hcell"><img class="hthumb sm" src="/hotels/shandaru-blue-bentota.webp" alt="Shandaru Blue Bentota" width="56" height="56" loading="lazy" decoding="async"><span><span dir="ltr">Shandaru Blue Bentota</span><small class="hst">★★★★ 4-स्टार</small></span></span></td><td class="num">2</td></tr></tbody></table></div>
+    <div class="pcols"><div class="pcol"><h3>कीमत में शामिल</h3><ul><li>4-स्टार होटलों (सुझाए गए होटल) में नाश्ते सहित 7 रातें</li><li>प्रोग्राम के सभी ट्रांसफर के लिए गाइड के साथ निजी कार</li><li>हवाई अड्डे पर स्वागत और प्रस्थान ट्रांसफर</li></ul></div><div class="pcol no"><h3>अलग से भुगतान</h3><ul><li>प्रवेश टिकट और गतिविधियाँ</li><li>उड़ानें</li><li>वीज़ा</li><li>दोपहर और रात का भोजन</li><li>फूलों का गुलदस्ता और हनीमून कार सजावट (अनुरोध पर)</li><li>अर्ली चेक-इन (अनुरोध पर)</li></ul></div></div>
     <div class="pnotes"><h3>टिप्पणियाँ</h3><ul><li>कीमतें ठहरने की तारीखों पर निर्भर हैं और कमरों की उपलब्धता व बुकिंग की पुष्टि के अधीन हैं।</li><li>तारीख बदलने पर कीमत सीज़न और अनिवार्य शुल्कों (यदि हों) के अनुसार दोबारा तय होती है।</li></ul></div>
-    <div class="pcta"><div><h3>अपना प्राइवेट टूर बुक करें</h3><p>हमें अपनी आगमन तिथि और यात्रियों की संख्या भेजें, हम आपकी तारीखों की अंतिम कीमत WhatsApp पर भेजेंगे।</p></div><div class="acts"><a class="pbtn wa" href="https://wa.me/9647711745353?text=%E0%A4%A8%E0%A4%AE%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A5%87%2C%20%E0%A4%AE%E0%A5%88%E0%A4%82%208%20%E0%A4%A6%E0%A4%BF%E0%A4%A8%20%E0%A4%95%E0%A4%BE%20%E0%A4%B6%E0%A5%8D%E0%A4%B0%E0%A5%80%E0%A4%B2%E0%A4%82%E0%A4%95%E0%A4%BE%20%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%BE%E0%A4%87%E0%A4%B5%E0%A5%87%E0%A4%9F%20%E0%A4%9F%E0%A5%82%E0%A4%B0%20%E0%A4%AC%E0%A5%81%E0%A4%95%20%E0%A4%95%E0%A4%B0%E0%A4%A8%E0%A4%BE%20%E0%A4%9A%E0%A4%BE%E0%A4%B9%E0%A4%A4%E0%A4%BE/%E0%A4%9A%E0%A4%BE%E0%A4%B9%E0%A4%A4%E0%A5%80%20%E0%A4%B9%E0%A5%82%E0%A4%81%20%28%E0%A4%95%E0%A5%8B%E0%A4%B2%E0%A4%82%E0%A4%AC%E0%A5%8B%2C%20%E0%A4%95%E0%A5%88%E0%A4%82%E0%A4%A1%E0%A5%80%2C%20%E0%A4%A8%E0%A5%81%E0%A4%B5%E0%A4%BE%E0%A4%B0%E0%A4%BE%20%E0%A4%8F%E0%A4%B2%E0%A4%BF%E0%A4%AF%E0%A4%BE%2C%20%E0%A4%AC%E0%A5%87%E0%A4%A8%E0%A4%9F%E0%A5%8B%E0%A4%9F%E0%A4%BE%29%E0%A5%A4" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2s.2-1.1.1-1.2-.2-.2-.4-.3z"/></svg>WhatsApp पर बुक करें</a><a class="pbtn gd" href="/hi/private-tour-8-days/">पूरे प्रोग्राम का पेज</a></div></div>
+    <div class="pcta"><div><h3>अपना प्राइवेट टूर बुक करें</h3><p>हमें अपनी आगमन तिथि और यात्रियों की संख्या भेजें, हम आपकी तारीखों की अंतिम कीमत WhatsApp पर भेजेंगे।</p></div><div class="acts"><a class="pbtn wa" href="https://wa.me/9647711745353?text=%E0%A4%A8%E0%A4%AE%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A5%87%2C%20%E0%A4%AE%E0%A5%88%E0%A4%82%208%20%E0%A4%A6%E0%A4%BF%E0%A4%A8%20%E0%A4%95%E0%A4%BE%20%E0%A4%B6%E0%A5%8D%E0%A4%B0%E0%A5%80%E0%A4%B2%E0%A4%82%E0%A4%95%E0%A4%BE%20%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%BE%E0%A4%87%E0%A4%B5%E0%A5%87%E0%A4%9F%20%E0%A4%9F%E0%A5%82%E0%A4%B0%20%E0%A4%AC%E0%A5%81%E0%A4%95%20%E0%A4%95%E0%A4%B0%E0%A4%A8%E0%A4%BE%20%E0%A4%9A%E0%A4%BE%E0%A4%B9%E0%A4%A4%E0%A4%BE/%E0%A4%9A%E0%A4%BE%E0%A4%B9%E0%A4%A4%E0%A5%80%20%E0%A4%B9%E0%A5%82%E0%A4%81%20%28%E0%A4%95%E0%A5%8B%E0%A4%B2%E0%A4%82%E0%A4%AC%E0%A5%8B%2C%20%E0%A4%95%E0%A5%88%E0%A4%82%E0%A4%A1%E0%A5%80%2C%20%E0%A4%A8%E0%A5%81%E0%A4%B5%E0%A4%BE%E0%A4%B0%E0%A4%BE%20%E0%A4%8F%E0%A4%B2%E0%A4%BF%E0%A4%AF%E0%A4%BE%2C%20%E0%A4%AC%E0%A5%87%E0%A4%A8%E0%A4%9F%E0%A5%8B%E0%A4%9F%E0%A4%BE%29%E0%A5%A4" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2s.2-1.1.1-1.2-.2-.2-.4-.3z"/></svg>WhatsApp पर बुक करें</a><a class="pbtn ol" href="#price" data-g="2">कीमत निकालें</a><a class="pbtn gd" href="/hi/private-tour-8-days/">पूरे प्रोग्राम का पेज</a></div></div>
     </div>
     </div></section>
   </section>
@@ -670,6 +682,7 @@ img.hero-img{width:100%;object-fit:cover;object-position:center;display:block}
 
   <section class="block in" style="padding-top:0" id="price">
     <div class="sec-head"><span class="eyebrow" id="pc-e">कीमतें</span><h2 class="disp" id="pc-h">अपनी कीमत जानें</h2><p id="pc-p"></p></div>
+    <div class="pc-progw"><p class="pc-pkg-l">प्रोग्राम चुनें</p><div class="pc-prog" role="radiogroup"><button type="button" role="radio" aria-checked="true" data-g="1"><span class="st">5★ · 3★ · 🚘</span>प्रोग्राम 1 · हर शुक्रवार</button><button type="button" role="radio" aria-checked="false" data-g="2"><span class="st">★★★★</span>प्रोग्राम 2 · प्राइवेट टूर</button></div><div class="pc-pkg pr-pkg" role="radiogroup"><button type="button" role="radio" aria-checked="true" data-p="5"><span class="st">★★★★★</span><span class="pkg5">5★</span></button><button type="button" role="radio" aria-checked="false" data-p="3"><span class="st">★★★</span><span class="pkg3">3★</span></button><button type="button" role="radio" aria-checked="false" data-p="0"><span class="st">🚘</span><span class="pkg0">Driver/guide</span></button></div></div>
     <div class="pc">
       <div class="pc-grid">
         <div class="field pc-date"><label for="pc-date" id="pc-lDate">प्रस्थान की तारीख</label><select id="pc-date"></select></div>
@@ -1100,6 +1113,7 @@ function pcFill(){
   pcCalc();
 }
 function pcCalc(){
+  if(window.pcProg==="2") return window.pc2Calc();
   const t=PT[lang], out=$("#pc-out");
   const num=v=>Math.max(0,parseInt(v,10)||0);
   const p3=pcPkg==="3";
@@ -1130,7 +1144,7 @@ function pcCalc(){
   out.querySelector(".pc-total span").textContent=t.tot.replace("{n}",pax);
   pcQuote=`${pcPkg}-star | ${dep} | pax ${pax} | DBL ${dbl} x ${dbl?money(ppD)+" pp":"-"} | SGL ${sgl} x ${sgl?money(ppS):"-"} | TPL ${tpl} x ${tpl?money(ppT)+" pp":"-"} | TOTAL ${money(total)}`;
 }
-function pcAuto(){ if(pcPkg==="0") return; const n=Math.max(0,parseInt($("#pc-pax").value,10)||0); if(n&&n<=PRICE_CFG.maxPax){ const t3=(pcPkg==="3"&&n>=3&&n%2)?1:0, r=n-3*t3; $("#pc-tpl").value=t3; $("#pc-dbl").value=Math.floor(r/2); $("#pc-sgl").value=r%2; } }
+function pcAuto(){ if(pcPkg==="0"&&window.pcProg!=="2") return; const n=Math.max(0,parseInt($("#pc-pax").value,10)||0); if(n&&n<=PRICE_CFG.maxPax){ const t3=((pcPkg==="3"||window.pcProg==="2")&&n>=3&&n%2)?1:0, r=n-3*t3; $("#pc-tpl").value=t3; $("#pc-dbl").value=Math.floor(r/2); $("#pc-sgl").value=r%2; } }
 pcPaxOpts(PRICE_CFG.maxPax); $("#pc-pax").addEventListener("change",()=>{ pcAuto(); pcCalc(); });
 ["#pc-dbl","#pc-sgl","#pc-tpl","#pc-date"].forEach(s=>$(s).addEventListener("input",pcCalc));
 document.querySelectorAll(".pc-pkg button").forEach(b=>b.addEventListener("click",()=>pcSetPkg(b.dataset.p)));
@@ -1168,6 +1182,7 @@ var to;t.addEventListener("scroll",function(){clearTimeout(to);to=setTimeout(dra
 <style id="hero-ss-css">.hero-ss{position:relative;overflow:hidden;background:var(--navy-2)}.hero-ss .hero-img{transition:opacity 1s ease}.hero-ss .hs{position:absolute;inset:0;height:100%;opacity:0}.hero-ss .hs.on{opacity:1}</style>
 <script>(function(){var w=document.querySelector(".hero-ss");if(!w)return;var s=w.querySelectorAll(".hs"),i=0;if(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches)return;
 setInterval(function(){if(document.hidden)return;i=(i+1)%(s.length+1);s.forEach(function(e,k){e.classList.toggle("on",k===i-1)});},3000);})();</script>
+<script id="pc2-js">window.PC2T={"date2": "आगमन तिथि", "note2": "अमेरिकी डॉलर में शुरुआती कीमतें, 20 नवंबर 2026 को आगमन के आधार पर: सिंगल रूम $1,655, डबल $875 प्रति व्यक्ति, ट्रिपल $665 प्रति व्यक्ति। नाश्ते सहित 4-स्टार होटल, गाइड के साथ निजी कार और एयरपोर्ट ट्रांसफर शामिल। उड़ान, वीज़ा और प्रवेश टिकट शामिल नहीं। कीमत आपकी तारीखों और सीज़न के अनुसार दोबारा तय होती है।"};</script>
 <script id="prog-js">(function(){
 function set(s,o){var b=s.querySelector(".prog-body"),t=b&&document.querySelector('.prog-tg[aria-controls="'+b.id+'"]');if(!b||!t)return;var pk=t.closest(".pk");if(pk)pk.classList.toggle("on",o);b.hidden=!o;s.classList.toggle("open",o);t.setAttribute("aria-expanded",o);t.querySelector(".lbl").textContent=o?t.dataset.hide:t.dataset.show;}
 document.querySelectorAll(".pk .prog-tg").forEach(function(t){t.addEventListener("click",function(){var b=document.getElementById(t.getAttribute("aria-controls")),s=b&&b.closest(".prog");if(!s)return;var o=b.hidden;document.querySelectorAll(".prog.open").forEach(function(x){if(x!==s)set(x,false);});set(s,o);if(o)setTimeout(function(){s.scrollIntoView({behavior:"smooth",block:"start"});},30);});});
@@ -1182,6 +1197,30 @@ function draw(){d.innerHTML="";var k=cur();for(var i=0;i<c.length;i++){(function
 var tm;g.addEventListener("scroll",function(){clearTimeout(tm);tm=setTimeout(draw,120);});window.addEventListener("resize",draw);draw();}
 document.querySelectorAll(".pk-ph").forEach(function(p){p.addEventListener("click",function(){var b=p.parentNode.querySelector(".prog-tg");if(b)b.click();});});
 document.querySelectorAll(".p2days").forEach(function(w){w.addEventListener("click",function(e){var btn=e.target.closest(".day-btn");if(!btn||!w.contains(btn))return;var a=btn.parentElement,body=a.querySelector(".day-body"),o=!a.classList.contains("open");a.classList.toggle("open",o);body.hidden=!o;btn.setAttribute("aria-expanded",o);});});
+if(typeof pcFill==="function"&&document.getElementById("pc-out")){
+var PR2={s:1655,d:875,t:665};window.pcProg="1";
+window.pc2Calc=function(){var t=PT[lang],out=$("#pc-out"),num=function(v){return Math.max(0,parseInt(v,10)||0);};
+var pax=num($("#pc-pax").value),dbl=num($("#pc-dbl").value),sgl=num($("#pc-sgl").value),tpl=num($("#pc-tpl").value),dep=$("#pc-date").value;
+$("#pc-note").textContent=PC2T.note2;pcQuote="";
+if(!pax||dbl*2+sgl+tpl*3!==pax){out.innerHTML='<p class="pc-warn">'+P3("mis3")+'</p>';return;}
+var money=function(v){return "US$ "+v.toLocaleString("en-US");},total=PR2.d*dbl*2+PR2.s*sgl+PR2.t*tpl*3,h="";
+function row(l,v){return '<div class="pc-row"><span>'+l+'</span><b dir="ltr">'+money(v)+'</b></div>';}
+if(dbl)h+=row(t.ppD,PR2.d);if(sgl)h+=row(t.ppS,PR2.s);if(tpl)h+=row(P3("ppT"),PR2.t);
+h+='<div class="pc-row pc-total"><span></span><b dir="ltr">'+money(total)+'</b></div><a class="btn" href="#interest">'+t.book+'</a>';
+out.innerHTML=h;out.querySelector(".pc-total span").textContent=t.tot.replace("{n}",pax);
+pcQuote="Program 2 private 4-star | arrival "+dep+" | pax "+pax+" | DBL "+dbl+" | SGL "+sgl+" | TPL "+tpl+" | TOTAL "+money(total);};
+function setProg(g){window.pcProg=g;document.querySelectorAll(".pc-prog button").forEach(function(b){b.setAttribute("aria-checked",b.dataset.g===g?"true":"false");});
+var pp=document.querySelector(".pr-pkg");if(pp)pp.style.display=g==="1"?"":"none";
+if(g==="2"){var loc={ar:"ar",en:"en-GB",ru:"ru",de:"de",fr:"fr",es:"es",hi:"hi"}[lang]||"en-GB",fmt=new Intl.DateTimeFormat(loc,{weekday:"short",day:"numeric",month:"long",year:"numeric",timeZone:"UTC"}),n=new Date(),o=[];
+var d=new Date(Date.UTC(n.getFullYear(),n.getMonth(),n.getDate()+1));for(var i=0;i<365;i++){o.push('<option value="'+pcISO(d)+'">'+fmt.format(d)+'</option>');d.setUTCDate(d.getUTCDate()+1);}
+$("#pc-date").innerHTML=o.join("");$("#pc-lDate").textContent=PC2T.date2;$("#pc-tplF").style.display="";["#pc-dbl","#pc-sgl"].forEach(function(x){$(x).parentElement.style.display="";});
+document.querySelector(".pc-grid").classList.add("t3");pcPaxOpts(PRICE_CFG.maxPax);pcAuto();pcCalc();}
+else{pcFill();pcSetPkg(pcPkg);}}
+document.querySelectorAll(".pc-prog button").forEach(function(b){b.addEventListener("click",function(){setProg(b.dataset.g);});});
+document.querySelectorAll(".pc-pkg button").forEach(function(b){b.addEventListener("click",function(){if(window.pcProg!=="1")setProg("1");});});
+document.querySelectorAll('a[data-g][href="#price"]').forEach(function(a){a.addEventListener("click",function(){setProg(a.dataset.g);});});
+if(location.hash==="#price-p2"){setProg("2");setTimeout(function(){var p=document.getElementById("price");if(p)p.scrollIntoView({block:"start"});},80);}
+}
 })();</script>
 </body>
 </html>

@@ -346,6 +346,18 @@ img.hero-img{width:100%;object-fit:cover;object-position:center;display:block}
 .pbtn.wa{background:#25D366;color:#fff}.pbtn.gd{background:var(--gold);color:var(--navy)}.pbtn.ol{border:1px solid var(--gold-2);color:var(--gold-2)}
 .pbtn:hover{filter:brightness(1.07)}
 @media (max-width:760px){.pcols{grid-template-columns:1fr}.pcta{padding:20px}.pcta .acts,.pcta .pbtn{width:100%;justify-content:center}}
+.hth{display:flex;align-items:center;gap:14px;min-width:0}
+.hthumb{width:64px;height:64px;flex:none;border-radius:10px;object-fit:cover;display:block;box-shadow:0 0 0 2px var(--gold)}
+.hthumb.sm{width:56px;height:56px;border-radius:8px;box-shadow:none}
+.hcell{display:flex;align-items:center;gap:12px}.hcell>span{display:flex;flex-direction:column;line-height:1.35}
+.hst{display:block;color:var(--gold);font-size:12.5px;letter-spacing:.5px;margin-top:2px}
+.pk-price{color:#fff;font-size:14px;font-weight:600;text-decoration:none;border-bottom:1px solid var(--gold-2);align-self:flex-start;margin-top:8px}
+.pc-progw{display:grid;gap:10px;margin-bottom:14px}
+.pc-prog{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.pc-prog button{font:inherit;cursor:pointer;padding:12px 10px;border-radius:6px;border:1px solid var(--line);background:var(--paper);color:var(--navy);font-weight:700;font-size:15px}
+.pc-prog button .st{display:block;color:var(--gold);letter-spacing:2px;font-size:13px}
+.pc-prog button[aria-checked="true"]{background:var(--navy);color:#fff;border-color:var(--navy);box-shadow:inset 0 -3px 0 var(--gold)}
+@media (max-width:560px){.pc-prog button{font-size:13.5px;padding:10px 6px}.hthumb{width:56px;height:56px}}
 </style>
 <style>.hero-img{width:100%;display:block;object-fit:cover;height:clamp(240px,46vw,420px);object-position:center 35%}.crumb{font-size:14px;padding-top:18px}.crumb a{color:var(--navy-2);text-decoration:none;border-bottom:1px solid var(--gold-2)}</style>
 </head>
@@ -374,7 +386,7 @@ img.hero-img{width:100%;object-fit:cover;object-position:center;display:block}
   <div class="hero-band in">
     <span class="eyebrow">Private tour · 8 days / 7 nights</span>
     <h1 class="disp">Sri Lanka private tour: 8 days</h1>
-    <p>Colombo · Kandy · Nuwara Eliya · Bentota. A private trip with your own car and guide, hotels with breakfast.</p>
+    <p>Colombo · Kandy · Nuwara Eliya · Bentota. A private trip with your own car and guide, hotels with breakfast. You stay in 4-star hotels.</p>
   </div>
 </section>
 <main>
@@ -383,7 +395,7 @@ img.hero-img{width:100%;object-fit:cover;object-position:center;display:block}
     <div class="stats">
       <div class="stat"><strong>8 / 7</strong><span>days / nights</span></div>
       <div class="stat"><strong dir="ltr">$875</strong><span>from · per person, double room</span></div>
-      <div class="stat"><strong>Private</strong><span>private car and guide</span></div>
+      <div class="stat"><strong dir="ltr">4★</strong><span>4-star hotels</span></div>
       <div class="stat"><strong>CMB</strong><span>Colombo airport transfers</span></div>
     </div>
   </div>
@@ -398,7 +410,7 @@ img.hero-img{width:100%;object-fit:cover;object-position:center;display:block}
     <div class="day-body" id="p2db0">
       <div class="text"><p>Welcome at the airport and transfer to Colombo. City tour of Independence Square, the Fort district, Galle Face Green and the Bandaranaike Memorial International Conference Hall, or shopping at One Galle Face Mall. Overnight in Colombo.</p></div>
       <div class="p2gal"><figure><img src="/gallery/sri-lanka-18.jpg" alt="Arrival at Colombo airport" loading="lazy" decoding="async"><figcaption>Arrival at Colombo airport</figcaption></figure></div>
-      <div class="hotel"><div class="hotel-h"><div><span class="eyebrow">Your hotel · Colombo</span><h4>Maradha Colombo</h4></div></div></div>
+      <div class="hotel"><div class="hotel-h"><div class="hth"><img class="hthumb" src="/hotels/maradha-colombo.webp" alt="Maradha Colombo" width="64" height="64" loading="lazy" decoding="async"><div><span class="eyebrow">Your hotel · Colombo</span><h4>Maradha Colombo <span class="stbadge">4-star</span></h4></div></div><span class="stars" aria-hidden="true">★★★★</span></div></div>
     </div>
    </article>
 <article class="day" id="private-8-days-day-2">
@@ -410,7 +422,7 @@ img.hero-img{width:100%;object-fit:cover;object-position:center;display:block}
     <div class="day-body" id="p2db1" hidden>
       <div class="text"><p>After breakfast, drive towards Kandy with a stop in Pinnawala, where an elephant ride is possible, then a visit to a spice garden. Overnight in Kandy.</p></div>
       <div class="p2gal"><figure><img src="/gallery/sri-lanka-11.jpg" alt="Elephant ride" loading="lazy" decoding="async"><figcaption>Elephant ride</figcaption></figure></div>
-      <div class="hotel"><div class="hotel-h"><div><span class="eyebrow">Your hotel · Kandy</span><h4>Radisson Hotel Kandy</h4></div></div></div>
+      <div class="hotel"><div class="hotel-h"><div class="hth"><img class="hthumb" src="/hotels/radisson-hotel-kandy.webp" alt="Radisson Hotel Kandy" width="64" height="64" loading="lazy" decoding="async"><div><span class="eyebrow">Your hotel · Kandy</span><h4>Radisson Hotel Kandy <span class="stbadge">4-star</span></h4></div></div><span class="stars" aria-hidden="true">★★★★</span></div></div>
     </div>
    </article>
 <article class="day" id="private-8-days-day-3">
@@ -422,7 +434,7 @@ img.hero-img{width:100%;object-fit:cover;object-position:center;display:block}
     <div class="day-body" id="p2db2" hidden>
       <div class="text"><p>Peradeniya Royal Botanical Gardens, Kandy market, craft and batik workshops and a gem museum. Visit the Kandy viewpoint and walk around the lake, then the evening cultural show. Overnight in Kandy.</p></div>
       
-      <div class="hotel"><div class="hotel-h"><div><span class="eyebrow">Your hotel · Kandy</span><h4>Radisson Hotel Kandy</h4></div></div></div>
+      <div class="hotel"><div class="hotel-h"><div class="hth"><img class="hthumb" src="/hotels/radisson-hotel-kandy.webp" alt="Radisson Hotel Kandy" width="64" height="64" loading="lazy" decoding="async"><div><span class="eyebrow">Your hotel · Kandy</span><h4>Radisson Hotel Kandy <span class="stbadge">4-star</span></h4></div></div><span class="stars" aria-hidden="true">★★★★</span></div></div>
     </div>
    </article>
 <article class="day" id="private-8-days-day-4">
@@ -434,7 +446,7 @@ img.hero-img{width:100%;object-fit:cover;object-position:center;display:block}
     <div class="day-body" id="p2db3" hidden>
       <div class="text"><p>Photo stop at Ramboda Falls, then a visit to a tea estate and factory to see how tea is made, try plucking tea leaves and taste it. Overnight in Nuwara Eliya.</p></div>
       <div class="p2gal"><figure><img src="/gallery/sri-lanka-16.jpg" alt="Waterfall and tea hills" loading="lazy" decoding="async"><figcaption>Waterfall and tea hills</figcaption></figure><figure><img src="/gallery/sri-lanka-6.jpg" alt="Hill-country tea estates" loading="lazy" decoding="async"><figcaption>Hill-country tea estates</figcaption></figure></div>
-      <div class="hotel"><div class="hotel-h"><div><span class="eyebrow">Your hotel · Nuwara Eliya</span><h4>Queenswood Cottage <span class="rmt">· standard room</span></h4></div></div></div>
+      <div class="hotel"><div class="hotel-h"><div class="hth"><img class="hthumb" src="/hotels/queenswood-cottage.webp" alt="Queenswood Cottage" width="64" height="64" loading="lazy" decoding="async"><div><span class="eyebrow">Your hotel · Nuwara Eliya</span><h4>Queenswood Cottage <span class="stbadge">4-star</span> <span class="rmt">· standard room</span></h4></div></div><span class="stars" aria-hidden="true">★★★★</span></div></div>
     </div>
    </article>
 <article class="day" id="private-8-days-day-5">
@@ -446,7 +458,7 @@ img.hero-img{width:100%;object-fit:cover;object-position:center;display:block}
     <div class="day-body" id="p2db4" hidden>
       <div class="text"><p>Morning at Gregory Lake, then a visit to Ambewela farm and the strawberry farms, with stops at local shops or cafés. Overnight in Nuwara Eliya.</p></div>
       <div class="p2gal"><figure><img src="/gallery/sri-lanka-7.jpg" alt="Green hill country" loading="lazy" decoding="async"><figcaption>Green hill country</figcaption></figure></div>
-      <div class="hotel"><div class="hotel-h"><div><span class="eyebrow">Your hotel · Nuwara Eliya</span><h4>Queenswood Cottage <span class="rmt">· standard room</span></h4></div></div></div>
+      <div class="hotel"><div class="hotel-h"><div class="hth"><img class="hthumb" src="/hotels/queenswood-cottage.webp" alt="Queenswood Cottage" width="64" height="64" loading="lazy" decoding="async"><div><span class="eyebrow">Your hotel · Nuwara Eliya</span><h4>Queenswood Cottage <span class="stbadge">4-star</span> <span class="rmt">· standard room</span></h4></div></div><span class="stars" aria-hidden="true">★★★★</span></div></div>
     </div>
    </article>
 <article class="day" id="private-8-days-day-6">
@@ -458,7 +470,7 @@ img.hero-img{width:100%;object-fit:cover;object-position:center;display:block}
     <div class="day-body" id="p2db5" hidden>
       <div class="text"><p>Photo stops at Devon and St. Clair&#x27;s falls, and the option of white-water rafting on the Kelani River in Kitulgala, then arrival in Bentota. Overnight in Bentota.</p></div>
       
-      <div class="hotel"><div class="hotel-h"><div><span class="eyebrow">Your hotel · Bentota</span><h4>Shandaru Blue Bentota</h4></div></div></div>
+      <div class="hotel"><div class="hotel-h"><div class="hth"><img class="hthumb" src="/hotels/shandaru-blue-bentota.webp" alt="Shandaru Blue Bentota" width="64" height="64" loading="lazy" decoding="async"><div><span class="eyebrow">Your hotel · Bentota</span><h4>Shandaru Blue Bentota <span class="stbadge">4-star</span></h4></div></div><span class="stars" aria-hidden="true">★★★★</span></div></div>
     </div>
    </article>
 <article class="day" id="private-8-days-day-7">
@@ -470,7 +482,7 @@ img.hero-img{width:100%;object-fit:cover;object-position:center;display:block}
     <div class="day-body" id="p2db6" hidden>
       <div class="text"><p>Free time on the beach or for water sports, then a boat ride on the Madu River and a visit to a sea turtle conservation centre. Overnight in Bentota.</p></div>
       <div class="p2gal"><figure><img src="/gallery/sri-lanka-12.jpg" alt="Boat ride through the mangroves" loading="lazy" decoding="async"><figcaption>Boat ride through the mangroves</figcaption></figure><figure><img src="/gallery/sri-lanka-13.jpg" alt="Indian Ocean beach" loading="lazy" decoding="async"><figcaption>Indian Ocean beach</figcaption></figure></div>
-      <div class="hotel"><div class="hotel-h"><div><span class="eyebrow">Your hotel · Bentota</span><h4>Shandaru Blue Bentota</h4></div></div></div>
+      <div class="hotel"><div class="hotel-h"><div class="hth"><img class="hthumb" src="/hotels/shandaru-blue-bentota.webp" alt="Shandaru Blue Bentota" width="64" height="64" loading="lazy" decoding="async"><div><span class="eyebrow">Your hotel · Bentota</span><h4>Shandaru Blue Bentota <span class="stbadge">4-star</span></h4></div></div><span class="stars" aria-hidden="true">★★★★</span></div></div>
     </div>
    </article>
 <article class="day" id="private-8-days-day-8">
@@ -493,11 +505,11 @@ img.hero-img{width:100%;object-fit:cover;object-position:center;display:block}
     
     <div class="tbl-wrap"><table class="ptbl"><thead><tr><th>Room type</th><th class="num">Price per person</th><th class="num">Booking total</th></tr></thead><tbody><tr><td>Single room · 1 traveler</td><td class="num"><b dir="ltr">$1,655</b></td><td class="num" dir="ltr">$1,655</td></tr><tr><td>Double room · 2 travelers</td><td class="num"><b dir="ltr">$875</b></td><td class="num" dir="ltr">$1,750</td></tr><tr><td>Triple room · 3 travelers</td><td class="num"><b dir="ltr">$665</b></td><td class="num" dir="ltr">$1,995</td></tr></tbody></table></div>
     <p class="note">Prices shown are &#x27;from&#x27; prices, calculated for arrival on 20 November 2026 and departure on 27 November 2026. Prices depend on your travel dates and are subject to room availability and booking confirmation; for other dates the price is recalculated by season and any mandatory fees.</p>
-    <h3 class="ptbl-h">Suggested hotels</h3>
-    <div class="tbl-wrap"><table class="ptbl"><thead><tr><th>City</th><th>Hotel</th><th class="num">Nights</th></tr></thead><tbody><tr><td>Colombo</td><td dir="ltr" style="text-align:start">Maradha Colombo</td><td class="num">1</td></tr><tr><td>Kandy</td><td dir="ltr" style="text-align:start">Radisson Hotel Kandy</td><td class="num">2</td></tr><tr><td>Nuwara Eliya</td><td dir="ltr" style="text-align:start">Queenswood Cottage · standard room</td><td class="num">2</td></tr><tr><td>Bentota</td><td dir="ltr" style="text-align:start">Shandaru Blue Bentota</td><td class="num">2</td></tr></tbody></table></div>
-    <div class="pcols"><div class="pcol"><h3>Included</h3><ul><li>7 nights with breakfast in the suggested hotels</li><li>Private car with guide for all transfers on the program</li><li>Airport welcome and departure transfer</li></ul></div><div class="pcol no"><h3>Paid separately</h3><ul><li>Entrance tickets and activities</li><li>Flights</li><li>Visa</li><li>Lunch and dinner</li><li>Flower bouquet and honeymoon car decoration (on request)</li><li>Early check-in (on request)</li></ul></div></div>
+    <h3 class="ptbl-h">Suggested hotels · 4-star</h3>
+    <div class="tbl-wrap"><table class="ptbl"><thead><tr><th>City</th><th>Hotel</th><th class="num">Nights</th></tr></thead><tbody><tr><td>Colombo</td><td><span class="hcell"><img class="hthumb sm" src="/hotels/maradha-colombo.webp" alt="Maradha Colombo" width="56" height="56" loading="lazy" decoding="async"><span><span dir="ltr">Maradha Colombo</span><small class="hst">★★★★ 4-star</small></span></span></td><td class="num">1</td></tr><tr><td>Kandy</td><td><span class="hcell"><img class="hthumb sm" src="/hotels/radisson-hotel-kandy.webp" alt="Radisson Hotel Kandy" width="56" height="56" loading="lazy" decoding="async"><span><span dir="ltr">Radisson Hotel Kandy</span><small class="hst">★★★★ 4-star</small></span></span></td><td class="num">2</td></tr><tr><td>Nuwara Eliya</td><td><span class="hcell"><img class="hthumb sm" src="/hotels/queenswood-cottage.webp" alt="Queenswood Cottage" width="56" height="56" loading="lazy" decoding="async"><span><span dir="ltr">Queenswood Cottage</span><small class="hst">★★★★ 4-star</small><small class="hst">standard room</small></span></span></td><td class="num">2</td></tr><tr><td>Bentota</td><td><span class="hcell"><img class="hthumb sm" src="/hotels/shandaru-blue-bentota.webp" alt="Shandaru Blue Bentota" width="56" height="56" loading="lazy" decoding="async"><span><span dir="ltr">Shandaru Blue Bentota</span><small class="hst">★★★★ 4-star</small></span></span></td><td class="num">2</td></tr></tbody></table></div>
+    <div class="pcols"><div class="pcol"><h3>Included</h3><ul><li>7 nights with breakfast in 4-star hotels (the suggested hotels)</li><li>Private car with guide for all transfers on the program</li><li>Airport welcome and departure transfer</li></ul></div><div class="pcol no"><h3>Paid separately</h3><ul><li>Entrance tickets and activities</li><li>Flights</li><li>Visa</li><li>Lunch and dinner</li><li>Flower bouquet and honeymoon car decoration (on request)</li><li>Early check-in (on request)</li></ul></div></div>
     <div class="pnotes"><h3>Notes</h3><ul><li>Prices depend on your hotel dates and are subject to room availability and booking confirmation.</li><li>If the dates change, the price is recalculated by season and any mandatory fees.</li></ul></div>
-    <div class="pcta"><div><h3>Book your private tour</h3><p>Send us your arrival date and number of travelers, and we will send you the final price for your dates on WhatsApp.</p></div><div class="acts"><a class="pbtn wa" href="https://wa.me/9647711745353?text=Hello%2C%20I%20would%20like%20to%20book%20the%20Sri%20Lanka%20private%20tour%2C%208%20days%20%28Colombo%2C%20Kandy%2C%20Nuwara%20Eliya%2C%20Bentota%29." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2s.2-1.1.1-1.2-.2-.2-.4-.3z"/></svg>Book on WhatsApp</a><a class="pbtn ol" href="/en/#itinerary">All Sri Lanka programs</a></div></div>
+    <div class="pcta"><div><h3>Book your private tour</h3><p>Send us your arrival date and number of travelers, and we will send you the final price for your dates on WhatsApp.</p></div><div class="acts"><a class="pbtn wa" href="https://wa.me/9647711745353?text=Hello%2C%20I%20would%20like%20to%20book%20the%20Sri%20Lanka%20private%20tour%2C%208%20days%20%28Colombo%2C%20Kandy%2C%20Nuwara%20Eliya%2C%20Bentota%29." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2s.2-1.1.1-1.2-.2-.2-.4-.3z"/></svg>Book on WhatsApp</a><a class="pbtn gd" href="/en/#price-p2">Calculate the price</a><a class="pbtn ol" href="/en/#itinerary">All Sri Lanka programs</a></div></div>
     </div>
   </section>
 </main>
@@ -525,6 +537,30 @@ function draw(){d.innerHTML="";var k=cur();for(var i=0;i<c.length;i++){(function
 var tm;g.addEventListener("scroll",function(){clearTimeout(tm);tm=setTimeout(draw,120);});window.addEventListener("resize",draw);draw();}
 document.querySelectorAll(".pk-ph").forEach(function(p){p.addEventListener("click",function(){var b=p.parentNode.querySelector(".prog-tg");if(b)b.click();});});
 document.querySelectorAll(".p2days").forEach(function(w){w.addEventListener("click",function(e){var btn=e.target.closest(".day-btn");if(!btn||!w.contains(btn))return;var a=btn.parentElement,body=a.querySelector(".day-body"),o=!a.classList.contains("open");a.classList.toggle("open",o);body.hidden=!o;btn.setAttribute("aria-expanded",o);});});
+if(typeof pcFill==="function"&&document.getElementById("pc-out")){
+var PR2={s:1655,d:875,t:665};window.pcProg="1";
+window.pc2Calc=function(){var t=PT[lang],out=$("#pc-out"),num=function(v){return Math.max(0,parseInt(v,10)||0);};
+var pax=num($("#pc-pax").value),dbl=num($("#pc-dbl").value),sgl=num($("#pc-sgl").value),tpl=num($("#pc-tpl").value),dep=$("#pc-date").value;
+$("#pc-note").textContent=PC2T.note2;pcQuote="";
+if(!pax||dbl*2+sgl+tpl*3!==pax){out.innerHTML='<p class="pc-warn">'+P3("mis3")+'</p>';return;}
+var money=function(v){return "US$ "+v.toLocaleString("en-US");},total=PR2.d*dbl*2+PR2.s*sgl+PR2.t*tpl*3,h="";
+function row(l,v){return '<div class="pc-row"><span>'+l+'</span><b dir="ltr">'+money(v)+'</b></div>';}
+if(dbl)h+=row(t.ppD,PR2.d);if(sgl)h+=row(t.ppS,PR2.s);if(tpl)h+=row(P3("ppT"),PR2.t);
+h+='<div class="pc-row pc-total"><span></span><b dir="ltr">'+money(total)+'</b></div><a class="btn" href="#interest">'+t.book+'</a>';
+out.innerHTML=h;out.querySelector(".pc-total span").textContent=t.tot.replace("{n}",pax);
+pcQuote="Program 2 private 4-star | arrival "+dep+" | pax "+pax+" | DBL "+dbl+" | SGL "+sgl+" | TPL "+tpl+" | TOTAL "+money(total);};
+function setProg(g){window.pcProg=g;document.querySelectorAll(".pc-prog button").forEach(function(b){b.setAttribute("aria-checked",b.dataset.g===g?"true":"false");});
+var pp=document.querySelector(".pr-pkg");if(pp)pp.style.display=g==="1"?"":"none";
+if(g==="2"){var loc={ar:"ar",en:"en-GB",ru:"ru",de:"de",fr:"fr",es:"es",hi:"hi"}[lang]||"en-GB",fmt=new Intl.DateTimeFormat(loc,{weekday:"short",day:"numeric",month:"long",year:"numeric",timeZone:"UTC"}),n=new Date(),o=[];
+var d=new Date(Date.UTC(n.getFullYear(),n.getMonth(),n.getDate()+1));for(var i=0;i<365;i++){o.push('<option value="'+pcISO(d)+'">'+fmt.format(d)+'</option>');d.setUTCDate(d.getUTCDate()+1);}
+$("#pc-date").innerHTML=o.join("");$("#pc-lDate").textContent=PC2T.date2;$("#pc-tplF").style.display="";["#pc-dbl","#pc-sgl"].forEach(function(x){$(x).parentElement.style.display="";});
+document.querySelector(".pc-grid").classList.add("t3");pcPaxOpts(PRICE_CFG.maxPax);pcAuto();pcCalc();}
+else{pcFill();pcSetPkg(pcPkg);}}
+document.querySelectorAll(".pc-prog button").forEach(function(b){b.addEventListener("click",function(){setProg(b.dataset.g);});});
+document.querySelectorAll(".pc-pkg button").forEach(function(b){b.addEventListener("click",function(){if(window.pcProg!=="1")setProg("1");});});
+document.querySelectorAll('a[data-g][href="#price"]').forEach(function(a){a.addEventListener("click",function(){setProg(a.dataset.g);});});
+if(location.hash==="#price-p2"){setProg("2");setTimeout(function(){var p=document.getElementById("price");if(p)p.scrollIntoView({block:"start"});},80);}
+}
 })();</script>
 </body>
 </html>
