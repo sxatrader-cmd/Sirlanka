@@ -358,6 +358,15 @@ img.hero-img{width:100%;object-fit:cover;object-position:center;display:block}
 .pc-prog button .st{display:block;color:var(--gold);letter-spacing:2px;font-size:13px}
 .pc-prog button[aria-checked="true"]{background:var(--navy);color:#fff;border-color:var(--navy);box-shadow:inset 0 -3px 0 var(--gold)}
 @media (max-width:560px){.pc-prog button{font-size:13.5px;padding:10px 6px}.hthumb{width:56px;height:56px}}
+.pc .field{position:relative}
+.pc input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:48px;padding:0;margin:0;border:0;background:transparent;cursor:pointer;accent-color:var(--gold);touch-action:pan-y}
+.pc input[type=range]::-webkit-slider-runnable-track{height:8px;border-radius:4px;background:linear-gradient(to right,var(--gold) var(--fill,0%),var(--line) var(--fill,0%))}
+[dir=rtl] .pc input[type=range]::-webkit-slider-runnable-track{background:linear-gradient(to left,var(--gold) var(--fill,0%),var(--line) var(--fill,0%))}
+.pc input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:26px;height:26px;border-radius:50%;background:var(--navy);border:3px solid var(--gold);margin-top:-9px;box-shadow:0 2px 6px rgba(27,42,71,.3)}
+.pc input[type=range]::-moz-range-track{height:8px;border-radius:4px;background:var(--line)}
+.pc input[type=range]::-moz-range-progress{height:8px;border-radius:4px;background:var(--gold)}
+.pc input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:var(--navy);border:3px solid var(--gold)}
+.pc .rv{position:absolute;top:0;inset-inline-end:0;min-width:28px;text-align:center;background:var(--navy);color:#fff;border-radius:12px;font-weight:700;font-size:14px;line-height:22px;padding:0 8px;font-variant-numeric:tabular-nums}
 </style>
 <style>.hero-img{width:100%;display:block;object-fit:cover;height:clamp(240px,46vw,420px);object-position:center 35%}.crumb{font-size:14px;padding-top:18px}.crumb a{color:var(--navy-2);text-decoration:none;border-bottom:1px solid var(--gold-2)}</style>
 </head>
@@ -509,6 +518,14 @@ img.hero-img{width:100%;object-fit:cover;object-position:center;display:block}
     <div class="tbl-wrap"><table class="ptbl"><thead><tr><th>Ville</th><th>Hôtel</th><th class="num">Nuits</th></tr></thead><tbody><tr><td>Colombo</td><td><span class="hcell"><img class="hthumb sm" src="/hotels/maradha-colombo.webp" alt="Maradha Colombo" width="56" height="56" loading="lazy" decoding="async"><span><span dir="ltr">Maradha Colombo</span><small class="hst">★★★★ 4 étoiles</small></span></span></td><td class="num">1</td></tr><tr><td>Kandy</td><td><span class="hcell"><img class="hthumb sm" src="/hotels/radisson-hotel-kandy.webp" alt="Radisson Hotel Kandy" width="56" height="56" loading="lazy" decoding="async"><span><span dir="ltr">Radisson Hotel Kandy</span><small class="hst">★★★★ 4 étoiles</small></span></span></td><td class="num">2</td></tr><tr><td>Nuwara Eliya</td><td><span class="hcell"><img class="hthumb sm" src="/hotels/queenswood-cottage.webp" alt="Queenswood Cottage" width="56" height="56" loading="lazy" decoding="async"><span><span dir="ltr">Queenswood Cottage</span><small class="hst">★★★★ 4 étoiles</small><small class="hst">chambre standard</small></span></span></td><td class="num">2</td></tr><tr><td>Bentota</td><td><span class="hcell"><img class="hthumb sm" src="/hotels/shandaru-blue-bentota.webp" alt="Shandaru Blue Bentota" width="56" height="56" loading="lazy" decoding="async"><span><span dir="ltr">Shandaru Blue Bentota</span><small class="hst">★★★★ 4 étoiles</small></span></span></td><td class="num">2</td></tr></tbody></table></div>
     <div class="pcols"><div class="pcol"><h3>Le prix comprend</h3><ul><li>7 nuits avec petit-déjeuner en hôtels 4 étoiles (les hôtels proposés)</li><li>Voiture privée avec guide pour les trajets du programme</li><li>Accueil à l&#x27;aéroport et transfert de départ</li></ul></div><div class="pcol no"><h3>À régler séparément</h3><ul><li>Billets d&#x27;entrée et activités</li><li>Vols</li><li>Visa</li><li>Déjeuners et dîners</li><li>Bouquet de fleurs et décoration de voiture pour lune de miel (sur demande)</li><li>Arrivée anticipée à l&#x27;hôtel (sur demande)</li></ul></div></div>
     <div class="pnotes"><h3>Remarques</h3><ul><li>Les prix dépendent des dates du séjour et sont soumis à la disponibilité des chambres et à la confirmation de la réservation.</li><li>En cas de changement de dates, le prix est recalculé selon la saison et les frais obligatoires éventuels.</li></ul></div>
+    <div class="dgw" id="driver-guide">
+    <h3 class="ptbl-h">Formule chauffeur/guide</h3>
+    <div class="pricebox dg"><div><div class="amount" dir="ltr">$650<small>USD</small></div><div class="per">par groupe (jusqu&#x27;à 3 personnes)</div></div><div class="tag">Hôtels non compris, à réserver vous-même</div></div>
+    <div class="tbl-wrap"><table class="ptbl"><thead><tr><th>Voyageurs</th><th class="num">Prix par personne</th><th class="num">Total de la réservation</th></tr></thead><tbody><tr><td>1 voyageur</td><td class="num"><b dir="ltr">$650</b></td><td class="num" dir="ltr">$650</td></tr><tr><td>2 voyageurs</td><td class="num"><b dir="ltr">$325</b></td><td class="num" dir="ltr">$650</td></tr><tr><td>3 voyageurs</td><td class="num"><b dir="ltr">$217</b></td><td class="num" dir="ltr">$650</td></tr></tbody></table></div>
+    <p class="note">650 $ US par groupe jusqu&#x27;à 3 personnes, nombre de groupes illimité (ex. 4 à 6 personnes = 2 groupes = 1 300 $ US).</p>
+    <p><a class="pbtn gd" href="/fr/#price-p2-dg">Calculer le prix</a></p>
+    <div class="pcols"><div class="pcol"><h3>Le prix comprend</h3><ul><li>Voiture privée avec chauffeur/guide pendant tout le programme</li><li>Accueil et départ à l&#x27;aéroport</li></ul></div><div class="pcol no"><h3>À régler séparément</h3><ul><li>Hôtels (à réserver vous-même)</li><li>Vols internationaux</li><li>Droits d&#x27;entrée</li></ul></div></div>
+    </div>
     <div class="pcta"><div><h3>Réservez votre voyage privé</h3><p>Envoyez-nous votre date d&#x27;arrivée et le nombre de voyageurs, et nous vous enverrons le prix final pour vos dates sur WhatsApp.</p></div><div class="acts"><a class="pbtn wa" href="https://wa.me/9647711745353?text=Bonjour%2C%20je%20souhaite%20r%C3%A9server%20le%20voyage%20priv%C3%A9%20de%208%20jours%20au%20Sri%20Lanka%20%28Colombo%2C%20Kandy%2C%20Nuwara%20Eliya%2C%20Bentota%29." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2s.2-1.1.1-1.2-.2-.2-.4-.3z"/></svg>Réserver sur WhatsApp</a><a class="pbtn gd" href="/fr/#price-p2">Calculer le prix</a><a class="pbtn ol" href="/fr/#itinerary">Tous les programmes au Sri Lanka</a></div></div>
     </div>
   </section>
@@ -537,9 +554,17 @@ function draw(){d.innerHTML="";var k=cur();for(var i=0;i<c.length;i++){(function
 var tm;g.addEventListener("scroll",function(){clearTimeout(tm);tm=setTimeout(draw,120);});window.addEventListener("resize",draw);draw();}
 document.querySelectorAll(".pk-ph").forEach(function(p){p.addEventListener("click",function(){var b=p.parentNode.querySelector(".prog-tg");if(b)b.click();});});
 document.querySelectorAll(".p2days").forEach(function(w){w.addEventListener("click",function(e){var btn=e.target.closest(".day-btn");if(!btn||!w.contains(btn))return;var a=btn.parentElement,body=a.querySelector(".day-body"),o=!a.classList.contains("open");a.classList.toggle("open",o);body.hidden=!o;btn.setAttribute("aria-expanded",o);});});
+window.pcSync=function(){["pc-dbl","pc-sgl","pc-tpl"].forEach(function(id){var e=document.getElementById(id);if(!e||e.type!=="range")return;var o=document.querySelector('output[for="'+id+'"]');if(o)o.textContent=e.value;var mx=+e.max||1;e.style.setProperty("--fill",(100*e.value/mx)+"%");});};
 if(typeof pcFill==="function"&&document.getElementById("pc-out")){
 var PR2={s:1655,d:875,t:665};window.pcProg="1";
+window.pc2Pkg="4";["pc-dbl","pc-sgl","pc-tpl"].forEach(function(id){var e=document.getElementById(id);if(e)e.addEventListener("input",window.pcSync);});window.pcSync();
 window.pc2Calc=function(){var t=PT[lang],out=$("#pc-out"),num=function(v){return Math.max(0,parseInt(v,10)||0);};
+if(window.pc2Pkg==="0"){var pax0=num($("#pc-pax").value),dep0=$("#pc-date").value,m0=function(v){return "US$ "+v.toLocaleString("en-US");};
+$("#pc-note").textContent=P3("note0");pcQuote="";if(!pax0){out.innerHTML="";return;}
+var g0=Math.ceil(pax0/3),tot0=g0*DRIVER_GROUP,pp0=Math.ceil(tot0/pax0);
+out.innerHTML='<div class="pc-row"><span>'+P3("ppP")+'</span><b dir="ltr">'+m0(pp0)+'</b></div><div class="pc-row"><span>'+P3("grp").replace("{g}",g0)+'</span><b dir="ltr"></b></div><div class="pc-row pc-total"><span></span><b dir="ltr">'+m0(tot0)+'</b></div><a class="btn" href="#interest">'+t.book+'</a>';
+out.querySelector(".pc-total span").textContent=t.tot.replace("{n}",pax0);
+pcQuote="Program 2 driver/guide | arrival "+dep0+" | pax "+pax0+" | groups "+g0+" x "+m0(DRIVER_GROUP)+" | "+m0(pp0)+" pp | TOTAL "+m0(tot0);return;}
 var pax=num($("#pc-pax").value),dbl=num($("#pc-dbl").value),sgl=num($("#pc-sgl").value),tpl=num($("#pc-tpl").value),dep=$("#pc-date").value;
 $("#pc-note").textContent=PC2T.note2;pcQuote="";
 if(!pax||dbl*2+sgl+tpl*3!==pax){out.innerHTML='<p class="pc-warn">'+P3("mis3")+'</p>';return;}
@@ -550,16 +575,19 @@ h+='<div class="pc-row pc-total"><span></span><b dir="ltr">'+money(total)+'</b><
 out.innerHTML=h;out.querySelector(".pc-total span").textContent=t.tot.replace("{n}",pax);
 pcQuote="Program 2 private 4-star | arrival "+dep+" | pax "+pax+" | DBL "+dbl+" | SGL "+sgl+" | TPL "+tpl+" | TOTAL "+money(total);};
 function setProg(g){window.pcProg=g;document.querySelectorAll(".pc-prog button").forEach(function(b){b.setAttribute("aria-checked",b.dataset.g===g?"true":"false");});
-var pp=document.querySelector(".pr-pkg");if(pp)pp.style.display=g==="1"?"":"none";
+var pp=document.querySelector(".pr-pkg");if(pp)pp.style.display=g==="1"?"":"none";var p2=document.querySelector(".p2-pkg");if(p2)p2.style.display=g==="2"?"":"none";
 if(g==="2"){var loc={ar:"ar",en:"en-GB",ru:"ru",de:"de",fr:"fr",es:"es",hi:"hi"}[lang]||"en-GB",fmt=new Intl.DateTimeFormat(loc,{weekday:"short",day:"numeric",month:"long",year:"numeric",timeZone:"UTC"}),n=new Date(),o=[];
 var d=new Date(Date.UTC(n.getFullYear(),n.getMonth(),n.getDate()+1));for(var i=0;i<365;i++){o.push('<option value="'+pcISO(d)+'">'+fmt.format(d)+'</option>');d.setUTCDate(d.getUTCDate()+1);}
-$("#pc-date").innerHTML=o.join("");$("#pc-lDate").textContent=PC2T.date2;$("#pc-tplF").style.display="";["#pc-dbl","#pc-sgl"].forEach(function(x){$(x).parentElement.style.display="";});
-document.querySelector(".pc-grid").classList.add("t3");pcPaxOpts(PRICE_CFG.maxPax);pcAuto();pcCalc();}
+$("#pc-date").innerHTML=o.join("");$("#pc-lDate").textContent=PC2T.date2;p2ui();}
 else{pcFill();pcSetPkg(pcPkg);}}
-document.querySelectorAll(".pc-prog button").forEach(function(b){b.addEventListener("click",function(){setProg(b.dataset.g);});});
+function p2ui(){var dg=window.pc2Pkg==="0";document.querySelectorAll(".p2-pkg button").forEach(function(b){b.setAttribute("aria-checked",b.dataset.k===window.pc2Pkg?"true":"false");});
+$("#pc-tplF").style.display=dg?"none":"";["#pc-dbl","#pc-sgl"].forEach(function(x){$(x).parentElement.style.display=dg?"none":"";});
+document.querySelector(".pc-grid").classList.toggle("t3",!dg);pcPaxOpts(dg?30:PRICE_CFG.maxPax);pcAuto();pcCalc();}
+document.querySelectorAll(".pc-prog button[data-g]").forEach(function(b){b.addEventListener("click",function(){setProg(b.dataset.g);});});
+document.querySelectorAll(".p2-pkg button").forEach(function(b){b.addEventListener("click",function(){window.pc2Pkg=b.dataset.k;p2ui();});});
 document.querySelectorAll(".pc-pkg button").forEach(function(b){b.addEventListener("click",function(){if(window.pcProg!=="1")setProg("1");});});
-document.querySelectorAll('a[data-g][href="#price"]').forEach(function(a){a.addEventListener("click",function(){setProg(a.dataset.g);});});
-if(location.hash==="#price-p2"){setProg("2");setTimeout(function(){var p=document.getElementById("price");if(p)p.scrollIntoView({block:"start"});},80);}
+document.querySelectorAll('a[data-g][href="#price"]').forEach(function(a){a.addEventListener("click",function(){if(a.dataset.k)window.pc2Pkg=a.dataset.k;setProg(a.dataset.g);});});
+if(location.hash==="#price-p2"||location.hash==="#price-p2-dg"){if(location.hash==="#price-p2-dg")window.pc2Pkg="0";setProg("2");setTimeout(function(){var p=document.getElementById("price");if(p)p.scrollIntoView({block:"start"});},80);}
 }
 })();</script>
 </body>
